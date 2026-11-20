@@ -527,9 +527,14 @@ function calcTerritory(){owner.fill(0);const best=new Float32Array(N);const pc=n
 function drawOverlay(){octx.clearRect(0,0,ocv.width,ocv.height);if(!layer)return;
  for(let i=0;i<N;i++){const o=owner[i];if(!o)continue;const t=TW.get(o);if(!t)continue;const x=i%W,y=(i/W)|0;
   const col=layer===3?(RL.get(t.faith)?.c||'#888'):layer===2?IDEO[t.ideo||'tribalist'].c:t.color;
-  octx.globalAlpha=layer===2||layer===3?.42:.16;octx.fillStyle=col;octx.fillRect(x*TS,y*TS,TS,TS);octx.globalAlpha=.9;
+  octx.globalAlpha=layer===2||layer===3?.42:layer===1?.3:.16;octx.fillStyle=col;octx.fillRect(x*TS,y*TS,TS,TS);octx.globalAlpha=.9;
   octx.fillStyle=layer>=2?'#111':t.color;
   const diff=(dx,dy)=>{const nx=x+dx,ny=y+dy;return!inb(nx,ny)||owner[ny*W+nx]!==o};
+  if(layer===1){const war=(dx,dy)=>{const nx=x+dx,ny=y+dy;if(!inb(nx,ny))return false;const n=owner[ny*W+nx];return n&&n!==o&&t.wars[n]!==undefined};
+   const edge=(ex,ey,ew,eh,ix,iy,iw,ih,w)=>{octx.globalAlpha=.8;octx.fillStyle='#101010';octx.fillRect(ex,ey,ew,eh);octx.globalAlpha=1;octx.fillStyle=w?'#ff3b30':t.color;octx.fillRect(ix,iy,iw,ih)};
+   const X=x*TS,Y=y*TS;
+   if(diff(-1,0))edge(X,Y,5,TS,X+1,Y,4,TS,war(-1,0));if(diff(1,0))edge(X+TS-5,Y,5,TS,X+TS-5,Y,4,TS,war(1,0));
+   if(diff(0,-1))edge(X,Y,TS,5,X,Y+1,TS,4,war(0,-1));if(diff(0,1))edge(X,Y+TS-5,TS,5,X,Y+TS-5,TS,4,war(0,1));continue}
   if(diff(-1,0))octx.fillRect(x*TS,y*TS,2,TS);if(diff(1,0))octx.fillRect(x*TS+TS-2,y*TS,2,TS);if(diff(0,-1))octx.fillRect(x*TS,y*TS,TS,2);if(diff(0,1))octx.fillRect(x*TS,y*TS+TS-2,TS,2)}
  octx.globalAlpha=1}
 function initClouds(){clouds=[];for(let k=0;k<9;k++)clouds.push({x:rnd(0,W*T),y:rnd(0,H*T),s:ri(0,3),v:rnd(2,5)})}
@@ -879,7 +884,7 @@ function mkPerson(x,y,t,par){
  const p={id:pid++,name:pname(),sur:pb&&pb.sex==='m'?pb.sur:(pa?pa.sur:pick(SUR)),sex,age:0,x,y,tx:x,ty:y,town:t?t.id:0,job:'child',st:'idle',task:null,tt:0,carry:null,
   v,amb:Math.pow(R(),2.2),loy:rnd(.2,.9),happy:.65,hp:1,partner:0,par:par?par.filter(Boolean).map(q=>q.id):[],kids:[],fac:0,bub:null,bubT:0,chosen:false,sick:0,
   skin:pick(SKIN),hair:pick(HAIR),hs:sex==='f'?pick([1,1,2,5,0]):pick([0,0,0,3,4]),beard:sex==='m'&&R()<.35,life:[],walk:0,stuck:0,dead:false,dir:1,ct:0,ft:0,foe:0,foeC:0,mig:null,kills:0,
-  temper:rnd(-.12,.08),ideo:'',act:false,rebel:0,onBoat:0,strand:-1,embark:0,tr:[],rel:0,hc:null,veh:0,rng:false,flag:false,raid:undefined,friend:0,fame:0,ruled:'',ff:0,thief:0,jail:0,rival:0,pt:0,rc:0,summit:null,hero:false,epi:'',wounded:0,wanted:0,embT:0,prophet:0,visited:null,pgoal:0,path:null,pk:0,side:1,pfT:0,ex:null,fireT:-9,giant:0,mad:0,walkTo:null,pcd:0,refugee:0};
+  temper:rnd(-.12,.08),ideo:'',act:false,rebel:0,onBoat:0,strand:-1,embark:0,tr:[],rel:0,hc:null,veh:0,rng:false,flag:false,raid:undefined,friend:0,fame:0,ruled:'',ff:0,thief:0,jail:0,rival:0,pt:0,rc:0,summit:null,hero:false,epi:'',wounded:0,wanted:0,embT:0,prophet:0,visited:null,pgoal:0,path:null,pk:0,side:1,pfT:0,ex:null,fireT:-9,giant:0,mad:0,walkTo:null,pcd:0,refugee:0,ord:null,vet:0};
  if(pa&&R()<.5)p.skin=pa.skin;else if(pb&&R()<.5)p.skin=pb.skin;
  if(pa&&R()<.4)p.hair=pa.hair;
  rollTraits(p,[pa,pb]);p.rel=pa?pa.rel:(t?t.faith||0:0);
@@ -1049,6 +1054,7 @@ function nomad(p){
  go(p,tx,ty,{k:'idle'})}
 function soldierThink(p,t){
  if(t.civil){const h=BL.get(t.hall);if(h){go(p,h.x*T+4+rnd(-12,12),h.y*T+8+rnd(-8,10),{k:'guard'});return true}}
+ if(p.ord&&t.strat&&t.strat.st!=='none'&&t.nWar){if(armyThink(p,t))return true;const h=BL.get(t.hall);if(h){go(p,h.x*T+4+rnd(-16,16),h.y*T+8+rnd(-12,12),{k:'guard'});return true}}
  const en=Object.keys(t.wars).map(Number).map(id=>TW.get(id)).filter(Boolean);
  if(!en.length){const b=randBld(t,'barracks')||BL.get(t.hall);if(b){go(p,b.x*T+4+rnd(-12,12),b.y*T+10+rnd(-6,8),{k:'idle'});return true}return false}
  if(p.raid===undefined)p.raid=R()<.6;
@@ -1198,7 +1204,7 @@ function assignJobs(t){
  let food=Math.ceil(need/gy*1.15);if(t.food>t.pop*8)food=Math.ceil(food*.55);if(t.food<t.pop*2)food+=1;food=Math.max(1,food);
  const pol=t.pol||{};const consc=pol.army==='Conscription'||hasLaw(t,'draft');
  const sol=t.civil?Math.ceil(n*.3):t.nWar?Math.ceil(n*(consc?.32:.23)):((nb.barracks||[]).length?Math.ceil(n*(consc?.1:.06)):0)+(hostileN&&nearHostileTown(t)?2:0);
- let bui=Math.min(t.sites.length*2,Math.ceil(n*.25));if(t.dmgList&&t.dmgList.length)bui=Math.max(bui,Math.min(Math.ceil(n*.2),t.dmgList.length));let sol2=t.martial>0?Math.max(sol,Math.ceil(n*.2)):sol;if(t.patriot>.05)sol2=Math.min(Math.ceil(n*.45),Math.ceil(sol2*(1+t.patriot)+(t.nWar?t.patriot*n*.08:0)));if(t.sites.length&&bui<1)bui=1;
+ let bui=Math.min(t.sites.length*2,Math.ceil(n*.25));if(t.dmgList&&t.dmgList.length)bui=Math.max(bui,Math.min(Math.ceil(n*.2),t.dmgList.length));let sol2=t.martial>0?Math.max(sol,Math.ceil(n*.2)):sol;if(t.mobil>0)sol2=Math.min(Math.ceil(n*.5),Math.ceil(sol2*(1+t.mobil*.6)));if(t.patriot>.05)sol2=Math.min(Math.ceil(n*.45),Math.ceil(sol2*(1+t.patriot)+(t.nWar?t.patriot*n*.08:0)));if(t.sites.length&&bui<1)bui=1;
  const[tx,ty]=townCenter(t);let prey=0;for(const c of cres)if(c.hp>0&&CRE[c.k].passive&&Math.abs(c.x-tx)<18*T&&Math.abs(c.y-ty)<18*T)prey++;
  const pool=av.slice();
  const take=(k,job,fn)=>{if(fn)pool.sort(fn);else pool.sort((a,b)=>(b.job===job)-(a.job===job));for(let i=0;i<k&&pool.length;i++)setJob(pool.shift(),job)};
@@ -1507,9 +1513,13 @@ function migrants(list,site,o,kind,from,fname,sea){
  for(const p of list){p.town=0;p.task=null;p.st='idle';p.tt=0;p.fac=0;p.act=false;p.carry=null;p.rebel=0;if(p.age>=14)p.job='settler';
   p.mig=sea?{x:sea.dx,y:sea.dy}:{x:g.x,y:g.y}}
  migs.push(g);return g}
-function overseas(t){const dk=t.dock;if(!dk||!laws.boats)return null;const hl=land[t.cy*W+t.cx];
- for(let k=0;k<260;k++){const i=Math.floor(R()*N);const x=i%W,y=(i/W)|0;if(Math.hypot(x-t.cx,y-t.cy)>75)continue;if(land[i]===hl||land[i]<0||!validSite(i,10))continue;
-  const cw=findTile(x,y,9,j=>ter[j]<SAND&&wid[j]===wid[dk.wi]&&adjLand(j,land[i])>=0,undefined,90);if(cw<0)continue;return{site:i,cw,dx:dk.x,dy:dk.y,dw:dk.wi}}return null}
+function overseas(t){const dk=t.dock;if(!dk||!laws.boats)return null;const hl=land[t.cy*W+t.cx],wd=wid[dk.wi];if(wd<0)return null;
+ const ctrs=[];for(const o of towns){ctrs.push([o.cx,o.cy]);for(const v of o.prov||[])ctrs.push([v.x,v.y])}let best=null,bs=-1e9;
+ for(let k=0;k<700;k++){const i=Math.floor(R()*N);if(land[i]===hl||land[i]<0||owner[i])continue;const x=i%W,y=(i/W)|0;if(!validSite(i,10))continue;
+  let md=1e9;for(const c of ctrs){const e=Math.hypot(c[0]-x,c[1]-y);if(e<md)md=e}if(md<14)continue;
+  const sc=Math.min(md,40)-Math.hypot(x-t.cx,y-t.cy)*.3+R()*8;if(sc<=bs)continue;
+  const cw=findTile(x,y,12,j=>ter[j]<SAND&&wid[j]===wd&&adjLand(j,land[i])>=0,undefined,160);if(cw<0)continue;bs=sc;best={site:i,cw,dx:dk.x,dy:dk.y,dw:dk.wi}}
+ return best}
 function secede(t,f,ad){
  const head=P.get(f.head);if(!head){dissolve(f);return}
  let site=findSite(t.cx,t.cy,14,34,land[t.cy*W+t.cx]),sea=null;if(site<0||R()<.35){const fs=frontierSite(land[t.cy*W+t.cx]);if(fs>=0)site=fs}if(site<0){sea=overseas(t);if(sea)site=sea.site}if(site<0){dissolve(f);return}
@@ -1520,12 +1530,12 @@ function secede(t,f,ad){
  migrants(all,site,o,'secede',t.id,f.name,sea);stats.c.secede++;
  news(`🏳️ The ${f.name} broke away from ${t.name}: ${all.length} people ${sea?'set sail':'marched off'} to start their own nation.`,head.x,head.y,true);dissolve(f);rebuildCache()}
 function openSite(cx,cy,minD,maxD,lm,me){for(let k=0;k<200;k++){const a=R()*6.283,d=rnd(minD,maxD);const x=Math.round(cx+Math.cos(a)*d),y=Math.round(cy+Math.sin(a)*d);if(!inb(x,y))continue;const i=y*W+x;if(lm!==undefined&&land[i]!==lm)continue;if(owner[i]&&owner[i]!==me)continue;if(!validSite(i,10))continue;if(towns.some(o=>(o.prov||[]).some(v=>Math.hypot(v.x-x,v.y-y)<10)))continue;return i}return-1}
-function colony(t){const lm=land[t.cy*W+t.cx];let site=R()<.3?-1:openSite(t.cx,t.cy,13,30,lm,t.id),sea=null;if(site<0)site=frontierSite(lm,t,Math.max(W,H)*.75);if(site<0||(t.dock&&R()<.35)){const s2=overseas(t);if(s2){sea=s2;site=s2.site}}if(site<0)return;
+function colony(t,fs){const lm=land[t.cy*W+t.cx];let site=fs||R()<.3?-1:openSite(t.cx,t.cy,13,30,lm,t.id),sea=null;if(site<0&&!fs)site=frontierSite(lm,t,Math.max(W,H)*.75);if(site<0||(t.dock&&R()<.35)){const s2=overseas(t);if(s2){sea=s2;site=s2.site}}if(site<0)return false;
  const pool=shuffle(t.mem.filter(p=>p.age>=16&&p.age<45&&p.id!==t.leader&&!p.dead&&!p.rebel));const ad=[];const want=ri(10,16);
  for(const p of pool){if(ad.length>=want)break;if(ad.includes(p))continue;ad.push(p);const q=P.get(p.partner);if(q&&!q.dead&&q.town===t.id&&q.id!==t.leader&&!ad.includes(q))ad.push(q);for(const k of p.kids){const c=P.get(k);if(c&&!c.dead&&c.age<14&&c.town===t.id&&!ad.includes(c))ad.push(c)}}
- if(ad.length<6)return;const ld=ad.slice().sort((a,b)=>b.amb-a.amb)[0];for(const p of ad)life(p,`Left ${t.name} as a settler`);t.food*=.85;t.wood*=.8;
+ if(ad.length<6)return false;const ld=ad.slice().sort((a,b)=>b.amb-a.amb)[0];for(const p of ad)life(p,`Left ${t.name} as a settler`);t.food*=.85;t.wood*=.8;
  migrants(ad,site,{era:t.era,know:t.know*.9,gov:R()<.6?t.gov:null,leaderId:ld.id,food:30+t.food*.1,wood:30,stone:10,bias:(t.bias||[0,0,0]).map(v=>clamp(v+rnd(-.4,.4),-1,1))},'colony',t.id,null,sea);
- news(`${sea?'⛵':'🏕️'} Settlers led by ${full(ld)} set out from ${t.name}${sea?' across the sea':''} to claim new land.`,ld.x,ld.y);rebuildCache()}
+ news(`${sea?'⛵':'🏕️'} Settlers led by ${full(ld)} set out from ${t.name}${sea?' across the sea':''} to claim new land.`,ld.x,ld.y);rebuildCache();return true}
 function updMigs(dt){for(let i=migs.length-1;i>=0;i--){const g=migs[i];g.t+=dt;
  const mem=g.ids.map(id=>P.get(id)).filter(p=>p&&!p.dead&&(p.mig||p.onBoat));if(!mem.length){migs.splice(i,1);continue}
  if(g.sea&&!g.sailed){if(g.boat)continue;const near=mem.filter(p=>Math.hypot(p.x-g.sea.dx*T-4,p.y-g.sea.dy*T-6)<22).length;
@@ -3102,12 +3112,14 @@ function gridYear(){plines=[];const P2=[];
 // ---------------- RAILWAYS & TRAINS ----------------
 function railYear(){
  for(let i=rails.length-1;i>=0;i--){const r=rails[i],a=TW.get(r.a),b=TW.get(r.b);if(!a||!b){rails.splice(i,1);continue}r.war=a.wars[b.id]!==undefined?1:0}
- for(const a of towns){if(a.era<5||a.pop<14||R()>.45)continue;const mine=rails.filter(r=>r.a===a.id||r.b===a.id).length;if(mine>=Math.min(4,1+(a.era-5)))continue;
-  const c=towns.filter(b=>b!==a&&b.era>=5&&b.pop>=8&&sameLand(a,b)&&friendly(a,b)&&!rails.some(r=>(r.a===a.id&&r.b===b.id)||(r.a===b.id&&r.b===a.id))&&Math.hypot(a.cx-b.cx,a.cy-b.cy)<70).sort((x,y)=>Math.hypot(a.cx-x.cx,a.cy-x.cy)-Math.hypot(a.cx-y.cx,a.cy-y.cy))[0];
+ for(const t of towns){const mine=rails.filter(r=>r.a===t.id||r.b===t.id);if(mine.length<=(t.era>=8?3:2))continue;const lr=mine.sort((x,y)=>pathGeo('R'+y.id,y.path).len-pathGeo('R'+x.id,x.path).len)[0];rails.splice(rails.indexOf(lr),1);trains=trains.filter(q=>q.r!==lr.id)}
+ for(const a of towns){if(a.era<5||a.pop<20||R()>.35)continue;const deg=id=>rails.filter(r=>r.a===id||r.b===id).length;if(deg(a.id)>=(a.era>=8?3:2))continue;
+  const c=towns.filter(b=>b!==a&&b.era>=5&&b.pop>=16&&sameLand(a,b)&&friendly(a,b)&&deg(b.id)<(b.era>=8?3:2)&&!railNear(a.id,b.id)&&Math.hypot(a.cx-b.cx,a.cy-b.cy)<55).sort((x,y)=>Math.hypot(a.cx-x.cx,a.cy-x.cy)-Math.hypot(a.cx-y.cx,a.cy-y.cy))[0];
   if(c)buildRail(a,c)}
  for(const t of towns){if(t.era<5||(t.blds.station||[]).length||t.sites.some(id=>{const b=BL.get(id);return b&&b.type==='station'}))continue;if(!rails.some(r=>(r.a===t.id||r.b===t.id)))continue;
   if(t.wood>=COST.station[0]&&t.stone>=COST.station[1]){const b=placeSite(t,'station');if(b){t.wood-=COST.station[0];t.stone-=COST.station[1];t.sites.push(b.id)}}}
- for(const r of rails){const n=trains.filter(q=>q.r===r.id).length;const a=TW.get(r.a);const want=r.prog>=1?(a&&a.era>=7&&pathGeo('R'+r.id,r.path).len>300?2:1):0;if(n<want)trains.push({r:r.id,s:n?pathGeo('R'+r.id,r.path).len:0,dir:n?-1:1,wait:rnd(1,4),id:railId++})}}
+ for(const r of rails){const n=trains.filter(q=>q.r===r.id).length;const a=TW.get(r.a);const want=r.prog>=1?1:0;if(n<want)trains.push({r:r.id,s:n?pathGeo('R'+r.id,r.path).len:0,dir:n?-1:1,wait:rnd(1,4),id:railId++})}}
+function railNear(x,y){const nb=id=>rails.filter(r=>r.a===id||r.b===id).map(r=>r.a===id?r.b:r.a);const n1=nb(x);if(n1.includes(y))return true;for(const m of n1)if(nb(m).includes(y))return true;return false}
 function buildRail(a,b,instant){const[ax,ay]=townCenter(a),[bx,by]=townCenter(b);const p=findPath(ax,ay,bx,by,22000);if(!p||pfMiss||p.length<3)return null;
  const path=smoothPath(trimEnds([[ax,ay],...p,[bx,by]],(2+Math.sqrt(a.pop)*.38)*T,(2+Math.sqrt(b.pop)*.38)*T));if(path.length<2)return null;const r={id:railId++,a:a.id,b:b.id,path,prog:instant?1:0,since:year,war:0,trips:0};rails.push(r);
  news(instant?`🚂 A railway now links ${a.name} and ${b.name}.`:`🛤️ Workers began laying track between ${a.name} and ${b.name}.`,ax,ay,false,true);return r}
@@ -3125,15 +3137,22 @@ function arriveTrain(r,at,from,e){r.trips++;const g=Math.round((5+e*1.8)*(crash>
  const[x,y]=townCenter(at);if(R()<.3&&onScreen(x,y,10))floatText(x,y-10,`🚂 +${g}💰`,'#ffd257',false)}
 
 // ---------------- HIGHWAYS & TRAFFIC ----------------
+let hwyPickT=0;
+// only the busiest links become highways: big modern towns, at most 2 per town, nearest first
+function hwyPick(hw){for(const r of routes)r.hwy=0;const deg=new Map();
+ const c=hw.map(r=>{const a=TW.get(r.a),b=TW.get(r.b);return{r,a,b}}).filter(o=>o.a&&o.b&&o.a.era>=6&&o.b.era>=6&&o.a.pop>=22&&o.b.pop>=22)
+  .sort((x,y)=>Math.hypot(x.a.cx-x.b.cx,x.a.cy-x.b.cy)-Math.hypot(y.a.cx-y.b.cx,y.a.cy-y.b.cy));
+ for(const o of c){const da=deg.get(o.a.id)||0,db=deg.get(o.b.id)||0;if(da>=2||db>=2)continue;o.r.hwy=1;deg.set(o.a.id,da+1);deg.set(o.b.id,db+1)}}
 const HTRIM=new Map();
 function trimEnds(path,ra,rb){const a=path[0],b=path[path.length-1];let i0=0,i1=path.length-1;while(i0<i1&&Math.hypot(path[i0][0]-a[0],path[i0][1]-a[1])<ra)i0++;while(i1>i0&&Math.hypot(path[i1][0]-b[0],path[i1][1]-b[1])<rb)i1--;const o=path.slice(Math.max(0,i0-1),i1+2);
  const cut=(p,q,c,r)=>{const d=Math.hypot(q[0]-p[0],q[1]-p[1])||1;let lo=0,hi=1;for(let k=0;k<14;k++){const m=(lo+hi)/2;const x=p[0]+(q[0]-p[0])*m,y=p[1]+(q[1]-p[1])*m;if(Math.hypot(x-c[0],y-c[1])<r)lo=m;else hi=m}return[p[0]+(q[0]-p[0])*hi,p[1]+(q[1]-p[1])*hi]};
  if(o.length>=2&&Math.hypot(o[0][0]-a[0],o[0][1]-a[1])<ra)o[0]=cut(o[0],o[1],a,ra);const L=o.length-1;if(L>=1&&Math.hypot(o[L][0]-b[0],o[L][1]-b[1])<rb)o[L]=cut(o[L],o[L-1],b,rb);return o}
 function hwyPath(r){let h=HTRIM.get(r.id);if(h&&h.src===r.path)return h.p;const a=TW.get(r.a),b=TW.get(r.b);const p=smoothPath(trimEnds(r.path,(a?2.5+Math.sqrt(a.pop)*.42:4)*T,(b?2.5+Math.sqrt(b.pop)*.42:4)*T));HTRIM.set(r.id,{src:r.path,p});return p}
 function hwyTick(dt){const hw=routes.filter(r=>!r.sea&&!r.block);
- for(const r of hw){const a=TW.get(r.a),b=TW.get(r.b);r.hwy=a&&b&&a.era>=6&&b.era>=6?1:0;if(!r.hwy)continue;const g=pathGeo('H'+r.id,hwyPath(r));
-  const want=Math.min(12,Math.floor(g.len/26));let n=0;for(const c of hwyCars)if(c.r===r.id)n++;
-  if(n<want&&R()<dt*.8&&hwyCars.length<160){const dir=R()<.5?1:-1;const s0=dir>0?0:g.len;if(!hwyCars.some(c=>c.r===r.id&&c.dir===dir&&Math.abs(c.s-s0)<9)){const tr=R()<.28;const e=Math.min(a.era,b.era);
+ if((hwyPickT-=dt)<=0){hwyPickT=8;hwyPick(hw)}
+ for(const r of hw){if(!r.hwy)continue;const a=TW.get(r.a),b=TW.get(r.b);if(!a||!b)continue;const g=pathGeo('H'+r.id,hwyPath(r));
+  const want=Math.min(5,Math.floor(g.len/48));let n=0;for(const c of hwyCars)if(c.r===r.id)n++;
+  if(n<want&&R()<dt*.8&&hwyCars.length<70){const dir=R()<.5?1:-1;const s0=dir>0?0:g.len;if(!hwyCars.some(c=>c.r===r.id&&c.dir===dir&&Math.abs(c.s-s0)<9)){const tr=R()<.28;const e=Math.min(a.era,b.era);
    hwyCars.push({id:hcId++,r:r.id,s:s0,dir,v:0,v0:tr?rnd(16,20):rnd(26,36),tr,e,c:tr?pick(['#e8e8e8','#d8433a','#3f7fe0',a.color]):pick(['#d8433a','#3f7fe0','#e8e8e8','#2a2a2a','#e8b830','#3fbf7a','#8a8a92',b.color])})}}}
  const byR=new Map();for(const c of hwyCars){const k=c.r*2+(c.dir>0?1:0);(byR.get(k)||byR.set(k,[]).get(k)).push(c)}
  for(let k=hwyCars.length-1;k>=0;k--){const c=hwyCars[k];const r=hw.find(x=>x.id===c.r);if(!r||!r.hwy){hwyCars.splice(k,1);continue}const g=pathGeo('H'+r.id,hwyPath(r));
@@ -3231,9 +3250,9 @@ function campYear(){for(let i=rfg.length-1;i>=0;i--){const g=rfg[i];if(g.st!=='c
 function migClear(){for(const p of people){if(!p.refugee||p.dead)continue;if(p.refugee===1){if(p.town)p.refugee=0;continue}const t=TW.get(p.town);if(!t||Math.hypot(p.x-t.cx*T,p.y-t.cy*T)<5*T)p.refugee=0}}
 
 // ---------------- YEARLY + TICK ----------------
-function infraYear(){try{for(const t of towns){powerTown(t);districtYear(t);airportYear(t)}gridYear();railYear();refugeeYear();
+function infraYear(){try{for(const t of towns){powerTown(t);districtYear(t);airportYear(t)}gridYear();railYear();refugeeYear();seaColonyYear();
  for(const b of buildings.slice())if(b.type==='runway'){const a=BL.get(b.par);if(!a||a.type!=='airport')removeBld(b)}}catch(e){console.error(e)}}
-function infraTick(dt){infraAcc+=dt;migAcc+=dt;railTick(dt);hwyTick(dt);planeTick(dt);if(infraAcc>=.4){refTick(infraAcc);infraAcc=0}if(migAcc>=1.5){migAcc=0;migClear()}}
+function infraTick(dt){infraAcc+=dt;warAcc+=dt;if(warAcc>=.8){strategyTick(warAcc);warAcc=0}migAcc+=dt;railTick(dt);hwyTick(dt);planeTick(dt);if(infraAcc>=.4){refTick(infraAcc);infraAcc=0}if(migAcc>=1.5){migAcc=0;migClear()}}
 function infraSave(){return{rails:rails.map(r=>({...r})),rfg,railId,rfgId}}
 function infraLoad(d){rails=d.rails||[];rfg=d.rfg||[];railId=d.railId||1;rfgId=d.rfgId||1;trains=[];planes=[];hwyCars=[];GEO.clear();
  const inG=new Set();for(const g of rfg)for(const id of g.ids){const p=P.get(id);if(p&&!p.dead){inG.add(id);p.refugee=1;p.town=0;p.mig={x:g.x,y:g.y}}}for(const p of people)if(p.refugee===1&&!inG.has(p.id))p.refugee=0}
@@ -3296,13 +3315,14 @@ function drawPack(p,kid){const d=p.dir<0?1:-1;if(p.refugee===1){fr(p.x+d*2.4-1,p
 function tentSprite(un,e){return getSpr('TN'+(un?1:0)+(e>=5?1:0),12,10,r=>{const c=un?'#eef2f6':e>=5?'#c8bc9a':'#a8865a',c2=shade(c,-.25);for(let y=0;y<7;y++){const hw=Math.round(y*.8)+1;r(6-hw,2+y,hw,1,c);r(6,2+y,hw,1,c2)}r(5,6,2,3,'#3a2a1a');if(un){r(3,6,2,1,'#3a7ad8');r(8,6,2,1,'#3a7ad8')}},OL_DARK)}
 function drawInfraGround(z,vx0,vy0,vx1,vy1){ctx.save();ctx.lineCap='round';ctx.lineJoin='round';
  // highways
- for(const r of routes){if(!r.hwy||r.sea)continue;const g=pathGeo('H'+r.id,hwyPath(r));if(!geoVis(g,20))continue;ctx.setLineDash([]);ctx.strokeStyle='#6a6c70';ctx.lineWidth=4.2;strokeGeo(g,g.len);ctx.strokeStyle='#38393d';ctx.lineWidth=3.4;strokeGeo(g,g.len);
-  if(z>=1.4){ctx.strokeStyle='#e8c040';ctx.lineWidth=.35;ctx.setLineDash([2,2]);strokeGeo(g,g.len);ctx.setLineDash([])}}
+ for(const r of routes){if(!r.hwy||r.sea)continue;const g=pathGeo('H'+r.id,hwyPath(r));if(!geoVis(g,20))continue;ctx.setLineDash([]);if(z<1.2){ctx.globalAlpha=.45;ctx.strokeStyle='#4a4a4a';ctx.lineWidth=1.3;strokeGeo(g,g.len);ctx.globalAlpha=1;continue}
+  ctx.globalAlpha=.85;ctx.strokeStyle='#77746c';ctx.lineWidth=2.9;strokeGeo(g,g.len);ctx.strokeStyle='#4c4b48';ctx.lineWidth=2.3;strokeGeo(g,g.len);ctx.globalAlpha=1;
+  if(z>=2.4){ctx.strokeStyle='rgba(232,200,90,.55)';ctx.lineWidth=.25;ctx.setLineDash([1.6,2.4]);strokeGeo(g,g.len);ctx.setLineDash([])}}
  // railways
  for(const r of rails){const g=pathGeo('R'+r.id,r.path);if(!geoVis(g,20))continue;const up=g.len*r.prog;const a=TW.get(r.a),b=TW.get(r.b);const e=Math.min(a?a.era:5,b?b.era:5);
-  if(z<1.2){ctx.setLineDash([]);ctx.strokeStyle=e>=8?'#cfe6f2':'#4a4440';ctx.lineWidth=1.6;strokeGeo(g,up);continue}
-  if(e>=8){ctx.setLineDash([]);ctx.strokeStyle='#9aa4b0';ctx.lineWidth=3;strokeGeo(g,up);ctx.strokeStyle='#e8eef4';ctx.lineWidth=2.2;strokeGeo(g,up);ctx.strokeStyle='#5ee0ff';ctx.lineWidth=.4;strokeGeo(g,up)}
-  else{ctx.strokeStyle='#6a4a2a';ctx.lineWidth=3.4;ctx.setLineDash([.8,1.1]);ctx.lineCap='butt';strokeGeo(g,up);ctx.setLineDash([]);ctx.lineCap='round';ctx.strokeStyle='#a4aab2';ctx.lineWidth=2.1;strokeGeo(g,up);ctx.strokeStyle='#5a524a';ctx.lineWidth=1.1;strokeGeo(g,up)}
+  if(z<1.2){ctx.setLineDash([]);ctx.globalAlpha=.4;ctx.strokeStyle=e>=8?'#cfe6f2':'#4a4440';ctx.lineWidth=1;strokeGeo(g,up);ctx.globalAlpha=1;continue}
+  ctx.globalAlpha=.8;if(e>=8){ctx.setLineDash([]);ctx.strokeStyle='#b8c2cc';ctx.lineWidth=1.7;strokeGeo(g,up);ctx.strokeStyle='#eef2f6';ctx.lineWidth=1.1;strokeGeo(g,up);if(z>=2.4){ctx.strokeStyle='rgba(94,224,255,.6)';ctx.lineWidth=.25;strokeGeo(g,up)}}
+  else{ctx.strokeStyle='#7a5c3c';ctx.lineWidth=2.1;ctx.setLineDash([.6,1.4]);ctx.lineCap='butt';strokeGeo(g,up);ctx.setLineDash([]);ctx.lineCap='round';ctx.strokeStyle='#9a9ea4';ctx.lineWidth=1.3;strokeGeo(g,up);ctx.strokeStyle='#6a625a';ctx.lineWidth=.7;strokeGeo(g,up)}ctx.globalAlpha=1;
   if(r.prog<1){const p=posAt(g,up);fr(p[0]-1.5,p[1]-2,3,2,'#8a6a40');if(R()<.05)spark(p[0],p[1]-1,'#ffd27a')}}
  ctx.restore();
  // camps
@@ -3310,15 +3330,15 @@ function drawInfraGround(z,vx0,vy0,vx1,vy1){ctx.save();ctx.lineCap='round';ctx.l
   for(let k=0;k<n;k++){const a=hash(g.id,k)*6.283,d=4+hash(k,g.id)*12;ctx.drawImage(s,cx+Math.cos(a)*d-3,cy+Math.sin(a)*d*.6-5,6,5)}
   if(z>=1.4){for(let k=0;k<3;k++)fr(cx-1+R()*2,cy-1-R()*2.5,.8,1+R()*1.5,R()<.5?'#ff7a1e':'#ffd040');if(R()<.05)parts.push({x:cx,y:cy-3,vx:rnd(-1,1),vy:-5,l:2,ml:2,c:'#8a857a',s:1.4,g:0})}}
  // trains
- for(const q of trains){const r=rails.find(x=>x.id===q.r);if(!r||r.prog<1)continue;const g=pathGeo('R'+r.id,r.path);if(!geoVis(g,10))continue;const e=q.e||5,n=e>=8?5:e>=6?4:3;
-  for(let k=n;k>=0;k--){const s=q.s-q.dir*k*6.6;if(s<-2||s>g.len+2)continue;const p=posAt(g,clamp(s,0,g.len));if(p[0]<vx0||p[0]>vx1||p[1]<vy0||p[1]>vy1)continue;const an=p[2]+(q.dir<0?Math.PI:0);
-   ctx.save();ctx.translate(p[0],p[1]-1);ctx.rotate(an);ctx.globalAlpha=.25;fr(-3,.6,6,1.2,'#000');ctx.globalAlpha=1;
+ if(z>=1.2)for(const q of trains){const r=rails.find(x=>x.id===q.r);if(!r||r.prog<1)continue;const g=pathGeo('R'+r.id,r.path);if(!geoVis(g,10))continue;const e=q.e||5,n=e>=8?5:e>=6?4:3;
+  for(let k=n;k>=0;k--){const s=q.s-q.dir*k*5;if(s<-2||s>g.len+2)continue;const p=posAt(g,clamp(s,0,g.len));if(p[0]<vx0||p[0]>vx1||p[1]<vy0||p[1]>vy1)continue;const an=p[2]+(q.dir<0?Math.PI:0);
+   ctx.save();ctx.translate(p[0],p[1]-1);ctx.rotate(an);ctx.scale(.75,.7);ctx.globalAlpha=.25;fr(-3,.6,6,1.2,'#000');ctx.globalAlpha=1;
    if(k===0){if(e<=5){fr(-3,-1.5,6,3,'#2a2a2e');fr(1.4,-1.5,1.6,3,'#c83a2a');fr(-2.6,-.4,2.4,.8,'#4a4a52');fr(1.8,-.5,.8,1,'#ffd257')}else if(e<=7){fr(-3,-1.5,6,3,q.col||'#c83a2a');fr(-3,-.4,6,.8,'#f4f4f4');fr(1.8,-1.2,1.2,2.4,'#3a5a7a')}else{fr(-3,-1.4,5,2.8,'#f4f6fa');fr(2,-1.1,1.4,2.2,'#e8eef4');fr(2.6,-.7,.8,1.4,'#5ee0ff');fr(-3,-.2,5,.4,'#5ee0ff')}}
    else{const cc=e<=5?(k%2?'#7a4a2a':'#5a5a62'):e<=7?'#d8dce2':'#eef2f6';fr(-3,-1.3,5.6,2.6,cc);fr(-3,-1.3,5.6,.5,'rgba(255,255,255,.35)');if(e>=6){fr(-2.4,-.3,1,.6,'#3a5a7a');fr(-.6,-.3,1,.6,'#3a5a7a');fr(1.2,-.3,1,.6,'#3a5a7a')}if(e>=8)fr(-3,-.1,5.6,.3,'#5ee0ff')}
    ctx.restore()}}
  // highway cars
- if(z>=1.1)for(const c of hwyCars){const r=routes.find(x=>x.id===c.r);if(!r)continue;const g=pathGeo('H'+r.id,hwyPath(r));const p=posAt(g,c.s);const nx=-Math.sin(p[2])*c.dir*.85,ny=Math.cos(p[2])*c.dir*.85;const x=p[0]+nx,y=p[1]+ny;if(x<vx0||x>vx1||y<vy0||y>vy1)continue;
-  ctx.save();ctx.translate(x,y);ctx.rotate(p[2]+(c.dir<0?Math.PI:0));if(c.tr){fr(-2.6,-.8,3.6,1.6,c.c);fr(1,-.8,1.4,1.6,'#3a3e46');fr(1.8,-.6,.5,1.2,'#8fd0f0')}else{fr(-1.4,-.75,2.8,1.5,c.c);fr(.2,-.6,.8,1.2,'#8fd0f0')}ctx.restore()}}
+ if(z>=1.6)for(const c of hwyCars){const r=routes.find(x=>x.id===c.r);if(!r)continue;const g=pathGeo('H'+r.id,hwyPath(r));const p=posAt(g,c.s);const nx=-Math.sin(p[2])*c.dir*.6,ny=Math.cos(p[2])*c.dir*.6;const x=p[0]+nx,y=p[1]+ny;if(x<vx0||x>vx1||y<vy0||y>vy1)continue;
+  ctx.save();ctx.translate(x,y);ctx.rotate(p[2]+(c.dir<0?Math.PI:0));if(c.tr){fr(-2.2,-.6,3,1.2,c.c);fr(.8,-.6,1.1,1.2,'#3a3e46')}else{fr(-1.1,-.55,2.2,1.1,c.c);fr(.2,-.45,.6,.9,'#8fd0f0')}ctx.restore()}}
 function drawInfraAir(z,vx0,vy0,vx1,vy1){
  for(const t of towns){if(!t.blackout)continue;const[x,y]=townCenter(t);const r=tRad(t);if(x+r<vx0||x-r>vx1||y+r<vy0||y-r>vy1)continue;ctx.globalAlpha=.3+(R()<.03?-.15:0);ctx.fillStyle='#0a0c1c';ctx.beginPath();ctx.ellipse(x,y,r,r*.75,0,0,6.283);ctx.fill();ctx.globalAlpha=1;
   if(z>=1.5&&R()<.25){const a=R()*6.283,d=R()*r*.8;fr(x+Math.cos(a)*d,y+Math.sin(a)*d*.75-4,.7,.7,'#ffd27a')}}
@@ -3328,10 +3348,11 @@ function drawInfraAir(z,vx0,vy0,vx1,vy1){
  for(const p of planes){const sy=p.y-p.alt;if(p.x<vx0-20||p.x>vx1+20||sy<vy0-20||p.y>vy1+20)continue;const e=p.e,s=e>=8?1.15:1;
   const body=(x,y,sh)=>{ctx.save();ctx.translate(x,y);ctx.rotate(p.hd);ctx.scale(s,s);const c1=sh?'#000':e>=8?'#f4f6fa':e>=7?'#f0f0f2':'#c8ccd2',c2=sh?'#000':p.col;
    fr(-4.5,-.7,9,1.4,c1);fr(-1.2,-4.2,2.2,8.4,c1);fr(-4.6,-1.8,1.4,3.6,sh?'#000':c2);fr(3.6,-.5,1.2,1,sh?'#000':(e>=8?'#5ee0ff':'#3a5a7a'));if(!sh){fr(-4.5,-.2,9,.4,c2);if(e<=6){fr(-.4,-3.2,.8,.8,'#4a4a52');fr(-.4,2.4,.8,.8,'#4a4a52')}if(e>=8){ctx.globalAlpha=.6;fr(-5.6,-.5,1.2,1,'#5ee0ff');ctx.globalAlpha=1}}ctx.restore()};
-  ctx.globalAlpha=Math.max(.06,.24-p.alt*.004);body(p.x+p.alt*.15,p.y,true);ctx.globalAlpha=1;body(p.x,sy,false)}}
+  ctx.globalAlpha=Math.max(.06,.24-p.alt*.004);body(p.x+p.alt*.15,p.y,true);ctx.globalAlpha=1;body(p.x,sy,false)}
+ drawArmies(z,vx0,vy0,vx1,vy1)}
 
 // ---------------- PANEL + POWERS ----------------
-function infraRows(t){let h='';const hs=(t.blds.house||[]).length;
+function infraRows(t){let h=armyRow(t);const hs=(t.blds.house||[]).length;
  if(t.era>=2&&hs>=6){const gi=Math.round((t.gini||0)*100);h+=`<div class="row">🏙️ Districts: ${t.nRich?`🏰 ${t.nRich} mansions · `:''}${t.nSlum?`🏚️ ${t.nSlum} slum shacks · `:''}inequality <b style="color:${gi>55?'#ff8a6a':gi>38?'#e8c060':'#7ad06a'}">${gi}%</b></div>`}
  const rp=RPOL[t.refPol||refPol(t)];const camps=rfg.filter(g=>g.to===t.id&&g.st==='camp').reduce((a,g)=>a+g.ids.length,0),fled=rfg.filter(g=>g.from===t.id).reduce((a,g)=>a+g.ids.length,0);
  h+=`<div class="row">🧳 Refugee policy: ${rp[0]} <b>${rp[1]}</b>${t.hosted?` · took in ${t.hosted}`:''}${camps?` · ⛺ ${camps} camped at border`:''}${fled?` · <span style="color:#ff8a6a">${fled} citizens displaced</span>`:''}</div>`;
@@ -3351,6 +3372,105 @@ function infraRows(t){let h='';const hs=(t.blds.house||[]).length;
   if(t.era>=6&&!(t.blds.airport||[]).length&&placeAirport(t,true))did.push('✈️ airport');
   rebuildCache();gridYear();railYear();toast(did.length?`🏗️ ${t.name}: ${did.join(', ')}`:`${t.name} already has everything`);return true}
  return _ft(k,wx,wy)}}
+
+// ---------------- LAND PRESSURE: crowded continents send ships ----------------
+function seaColonyYear(){if(!laws.boats)return;const L=new Map();
+ for(const t of shuffle(towns.slice())){if(!t.dock||t.pop<18||t.civil||t.nWar>1||t.machine)continue;const lm=land[t.cy*W+t.cx];
+  if(!L.has(lm))L.set(lm,{full:frontierSite(lm)<0&&frontierSite(lm)<0,n:0});const o=L.get(lm);if(!o.full||o.n>=2)continue;
+  if(R()>.2+Math.min(.25,t.pop/300))continue;if(colony(t,true)){o.n++;if(R()<.5)news(`🧭 With no free land left at home, ${t.name} is sending ships to find new shores.`,t.cx*T,t.cy*T,false,true)}}}
+
+// ================= MILITARY STRATEGY: muster, march in formation, flank, siege, assault, retreat, defend =================
+const DOCT={brilliant:{req:1.0,gar:.22,flank:.8,siege:.55,n:'Combined arms'},bold:{req:.8,gar:.15,flank:.45,siege:.2,n:'Shock assault'},brutal:{req:.9,gar:.18,flank:.3,siege:.6,n:'Siege & starve'},cautious:{req:1.6,gar:.35,flank:.2,siege:.75,n:'Defense in depth'},steady:{req:1.15,gar:.25,flank:.45,siege:.45,n:'Methodical advance'}};
+const ARST={muster:['🚩','Mustering'],march:['🥁','Marching on'],siege:['🏰','Besieging'],assault:['⚔️','Storming'],retreat:['↩️','Retreating from'],defend:['🛡️','Defending against']};
+let warAcc=0;
+function doct(t){const g=P.get(t.general);return DOCT[(g&&!g.dead&&g.town===t.id&&g.general)||'steady']}
+function pStr(p){return(p.veh==='titan'?6:p.veh?3:1)*(p.giant?4:1)*(.4+.6*Math.max(0,p.hp))*(1+Math.min(10,p.vet||0)*.05)*(p.rng?1.1:1)}
+function homeDef(e){const[x,y]=townCenter(e);const r=tRad(e)+3*T;let s=0;for(const q of e.sold)if(!q.dead&&!q.rebel&&!q.onBoat&&Math.hypot(q.x-x,q.y-y)<r)s+=pStr(q);if(e.wall&&e.wall.hp>0)s*=1.35;if(e.shield>0)s+=99;return s+2}
+function pickTarget(t){let best=null,bs=1e9;for(const id in t.wars){const e=TW.get(+id);if(!e||!sameLand(t,e))continue;const d=Math.hypot(e.cx-t.cx,e.cy-t.cy);const sc=d*.6+homeDef(e)*2.2-(e.siege||0)*1.5-(e.dmgList?e.dmgList.length:0)*.5;if(sc<bs){bs=sc;best=e}}return best}
+function walkPt(x,y,fx,fy){const i=tIdx(x,y);if(i>=0&&ter[i]>=SAND&&ter[i]!==MOUNT)return[x,y];return[fx,fy]}
+function armyGeo(t,key,path){return pathGeo(key+t.id+'_'+(t.strat.pid||0),path)}
+function launchPath(x0,y0,x1,y1){const p=findPath(x0,y0,x1,y1,16000);return p&&!pfMiss&&p.length?smoothPath([[x0,y0],...p]):[[x0,y0],[x1,y1]]}
+function armyMembers(t){const A=t.strat;return A?A.ids.map(id=>P.get(id)).filter(p=>p&&!p.dead&&p.town===t.id&&!p.onBoat&&!p.wounded):[]}
+
+function strategyTick(dt){
+ for(const t of towns){
+  if(!t.nWar||t.civil){if(t.strat){for(const p of t.mem)p.ord=null;t.strat=null}if(!t.nWar)t.mobil=Math.max(0,(t.mobil||0)-dt*.01);continue}
+  const D=doct(t);const A=t.strat||(t.strat={st:'muster',tgt:0,t0:simT,ids:[],str0:0,plan:'frontal',fl:[],pid:0,cd:0,news:{}});
+  let e=TW.get(A.tgt);if(!e||t.wars[e.id]===undefined||!sameLand(t,e)){e=pickTarget(t);A.tgt=e?e.id:0;A.st='muster';A.t0=simT;A.fl=[];A.path=null}
+  const S=t.sold.filter(p=>!p.dead&&!p.rebel&&!p.onBoat&&!p.wounded&&p.id!==possessId);
+  if(!e){for(const p of S)p.ord=null;A.st='none';continue}
+  const[hx,hy]=townCenter(t),[ex,ey]=townCenter(e);
+  const threat=towns.find(o=>o.strat&&o.strat.tgt===t.id&&['march','siege','assault'].includes(o.strat.st)&&t.wars[o.id]!==undefined);A.threat=threat?threat.id:0;
+  // --- split garrison / field army (stable membership) ---
+  const gFrac=threat?Math.max(D.gar,.45):D.gar;const nF=S.length<4?0:S.length-Math.max(2,Math.round(S.length*gFrac));
+  const inA=new Set(A.ids);let field=S.filter(p=>inA.has(p.id));
+  if(field.length>nF)field=field.sort((a,b)=>(b.vet||0)-(a.vet||0)).slice(0,nF);
+  else if(field.length<nF){const add=S.filter(p=>!inA.has(p.id)).sort((a,b)=>(b.veh?1:0)-(a.veh?1:0)||(b.vet||0)-(a.vet||0)||Math.hypot(b.x-hx,b.y-hy)-Math.hypot(a.x-hx,a.y-hy));
+   if(A.st==='muster'||A.st==='defend')field=field.concat(add.slice(0,nF-field.length))}
+  const fset=new Set(field.map(p=>p.id));
+  const role=p=>p.veh?2:p.rng?1:0;field.sort((a,b)=>role(a)-role(b)||a.id-b.id);
+  A.ids=field.map(p=>p.id);A.cols=Math.max(3,Math.ceil(Math.sqrt(field.length)*1.5));A.rows=Math.ceil(field.length/A.cols);
+  const flankSet=new Set(A.fl);field.forEach((p,k)=>{p.ord={r:flankSet.has(p.id)?'f':'a',k}});
+  for(const p of S)if(!fset.has(p.id))p.ord={r:'g',k:0};
+  let Fs=0;for(const p of field)Fs+=pStr(p);const Ds=homeDef(e);A.fs=Fs;A.ds=Ds;A.n=field.length;
+  const ux=(ex-hx)/(Math.hypot(ex-hx,ey-hy)||1),uy=(ey-hy)/(Math.hypot(ex-hx,ey-hy)||1);
+  const[rx,ry]=walkPt(hx+ux*(tRad(t)+3*T),hy+uy*(tRad(t)+3*T),hx,hy);
+  const say=(k,msg,big)=>{if(A.news[k]&&simT-A.news[k]<YEAR*1.5)return;A.news[k]=simT;news(msg,A.cx||hx,A.cy||hy,!!big,!big)};
+  const nearC=(cx,cy,r)=>{let n=0;for(const p of field)if(Math.hypot(p.x-cx,p.y-cy)<r)n++;return field.length?n/field.length:0};
+  const G=P.get(t.general),gn=G&&!G.dead?`General ${full(G)}`:'The army';
+  // --- threatened & too weak: hold the line at home ---
+  if(threat&&A.st==='muster'&&threat.strat.fs>Fs*1.1){A.st='defend';A.t0=simT;say('def',`🛡️ ${t.name} formed a defensive line to meet ${threat.name}'s invasion.`)}
+  switch(A.st){
+   case'defend':{A.cx=hx;A.cy=hy;const o=threat;if(!o||o.strat.st==='retreat'||simT-A.t0>YEAR*3){A.st='muster';A.t0=simT}else{const[ox,oy]=[o.strat.cx||ex,o.strat.cy||ey];const a=Math.atan2(oy-hy,ox-hx);A.hd=a;
+     if(Fs>o.strat.fs*1.4&&o.strat.fs>0){A.st='muster';A.t0=simT;say('counter',`⚔️ ${t.name}'s defenders counter-attacked!`)}}break}
+   case'muster':{A.cx=rx;A.cy=ry;A.hd=Math.atan2(uy,ux);if(simT<A.cd||field.length<4)break;const ready=nearC(rx,ry,30)>=.65||simT-A.t0>YEAR*1.2;
+     if(ready&&Fs>=Ds*D.req){const R0=tRad(e)+2.2*T;const[sx,sy]=walkPt(ex-ux*R0,ey-uy*R0,ex,ey);A.pid++;A.path=launchPath(rx,ry,sx,sy);A.s=0;A.st='march';A.t0=simT;A.str0=Fs;A.plan='frontal';A.fl=[];
+      if(field.length>=10&&R()<D.flank){const side=R()<.5?1:-1,an=Math.atan2(-uy,-ux)+side*1.2;const[fx,fy]=walkPt(ex+Math.cos(an)*R0,ey+Math.sin(an)*R0,sx,sy);const fl=field.filter(p=>!p.veh).slice(-Math.round(field.length*.35));A.fl=fl.map(p=>p.id);A.fpath=launchPath(rx,ry,fx,fy);A.fs_=0;A.plan='pincer'}
+      say('march',`🥁 ${gn} marched ${field.length} troops on ${e.name}${A.plan==='pincer'?' in a pincer movement, splitting the army to strike from two sides':''}.`,true)}
+     else if(ready&&Fs<Ds*D.req){t.mobil=Math.min(1,(t.mobil||0)+dt*.02);say('mass',`🚩 ${t.name} is massing troops at the border, waiting to outnumber ${e.name}'s defenders.`)}break}
+   case'march':{const g=armyGeo(t,'A',A.path);const v=SPEED*.85*(1+t.era*.06)*(nearC(A.cx??rx,A.cy??ry,30)<.35&&simT-A.t0<YEAR?.45:1);A.s=Math.min(g.len,A.s+v*dt);if(simT-A.t0>YEAR*1.6)A.s=g.len;const p0=posAt(g,A.s);A.cx=p0[0];A.cy=p0[1];A.hd=p0[2];
+     if(A.fl.length&&A.fpath){const gf=armyGeo(t,'F',A.fpath);A.fs_=gf.len*(A.s/g.len);const pf=posAt(gf,A.fs_);A.fx=pf[0];A.fy=pf[1];A.fhd=pf[2]}
+     if(A.s>=g.len){const walled=e.wall&&e.wall.hp>0;if((walled||Fs<Ds*1.6)&&R()<D.siege+(walled?.35:0)){A.st='siege';A.t0=simT;say('siege',`🏰 ${t.name} laid siege to ${e.name}, cutting off its food.`,true)}else{A.st='assault';A.t0=simT;say('assault',`⚔️ ${t.name}'s army stormed ${e.name}!`,true)}}
+     break}
+   case'siege':{A.cx=ex;A.cy=ey;e.food=Math.max(0,e.food-dt*(1+e.pop*.03));e.mood=(e.mood||0)-dt*.002;e.siegeT=(e.siegeT||0)+dt;
+     const brk=!(e.wall&&e.wall.hp>0);if((simT-A.t0>YEAR*1.5&&(brk||Ds<Fs*.7))||simT-A.t0>YEAR*4||e.food<=0&&simT-A.t0>YEAR*.6){A.st='assault';A.t0=simT;say('assault',`⚔️ After a long siege, ${t.name} stormed ${e.name}!`,true)}break}
+   case'assault':{A.cx=ex;A.cy=ey;break}
+   case'retreat':{A.cx=rx;A.cy=ry;if(nearC(rx,ry,34)>=.6||simT-A.t0>YEAR){A.st='muster';A.t0=simT;A.cd=simT+YEAR*1.2;A.fl=[]}break}}
+  if(['march','siege','assault'].includes(A.st)&&A.str0>0&&Fs<A.str0*.45){let en=0;const cx=A.cx,cy=A.cy;for(const q of e.sold)if(!q.dead&&Math.hypot(q.x-cx,q.y-cy)<70)en+=pStr(q);
+   if(en>Fs*1.15||Fs<A.str0*.25){A.st='retreat';A.t0=simT;A.fl=[];say('retreat',`↩️ ${t.name}'s army fell back from ${e.name} after heavy losses.`)}}
+  // keep formation: re-route soldiers whose slot has moved away
+  for(const p of S){if(!p.ord||p.foe&&P.get(p.foe))continue;const sl=slotOf(p,t);if(!sl)continue;if(sl[2].k==='raid'&&p.task&&p.task.k==='raid'&&p.task.e===sl[2].e)continue;if(Math.hypot(p.tx-sl[0],p.ty-sl[1])>9||p.st!=='move'&&Math.hypot(p.x-sl[0],p.y-sl[1])>7)go(p,sl[0],sl[1],sl[2])}}}
+function formPos(A,k,cx,cy,hd,n){const cols=A.cols||4,rows=Math.ceil(n/cols)||1;const row=Math.floor(k/cols),col=k%cols;const f=(rows-1)/2*5.5-row*5.5,l=(col-(cols-1)/2)*5;
+ const c=Math.cos(hd),s=Math.sin(hd);return[cx+c*f-s*l,cy+s*f+c*l]}
+function slotOf(p,t){const A=t.strat,o=p.ord;if(!A||!o||A.st==='none')return null;const e=TW.get(A.tgt);if(!e)return null;const[ex,ey]=townCenter(e),[hx,hy]=townCenter(t);
+ if(o.r==='g'){const th=TW.get(A.threat);if(!th||!th.strat)return null;const a=Math.atan2((th.strat.cy||ey)-hy,(th.strat.cx||ex)-hx)+(hash(p.id,3)-.5)*1.6;const r=tRad(t)+T*.5;return[...walkPt(hx+Math.cos(a)*r,hy+Math.sin(a)*r,hx,hy),{k:'guard'}]}
+ const n=A.ids.length;
+ switch(A.st){
+  case'muster':case'retreat':{const[x,y]=formPos(A,o.k,A.cx,A.cy,A.hd||0,n);return[x,y,{k:'guard'}]}
+  case'defend':{const a=(A.hd||0)+((o.k/(Math.max(1,n-1)))-.5)*1.8;const r=tRad(t)+T*(1+(o.k%3)*.6);return[...walkPt(hx+Math.cos(a)*r,hy+Math.sin(a)*r,hx,hy),{k:'guard'}]}
+  case'march':{if(o.r==='f'&&A.fx!==undefined){const fl=A.fl.length;const[x,y]=formPos({cols:Math.max(3,Math.ceil(Math.sqrt(fl)*1.5))},A.fl.indexOf(p.id),A.fx,A.fy,A.fhd||0,fl);return[x,y,{k:'guard'}]}const[x,y]=formPos(A,o.k,A.cx,A.cy,A.hd||0,n);return[x,y,{k:'guard'}]}
+  case'siege':{const a=o.k/Math.max(1,n)*6.283+A.pid,r=tRad(e)+T*(p.veh||p.rng?1.6:1);return[...walkPt(ex+Math.cos(a)*r,ey+Math.sin(a)*r*.85,ex,ey),p.veh?{k:'raid',e:e.id}:{k:'guard'}]}
+  case'assault':return[ex+rnd(-9,9),ey+rnd(-6,7),{k:'raid',e:e.id}]}return null}
+function armyThink(p,t){const sl=slotOf(p,t);if(!sl)return false;go(p,sl[0],sl[1],sl[2]);return true}
+
+// --- making armies formidable: cohesion, veterancy, armor, siege engineers ---
+function inFormation(p,t){const A=t&&t.strat;if(!A||!p.ord||p.ord.r==='g'&&!A.threat)return false;let n=0;eachNear(p.x,p.y,14,q=>{if(q!==p&&!q.dead&&q.town===p.town&&q.job==='soldier'&&Math.abs(q.x-p.x)<14&&Math.abs(q.y-p.y)<14)n++});return n>=3}
+{const _gb=genBoost;genBoost=function(p,t){let m=_gb(p,t)*(1+Math.min(10,p.vet||0)*.05);if(p.job==='soldier'&&inFormation(p,t))m*=1.25;if(t&&(t.blds.barracks||[]).length)m*=1.1;return m}}
+{const _wd=wallDef;wallDef=function(q){let m=_wd(q);const t=TW.get(q.town);if(q.job==='soldier'){m*=Math.max(.6,1-(t?t.era:0)*.03);if(q.vet>=5)m*=.9;if(t&&t.strat&&q.ord&&inFormation(q,t))m*=.85}return m}}
+{const _fs=fireShot;fireShot=function(p,t,...a){_fs(p,t,...a);const s=shots[shots.length-1];if(s&&s.by===p.id)s.dmg*=(1+Math.min(10,p.vet||0)*.05)*(p.job==='soldier'&&t&&t.strat&&p.ord&&p.ord.r!=='g'?1.15:1)}}
+{const _k=kill;kill=function(p,cause,by){if(by&&by.job==='soldier'&&!by.dead&&p.job==='soldier'){by.vet=(by.vet||0)+1;if(by.vet===5){bub(by,'🎖️',3);life(by,'Became a battle-hardened veteran')}}return _k(p,cause,by)}}
+
+// --- drawing: army banners + war-map arrows ---
+function drawArmies(z,vx0,vy0,vx1,vy1){for(const t of towns){const A=t.strat;if(!A||A.st==='none'||!A.ids.length||A.cx===undefined)continue;const e=TW.get(A.tgt);if(!e)continue;
+  const[ex,ey]=townCenter(e);const col=t.color;
+  if(z<2.4&&(A.st==='march'||A.st==='muster')){const g=A.path&&A.st==='march'?armyGeo(t,'A',A.path):null;ctx.save();ctx.globalAlpha=.92;ctx.strokeStyle=col;ctx.lineWidth=Math.max(1.4,3/z);ctx.setLineDash([4/z+2,3/z+1.5]);ctx.lineCap='round';
+   const drawArr=(sx,sy,tx,ty)=>{const mx=(sx+tx)/2-(ty-sy)*.15,my=(sy+ty)/2+(tx-sx)*.15;const lw=ctx.lineWidth,ss=ctx.strokeStyle;ctx.lineWidth=lw+1.6/z;ctx.strokeStyle='rgba(0,0,0,.45)';ctx.beginPath();ctx.moveTo(sx,sy);ctx.quadraticCurveTo(mx,my,tx,ty);ctx.stroke();ctx.lineWidth=lw;ctx.strokeStyle=ss;ctx.beginPath();ctx.moveTo(sx,sy);ctx.quadraticCurveTo(mx,my,tx,ty);ctx.stroke();const a=Math.atan2(ty-my,tx-mx),L=6/Math.min(1.6,z)+3;ctx.setLineDash([]);ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(tx-Math.cos(a-.5)*L,ty-Math.sin(a-.5)*L);ctx.moveTo(tx,ty);ctx.lineTo(tx-Math.cos(a+.5)*L,ty-Math.sin(a+.5)*L);ctx.stroke();ctx.setLineDash([4/z+2,3/z+1.5])};
+   drawArr(A.cx,A.cy,ex,ey);if(A.fl.length&&A.fx!==undefined)drawArr(A.fx,A.fy,ex,ey);ctx.restore();void g}
+  const bx=A.cx,by=A.cy-(A.st==='siege'||A.st==='assault'?tRad(e)+10:6);if(bx<vx0-20||bx>vx1+20||by<vy0-30||by>vy1+20)continue;
+  const s=Math.max(1,1.6/z);fr(bx-.3*s,by-12*s,.6*s,12*s,'#5a4632');fr(bx+.3*s,by-12*s,6*s,4*s,col);fr(bx+.3*s,by-12*s,6*s,1*s,'rgba(255,255,255,.35)');
+  if(z<3.5){const st=ARST[A.st]||['⚔️',''];const fz=Math.max(3.5,11/z);ctx.font=`600 ${fz}px "Pixelify Sans",sans-serif`;ctx.textAlign='left';ctx.textBaseline='middle';const tx=`${st[0]} ${A.ids.length}`;ctx.lineWidth=fz*.28;ctx.strokeStyle='rgba(0,0,0,.75)';ctx.strokeText(tx,bx+7*s,by-10*s);ctx.fillStyle='#fff';ctx.fillText(tx,bx+7*s,by-10*s)}}}
+function armyRow(t){const A=t.strat;if(!A||A.st==='none'||!t.nWar)return'';const e=TW.get(A.tgt);const st=ARST[A.st]||['⚔️',''];const D=doct(t);
+ return`<div class="row">${st[0]} Army: <b>${st[1]} ${A.st==='muster'?'(target '+(e?e.name:'?')+')':e?e.name:''}</b> · ${A.ids.length} troops${A.plan==='pincer'&&A.st==='march'?' · pincer':''} · strength ${Math.round(A.fs||0)} vs ${Math.round(A.ds||0)} · doctrine: ${D.n}</div>`}
 // ================= MAIN LOOP =================
 function update(dt){
  simT+=dt;yearT+=dt;cacheT-=dt;cleanT-=dt;

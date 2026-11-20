@@ -1,6 +1,6 @@
 // Ballot & Bone service worker: caches the game so it runs offline.
 // Bump VERSION whenever you upload a new index.html so players get the update.
-const VERSION = 'bb-v1';
+const VERSION = 'bb-v3';
 const FILES = [
   './', './index.html', './manifest.webmanifest',
   './fonts/PixelifySans.woff2', './fonts/PressStart2P.woff2',
