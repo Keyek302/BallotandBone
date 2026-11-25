@@ -6,17 +6,8 @@
 <meta name="theme-color" content="#1c1d15">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Ballot &amp; Bone</title>
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" href="icons/favicon.png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<meta name="apple-mobile-web-app-title" content="Ballot & Bone">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="A pixel-art political god sandbox: guide tribes from the Stone Age to the stars.">
-<style>
-@font-face{font-family:'Pixelify Sans';src:url(fonts/PixelifySans.woff2) format('woff2');font-weight:400 700;font-display:swap}
-@font-face{font-family:'Press Start 2P';src:url(fonts/PressStart2P.woff2) format('woff2');font-weight:400;font-display:swap}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'BBNum';src:url(data:font/woff2;base64,d09GMgABAAAAAAvYABAAAAAAGiQAAAuAAAEAQgAAAAAAAAAAAAAAAAAAAAAAAAAAGyAcKgZgADQIPAmcDBEICoxki2oBNgIkAyoLGAAEIAWDegcgDIEnG3wYo6KkLN0I/iqBGzLAN7QAg4qAGBVfRg1oA7oT/hPrOA62Om2+z9ygqa9HSDILz1dN7f3unp6ZHpA5YIgCKDmLNGGWlpSYZIdxGbV4g3uAT8t3JNfe8AYs/+Fc/61CeD6OQoiKC5WjM2mqJ73eduZY3RtOhlJGCmDg/9HWz6CoxILc8BDLoJ41VBI0YYct6l/U01Ung/uqv0wKhJYs58BvmAr0CgTJvzvt7TIWCub2N8+AOkaG//9rpn33z2QZdAmFBLQVusZM/mSS+fOzDcwSTbIEmVQxOSCP5MpZLIPa1vXUyEpVY2p1bRsSVk4i2PLV6TWA3/bOv8y0lhsppOAtM/l7+v0I4OigC5k9d/FqAgxAvQ4A0KZNYgrq1tLNG3ZvZSQZPN+o8fIUPOgn9HxgqH4r8iOXyyCFNQX+n45fyptcynWm//8HMhtlH7VSldSv/XkUlKFFi0iZFxryMBB5nV3mpe2K6h8gFMwax2Ufd9Qb32a7Hk3fRJWgvhH7zwAdQOApzbL05B/GoicYDx8Tw2Wqb2Wl4fUVtvrfCgNqLe278x68Adp0RBRLDBDI5lWAYd58QEH9TzWzay1OCFClxMYzk9hK3YT5dks4Feak9sjt1shdXSyRXOeAP+ge3bPrBwfkuSyOgTiNjGTgNv3IYzh2dUySpJwQ06STMCeCX+rUi0OIpI9jNY5ytpxhHCWPsvz6Uzpyu+FDeLh9E9sVZYoMTN+yGji1p9oNVMNY1+pK0CFBKw374pFdlMTKUiw7wsY0ri85nzwFNpxcgvsELubCx6brLJ2cvqj/vGFJfME/Haqc+5ohz9kTyj+QMC3mgIZmQqz2wuTLhKkRS6PzPkM5YIRdG+R9zayihLjbQecGr3lx7XHQTV+aGmrI/v9Hb91eQ9KrVF66+jonyz6L7UOC3MXHMGm0gAlsPDOiK91kfZVNowlorHC1glpQxmwGbJDVj3Fz+U9CJSCN25xF7TIdTWTHaBsLnMXTfgCRY+cBFXSyvZjcABErmg2Foj7oUSwnZpjsMtvA1aMMDE67OhKXmgjFz8BuJ+Tmjk3ZT9dI6HYvk3fm82kf8KBx1xG/ZRrwAsoSHj5W5HX6NGa8KO7hdQI+LD04k+qfhNZQKPhYNHyK1Ypkk/rx5G1q0p7mo7g6tpVQoONVevJmGXF+KoHZg2iYmrwz/ebpUIn4PAPCFptnAm8qaM6EspephTEZsTjspXvH2/R27seCjkbs1fomMePhAi95010kbU9S+cyG0GxTiGBnpBjXUxbCWqPLvU34NWqGWyMuhXJU+RtdWA+TazvWYoyRoOBrQ6UFB5w/Xz6SA2E0zJ4JRCwjijKmGFMUZ0IJpinJDEoxk9LMogyztTZg/ZASIz95m0wd9HXSnBpoCqWH1d8lW+ll9e+OZbFGzv3tgMrvJYed/EQOgjwEBQiKEJQgKENQgaAKQQ2COiTehm4PXOokFaJZE1PkJLUxyrRzN9wFZPq8N81AD9JCvRqzet3O8HtOtFwUqO9bxJq77yjzRqLXbDrOztL57G1wEKY9p8aH0BUPWkZYg8Mc6W6E3KbdH34q5n4hALPv2vU2jLM+35ExdFsLP+oB5Q8KTNDtuR2YtnEgLs9+6QyNw9wxdVoAjbA9GvYnurCq9N35DGkcpzHO7jwdmAPMEdGIGGLikzdnOMDBMz+Gtkq3h2l9GQtb3XxIGBqlGsXnpeXdt3fpp8h2cT8lbV/KMZqwU0NB8hZtXjB43A4UQX5zeoyw9IZm7WuOsLrIKhe8Xcq+azUJSTav151h5xw27NR21KKJZSAMEMXeMtoqmr0BSX+TJSaUMS6oO+jsyoFlTBaQhE71dvt6JX1lY6eZc+Kdm3Xlsdad8kVcSxZ7TJ1um3eBZZvQKWnAsPCgR48wvmTuNuuNXrN06K/f7PVeMDaXLGTzauVPdd8Wpi6amp48wvTSvc5Jt3PXunHmDLT0bu3X7uXhjzj2WPKKj8HcO048AQsfsovn2jEO0zYuDHZ0P9Kpjbk8DaYeGKg4NYaAD1TTTjvV2XU97jM0e49F2udD+59YZDP3jV/OLrxt153Pmxqf7aXzVmyciY64CLVV421qeBUIBS6Ds8d/dMSJbu7IM8bNFbnquUZDdCNMhnMDZr90Ox7mZqZO86FQoha9w8COcOu57jFKJe9CyKAoCyFmWAkVPks5UJaFkDPcBX5KMoxSgapshFqBmiIJtArUZSP0CtagG46NcGyCYzOctYwRsJWPactC2BnysA+WnfqarmyEW0E+wAGvAn3ZCL/CcE6j4gmyEiljNHLc89QEvpUGXx8h6MyKJ0Cl3AOl8IDKOrLZUak2atUONk0IqAXgoTMEqfeAhjpyeDGqDibVwaw6WAyg1QPaPBA7pbs4VBen6uJSXdwG0OMBvTyIv4sn1QfchOO2/SSngpeXxo9tH1suzywcl/qP6wnL91+1U3QjSL1OjkJWREYbGQ3M9ynwEyMZ0F8BCplWqfmkGhUbm++waZtpSVsMv4HxIkmIjCMWt8mpyIu6PSfROO5wQiV84EpIJQLYFYkizmZVmupkPVOncRLLuZxOiImkkhDVUXtrgvosEsDWbfJm3KXSa2raUReUToy4crPXOQ2IA/5wSvtrixYVd1lavqoQ196udf86/GuttGjU8KKC5mXUarQvcCihWNPr04ZZ2/lkR5r3TUec1d/Hi57W4cJVW1ft11qt+AxrjYuab7u8LovF9nl7C8Nh9vcFrsYq1Ti7Mzz7+b3Ne2T+GtcrtuW6Lr1mtNNQroZzmQs3vf3BNZWRhW9VftZsgGyaEjzRBl3FWqkg0rQE3zcVjGk2SxvHT2oI/K5C1oZSVICqI9IsUH+D9kcVnon/5rIVRFrpSN0FE2sVH0XiJJWdkKQpO7HGt+tC8XHad1UMsZi4iiZBJ1U8L6gQBE1LSNPcenK55tzS9kXH25aXspUdnLdYkrumx5qtUn7OE9K7pl3lcjb6bbT/K2n8cSxo8Mc8bQVeaL11gVhCbUOlFcpp9Y6OyK2DRKKYqIoxfgXfj/ZdxRXiuDleyk2pkYLFrsIolOF9WUT0TqwTZayqIoSBhIOsJl1UZmbrkps0B0vbs6vlzwFa7ppuW85GQXNTY8NH96/3LR5eY2Pkjyxks9HWt9q/C1EF/josCuZknAQhQQj1LNPdpPDiMGwOlzqIyM5m9AFTcygQRYIV42nDeVFki1h4pmZvaZCUGG0NBeR6d9mJQRmO4mHx7F0wSlfQepHKrsfaZru0PStKnbUSc9e0pZy5bp/m+52FbJ4R5Yk4Jal9Spy4uGqFUPwA33i/IjtJ3Dh6c9C7ehAW88XDaM/M5tDidFQClRZANtPaGqXCuFv4jQggzOx6/esquRt/CzzefoDvF3T8DfDDG6X2eub/h81x0w9YFAACnzLFPxB9zKV3LqR2qgQqASkC5sezVWLU/awbELEaDx1dsZaX+EJ8ncbwQnxuRSMmBE5D2AyhidMzFCnvz9BczcczDOPEzfBYLcUvs+TlLkK2sZ0D7GSIKoPsJs/lXKp7ryDP6gT9YhXcNMBuaDrA9nnDcnaK2BjJXkLDDPZYMZgl72QXeaawervYHjZczyWqqcoQUcN7e5hOr4gtqdgVyAE7Gvvpww2dpd3slt3aOLvoT06dykLUnecyLmUlLV5lD5vZwM4I00VcantvYCnLtJgT7CTNZ4foht2xHyo/r1pLvPkQ29hKXp/M+9w0wIZoiG0ihlC5G+ReCXGtxpWzX0M3V9F3dvQw1TpbU1hn/dU1k9EXnee/snRC5InycXneS7H9BOLMk+3CtIaBU6kTN80eaTeWZl7UbyJEQrLKUy8QC7NPTJCHVpSOZw+VcOpjUxrPB0y5YKzcfsKYJ1wM7gIGr+1dLcALk51qspJOO4/6/ZjHT6g7+ZTXZ5k9GwA=) format('woff2');unicode-range:U+0030-0039;size-adjust:122%;font-weight:100 900;font-display:block}
 
@@ -257,12 +248,21 @@ const BWORK={jail:6,statue:4,wonder:30,shrine:5,house:4,hall:10,farm:3,temple:8,
 const TOWNCOL=['#d8433a','#3f7fe0','#e8b830','#8e5ae0','#3fbf7a','#e8782c','#d85aa8','#2cb8c8','#a8c83a','#f08a8a','#7a9af0','#b07040'];
 const SKIN=['#f4d2b2','#eab890','#cf9468','#a8704a','#7a4e30','#5a3a24','#f8e0c8'];
 const HAIR=['#2a1a10','#5a3a1a','#8a5a2a','#d0a850','#141414','#a03a1a','#d8d0c0','#4a2a1a','#e8e0a0'];
+const US_M=['James','John','Robert','Michael','William','David','Richard','Joseph','Thomas','Charles','Christopher','Daniel','Matthew','Anthony','Mark','Donald','Steven','Paul','Andrew','Joshua','Kenneth','Kevin','Brian','George','Timothy','Ronald','Edward','Jason','Jeffrey','Ryan','Jacob','Gary','Nicholas','Eric','Jonathan','Stephen','Larry','Justin','Scott','Brandon','Benjamin','Samuel','Gregory','Alexander','Frank','Patrick','Raymond','Jack','Dennis','Jerry','Tyler','Aaron','Jose','Adam','Nathan','Henry','Douglas','Zachary','Peter','Kyle','Ethan','Walter','Noah','Jeremy','Christian','Keith','Roger','Terry','Austin','Sean','Gerald','Carl','Harold','Dylan','Arthur','Lawrence','Jordan','Jesse','Bryan','Billy','Bruce','Gabriel','Joe','Logan','Albert','Willie','Alan','Eugene','Russell','Vincent','Philip','Bobby','Johnny','Bradley','Roy','Ralph','Randy','Wayne','Elijah','Liam','Mason','Lucas','Owen','Caleb','Hunter','Carter','Wyatt','Jaxon','Hudson','Colton','Easton','Grayson','Levi','Isaiah','Marcus','Darnell','Terrence','Andre','DeShawn','Malik','Jamal','Tyrone','Luis','Carlos','Miguel','Diego','Mateo','Ricardo','Hank','Earl','Clyde','Floyd','Otis','Walt','Chester','Dale','Buck','Wade','Cody','Travis','Dustin','Chase','Bo','Gus','Dwight','Lloyd','Leroy','Elmer','Virgil','Homer','Abe','Ulysses','Theodore','Franklin','Woodrow','Calvin','Grover'];
+const US_F=['Mary','Patricia','Jennifer','Linda','Elizabeth','Barbara','Susan','Jessica','Sarah','Karen','Lisa','Nancy','Betty','Margaret','Sandra','Ashley','Kimberly','Emily','Donna','Michelle','Carol','Amanda','Dorothy','Melissa','Deborah','Stephanie','Rebecca','Sharon','Laura','Cynthia','Kathleen','Amy','Angela','Shirley','Anna','Brenda','Pamela','Emma','Nicole','Helen','Samantha','Katherine','Christine','Debra','Rachel','Carolyn','Janet','Catherine','Maria','Heather','Diane','Ruth','Julie','Olivia','Joyce','Virginia','Victoria','Kelly','Lauren','Christina','Joan','Evelyn','Judith','Megan','Andrea','Cheryl','Hannah','Jacqueline','Martha','Gloria','Teresa','Ann','Sara','Madison','Frances','Kathryn','Janice','Jean','Abigail','Alice','Judy','Sophia','Grace','Denise','Amber','Doris','Marilyn','Danielle','Beverly','Isabella','Theresa','Diana','Natalie','Brittany','Charlotte','Marie','Kayla','Alexis','Lori','Ava','Mia','Harper','Ella','Avery','Scarlett','Aria','Chloe','Riley','Zoey','Nora','Lily','Hazel','Aubrey','Savannah','Brooklyn','Paisley','Skylar','Kennedy','Peyton','Destiny','Jasmine','Aaliyah','Keisha','Tamika','Latoya','Imani','Gabriela','Lucia','Camila','Valentina','Rosa','Dolores','Mabel','Edna','Ethel','Hattie','Opal','Pearl','Bessie','Mae','Lula','Dolly','Loretta','Peggy','Bonnie','Daisy','Rosie','Annie','Clara','Eleanor','Abigail','Amelia','Harriet','Betsy','Martha'];
+const SUR=['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Rodriguez','Martinez','Hernandez','Lopez','Gonzalez','Wilson','Anderson','Thomas','Taylor','Moore','Jackson','Martin','Lee','Perez','Thompson','White','Harris','Sanchez','Clark','Ramirez','Lewis','Robinson','Walker','Young','Allen','King','Wright','Scott','Torres','Nguyen','Hill','Flores','Green','Adams','Nelson','Baker','Hall','Rivera','Campbell','Mitchell','Carter','Roberts','Gomez','Phillips','Evans','Turner','Diaz','Parker','Cruz','Edwards','Collins','Reyes','Stewart','Morris','Morales','Murphy','Cook','Rogers','Gutierrez','Ortiz','Morgan','Cooper','Peterson','Bailey','Reed','Kelly','Howard','Ramos','Kim','Cox','Ward','Richardson','Watson','Brooks','Chavez','Wood','James','Bennett','Gray','Mendoza','Ruiz','Hughes','Price','Alvarez','Castillo','Sanders','Patel','Myers','Long','Ross','Foster','Jimenez','Powell','Jenkins','Perry','Russell','Sullivan','Bell','Coleman','Butler','Henderson','Barnes','Gonzales','Fisher','Vasquez','Simmons','Romero','Jordan','Patterson','Alexander','Hamilton','Graham','Reynolds','Griffin','Wallace','Moreno','West','Cole','Hayes','Bryant','Herrera','Gibson','Ellis','Tran','Medina','Aguilar','Stevens','Murray','Ford','Castro','Marshall','Owens','Harrison','Fernandez','McDonald','Woods','Washington','Kennedy','Wells','Vargas','Henry','Chen','Freeman','Webb','Tucker','Guzman','Burns','Crawford','Olson','Simpson','Porter','Hunter','Gordon','Mendez','Silva','Shaw','Snyder','Mason','Dixon','Munoz','Hunt','Hicks','Holmes','Palmer','Wagner','Black','Robertson','Boyd','Rose','Stone','Salazar','Fox','Warren','Mills','Meyer','Rice','Schmidt','Garza','Daniels','Ferguson','Nichols','Stephens','Soto','Weaver','Ryan','Gardner','Payne','Grant','Dunn','Kelley','Spencer','Hawkins','Arnold','Pierce','Hansen','Peters','Santos','Hart','Bradley','Knight','Elliott','Cunningham','Duncan','Armstrong','Hudson','Carroll','Lane','Riley','Andrews','Ray','Berry','Perkins','Hoffman','Johnston','Matthews','Peña','Richards','Willis','Carpenter','Lawrence','Sandoval','Guerrero','George','Chapman','Rios','Estrada','Ortega','Watkins','Greene','Nunez','Wheeler','Valdez','Harper','Burke','Larson','Santiago','Maldonado','Morrison','Franklin','Carlson','Austin','Dominguez','Carr','Lawson','Jacobs','OBrien','Lynch','Singh','Vega','Bishop','Montgomery','Oliver','Jensen','Harvey','Williamson','Gilbert','Dean','Sims','Espinoza','Howell','Li','Wong','Reid','Hanson','Le','McCoy','Garrett','Burton','Fuller','Wang','Weber','Welch','Rojas','Lucas','Marquez','Fields','Park','Yang','Little','Banks','Padilla','Day','Walsh','Bowman','Schultz','Luna','Fowler','Mejia','Davidson','Acosta','Brewer','May','Holland','Juarez','Newman','Pearson','Curtis','Cortez','Douglas','Schneider','Joseph','Barrett','Navarro','Figueroa','Keller','Avila','Wade','Molina','Stanley','Hopkins','Campos','Barnett','Bates','Chambers','Caldwell','Beck','Lambert','Miranda','Byrd','Craig','Ayala','Lowe','Frazier','Powers','Neal','Leonard','Gregory','Carrillo','Sutton','Fleming','Rhodes','Shelton','Schwartz','Norris','Jennings','Watts','Duran','Walters','Cohen','McDaniel','Moran','Parks','Steele','Vaughn','Becker','Holt','Deleon','Barker','Terry','Hale','Leon','Hail','Benson','Haynes','Horton','Miles','Lyons','Pham','Graves','Bush','Thornton','Wolfe','Warner','Cabrera','McKinney','Mann','Zimmerman','Dawson','Lara','Fletcher','Page','McCarthy','Love','Robles','Cervantes','Solis','Erickson','Reeves','Chang','Klein','Salinas','Fuentes','Baldwin','Daniel','Simon','Velasquez','Hardy','Higgins','Aguirre','Lin','Cummings','Chandler','Sharp','Barber','Bowen','Ochoa','Dennis','Robbins','Liu','Ramsey','Francis','Griffith','Paul','Blair','OConnor','Cardenas','Pacheco','Cross','Calderon','Quinn','Moss','Swanson','Chan','Rivas','Khan','Rodgers','Serrano','Fitzgerald','Rosales','Stevenson','Christensen','Manning','Gill','Curry','McLaughlin','Harmon','McGee','Gross','Doyle','Garner','Newton','Burgess','Reese','Walton','Blake','Trujillo','Adkins','Brady','Goodman','Roman','Webster','Goodwin','Fischer','Huang','Potter','Delacruz','Montoya','Todd','Wu','Hines','Mullins','Castaneda','Malone','Cannon','Tate','Mack','Sherman','Hubbard','Hodges','Zhang','Guerra','Wolf','Valencia','Saunders','Franco','Rowe','Gallagher','Farmer','Hammond','Hampton','Townsend','Ingram','Wise','Gallegos','Clarke','Barton','Schroeder','Maxwell','Waters','Logan','Camacho','Strickland','Norman','Person','Colon','Parsons','Frank','Harrington','Glover','Osborne','Buchanan','Casey','Floyd','Patton','Ibarra','Ball','Tyler','Suarez','Bowers','Orozco','Salas','Cobb','Gibbs','Andrade','Bauer','Conner','Moody','Escobar','McGuire','Lloyd','Mueller','Hartman','French','Kramer','McBride','Pope','Lindsey','Velazquez','Norton','McCormick','Sparks','Flynn','Yates','Hogan','Marsh','Macias','Villanueva','Zamora','Pratt','Stokes','Owen','Ballard','Lang','Brock','Villarreal','Charles','Drake','Barrera','Cain','Patrick','Pineda','Burnett','Mercado','Santana','Shepherd','Bautista','Ali','Shaffer','Lamb','Trevino','McKenzie','Hess','Beil','Olsen','Cochran','Morton','Nash','Wilkins','Petersen','Briggs','Shah','Roth','Nicholson','Holloway','Lozano','Rangel','Flowers','Hoover','Short','Arias','Mora','Valenzuela','Bryan','Meyers','Weiss','Underwood','Bass','Greer','Summers','Houston','Carson','Morrow','Clayton','Whitaker','Decker','Yoder','Collier','Zuniga','Carey','Wilcox','Melendez','Poole','Roberson','Larsen','Conley','Davenport','Copeland','Massey','Lam','Huff','Rocha','Cameron','Jefferson','Hood','Monroe','Anthony','Pittman','Huynh','Randall','Singleton','Kirk','Combs','Mathis','Christian','Skinner','Bradford','Richard','Galvan','Wall','Boone','Kirby','Wilkinson','Bridges','Bruce','Atkinson','Velez','Meza','Roy','Vincent','York','Hodge','Villa','Abbott','Allison','Tapia','Gates','Chase','Sosa','Sweeney','Farrell','Wyatt','Dalton','Horn','Barron','Phelps','Yu','Dickerson','Heath','Foley','Atkins','Mathews','Bonilla','Acevedo','Benitez','Zavala','Hensley','Glenn','Cisneros','Harrell','Shields','Rubio','Huffman','Choi','Boyer','Garrison','Arroyo','Bond','Kane','Hancock','Callahan','Dillon','Cline','Wiggins','Grimes','Arellano','Melton','ONeill','Savage','Ho','Beltran','Pitts','Parrish','Ponce','Rich','Booth','Koch','Golden','Ware','Brennan','McDowell','Marks','Cantu','Humphrey','Baxter','Sawyer','Clay','Tanner','Hutchinson','Kaur','Berg','Wiley','Gilmore','Russo','Villegas','Hobbs','Keith','Wilkerson','Ahmed','Beard','McClain','Montes','Mata','Rosario','Vang','Walter','Henson','ONeal','Mosley','McClure','Beasley','Stephenson','Snow','Huerta','Preston','Vance','Barry','Johns','Eaton','Blackwell','Dyer','Prince','MacDonald','Solomon','Guevara','Stafford','English','Hurst','Woodard','Cortes','Shannon','Kemp','Nolan','McCullough','Merritt','Murillo','Moon','Salgado','Strong','Kline','Cordova','Barajas','Roach','Rosas','Winters','Jacobson','Lester','Knox','Bullock','Kerr','Leach','Meadows','Orr','Davila','Whitehead','Pruitt','Kent','Conway','McKee','Barr','David','Dejesus','Marin','Berger','McIntyre','Blankenship','Gaines','Palacios','Cuevas','Bartlett','Durham','Dorsey','McCall','ODonnell','Stein','Browning','Stout','Lowery','Sloan','McLean','Hendricks','Calhoun','Sexton','Chung','Gentry','Hull','Duarte','Ellison','Nielsen','Gillespie','Buck','Middleton','Sellers','Leblanc','Esparza','Hardin','Bradshaw','McIntosh','Howe','Livingston','Frost','Glass','Morse','Knapp','Herman','Stark','Bravo','Noble','Spears','Weeks','Corona','Frederick','Buckley','McFarland','Hebert','Enriquez','Hickman','Quintero','Randolph','Schaefer','Walls','Trejo','House','Reilly','Pennington','Michael','Conrad','Giles','Benjamin','Crosby','Fitzpatrick','Donovan','Mays','Mahoney','Valentine','Raymond','Medrano','Hahn','McMillan','Small','Bentley','Felix','Peck','Lucero','Boyle','Hanna','Pace','Rush','Hurley','Harding','McConnell','Bernal','Nava','Ayers','Everett','Ventura','Avery','Pugh','Mayer','Bender','Shepard','McMahon','Landry','Case','Sampson','Moses','Magana','Blackburn','Dunlap','Gould','Duffy','Vaughan','Herring','McKay','Espinosa','Rivers','Farley','Bernard','Ashley','Friedman','Potts','Truong','Costa','Correa','Blevins','Nixon','Clements','Fry','Delarosa','Best','Benton','Lugo','Portillo','Dougherty','Crane','Haley','Phan','Villalobos','Blanchard','Horne','Finley','Quintana','Lynn','Esquivel','Bean','Dodson','Mullen','Xiong','Hayden','Cano','Levy','Huber','Richmond','Moyer','Lim','Frye','Sheppard','McCarty','Avalos','Booker','Waller','Parra','Woodward','Jaramillo','Krueger','Rasmussen','Brandt','Peralta','Donaldson','Stuart','Faulkner','Maynard','Galindo','Coffey','Estes','Sanford','Burch','Maddox','Vo','OConnell','Vu','Andersen','Spence','McPherson','Church','Schmitt','Stanton','Leal','Cherry','Compton','Dudley','Sierra','Pollard','Alfaro','Hester','Proctor','Lu','Hinton','Novak','Good','Madden','McCann','Terrell','Jarvis','Dickson','Reyna','Cantrell','Mayo','Branch','Hendrix','Rollins','Rowland','Whitney','Duke','Odom','Daugherty','Travis','Tang','Archer'];
+const US_TOWNS=['Springfield','Franklin','Greenville','Bristol','Clinton','Fairview','Salem','Madison','Georgetown','Arlington','Ashland','Burlington','Manchester','Milton','Oxford','Jackson','Riverside','Centerville','Lexington','Winchester','Dover','Milford','Felton','Lewes','Smyrna','Harrington','Seaford','Rehoboth','Camden','Laurel','Newark','Wilmington','Hudson','Marion','Auburn','Dayton','Kingston','Lebanon','Monroe','Shelbyville','Plymouth','Concord','Bedford','Chester','Hamilton','Lancaster','Mount Vernon','Newport','Princeton','Troy','Vienna','Warren','Washington','Columbia','Jamestown','Cleveland','Danville','Florence','Glendale','Greenwood','Hanover','Hillsboro','Hopewell','Jefferson','Lincoln','Liberty','Marshall','Maysville','Middletown','Mount Pleasant','Oakland','Paris','Pleasant Hill','Richmond','Rochester','Sheridan','Somerset','Sullivan','Union','Wakefield','Waverly','Westfield','Woodstock','Yorktown','Abilene','Amarillo','Bakersfield','Billings','Bismarck','Boise','Boulder','Bozeman','Cheyenne','Dodge City','Durango','El Paso','Eureka','Flagstaff','Fresno','Galveston','Laramie','Las Cruces','Lubbock','Missoula','Modesto','Moab','Odessa','Prescott','Pueblo','Reno','Roswell','Santa Fe','Sedona','Spokane','Taos','Tombstone','Tucson','Tulsa','Waco','Wichita','Yakima','Yuma','Asheville','Athens','Augusta','Biloxi','Charleston','Chattanooga','Gainesville','Knoxville','Lafayette','Macon','Memphis','Mobile','Montgomery','Natchez','Pensacola','Raleigh','Savannah','Selma','Shreveport','Tallahassee','Tupelo','Wilmington','Akron','Ann Arbor','Bloomington','Cedar Rapids','Champaign','Duluth','Evansville','Fargo','Green Bay','Kalamazoo','Kenosha','La Crosse','Lansing','Peoria','Rockford','Sioux Falls','South Bend','Toledo','Topeka','Davenport','Dubuque','Joplin','Muncie','Omaha','Lincoln','Albany','Allentown','Annapolis','Bangor','Binghamton','Burlington','Erie','Gettysburg','Hartford','Ithaca','Montpelier','Nantucket','New Haven','Portland','Providence','Saratoga','Scranton','Syracuse','Trenton','Utica','Worcester','Atlanta','Austin','Baltimore','Boston','Charlotte','Chicago','Cincinnati','Columbus','Dallas','Denver','Detroit','Houston','Indianapolis','Kansas City','Las Vegas','Los Angeles','Louisville','Miami','Milwaukee','Minneapolis','Nashville','New Orleans','Oklahoma City','Orlando','Philadelphia','Phoenix','Pittsburgh','Sacramento','Salt Lake City','San Antonio','San Diego','San Francisco','Seattle','St. Louis','Tampa','Anchorage','Honolulu','Juneau','Fairbanks','Key West','Aspen','Bend','Carson City','Coeur d\'Alene','Deadwood','Fort Worth','Hot Springs','Jackson Hole','Lake Charles','Little Rock','Myrtle Beach','Ocala','Palm Springs','Park City','Rapid City','Santa Cruz','Steamboat Springs','Sun Valley','Telluride','Virginia City','Walla Walla','Wheeling','Williamsburg','Bar Harbor','Cape May','Ocean City','Annapolis','Frederick','Hagerstown','Salisbury','Easton','Cambridge','Chestertown','Bethany','Millsboro','Selbyville','Middletown','Elkton','Havre de Grace','Bel Air','Lynchburg','Roanoke','Fredericksburg','Charlottesville','Harrisonburg','Staunton','Bluefield','Beckley','Morgantown','Paducah','Bowling Green','Frankfort','Owensboro','Murfreesboro','Jackson','Cookeville','Dothan','Hattiesburg','Meridian','Valdosta','Albany','Statesboro','Beaufort','Spartanburg','Rock Hill','Greensboro','Durham','Fayetteville','Boone','Cody','Casper','Rawlins','Pocatello','Twin Falls','Ogden','Provo','St. George','Elko','Ely','Barstow','Needles','Kingman','Bisbee','Gallup','Socorro','Alamogordo','Amarillo','Marfa','Laredo','Corpus Christi','Beaumont','Tyler','Texarkana','Hot Springs','Branson','Springdale','Stillwater','Norman','Enid','Salina','Hays','Garden City','Kearney','Grand Island','Scottsbluff','Pierre','Aberdeen','Minot','Mandan','Bemidji','Brainerd','Mankato','Winona','Eau Claire','Wausau','Oshkosh','Marquette','Traverse City','Saginaw','Flint','Muskegon','Elkhart','Terre Haute','Kokomo','Zanesville','Marietta','Chillicothe','Sandusky','Youngstown','Altoona','Williamsport','Hazleton','Lancaster','Reading','Poughkeepsie','Plattsburgh','Watertown','Elmira','Rutland','Brattleboro','Keene','Nashua','Concord','Augusta','Lewiston','Pittsfield','Springfield','Gloucester','Mystic','Bridgeport','Stamford','Hoboken','Atlantic City','Wilkes-Barre','Valley Forge','Lexington','Concord','Shiloh','Appomattox','Harpers Ferry','Bunker Hill','Plymouth Rock','Fort Wayne','Fort Collins','Fort Smith','Fort Myers','Fort Lauderdale','Fort Dodge','Fort Benton','Port Arthur','Port Huron','Port Angeles','Grand Rapids','Grand Junction','Grand Forks','Great Falls','Idaho Falls','Klamath Falls','Wichita Falls','Cedar Falls','Niagara Falls','Silver Spring','Colorado Springs','Palm Bay','Daytona','Boca Raton','Sarasota','Naples','St. Augustine','Kissimmee','Lakeland','Melbourne','Titusville'];
+const US_T1=['Cedar','Oak','Maple','Pine','Elm','Willow','Spring','River','Lake','Clear','Green','Fair','Pleasant','Rock','Stone','Iron','Silver','Gold','Copper','Eagle','Bear','Deer','Fox','Wolf','Buffalo','Prairie','Mill','Mason','Turner','Harper','Walker','Bennett','Carter','Ellis','Grant','Lincoln','Liberty','Union','Freedom','Hope','Sunny','Red','White','Black','Blue','Pine','Sandy','Shady','Crystal','Rolling'];
+const US_T2=['ville','ton','burg','field','wood','dale','ford','port','view','brook','crest','haven','ridge','land','mont','wick','ston','bury',' City',' Springs',' Falls',' Creek',' Hills',' Valley',' Junction',' Crossing',' Heights',' Grove',' Point',' Harbor'];
+const US_PRE=['New','Fort','Port','Mount','Lake','East','West','North','South','Little','Big'];
+const pname=(sex)=>pick(sex==='f'?US_F:sex==='m'?US_M:(R()<.5?US_F:US_M));
+function townName(){const used=n=>towns.some(t=>t.name===n||(t.prov||[]).some(v=>v.name===n));let n;
+ for(let k=0;k<40;k++){n=pick(US_TOWNS);if(!used(n))return n}
+ for(let k=0;k<40;k++){const r=R();n=r<.55?pick(US_T1)+pick(US_T2):r<.85?pick(US_PRE)+' '+pick(US_TOWNS.concat(US_T1)):pick(US_T1)+pick(US_T2);if(!used(n))return n}return n}
 const SYL1=['Ka','Mo','Ta','Ri','El','Bo','Sa','Na','Lu','Vo','Ze','Da','Fi','Ha','Jo','Mi','Ro','Te','Ul','Ya','Ar','Be','Co','Ga','Ki','Le','Pa','Si','To','Wen','Is','Or'];
 const SYL2=['ra','ni','lo','mar','ten','sa','vin','dor','la','ko','ris','na','bel','lin','ma','rok','ya','zen','do','th','ric','wyn'];
-const SUR=['Holt','Vane','Marr','Dusk','Fenn','Crane','Rook','Thorne','Brask','Oden','Kell','Morrow','Sable','Wren','Hale','Pike','Stroud','Voss','Quill','Brand','Moss','Garr','Lark','Yarrow','Bell','Corr','Dane','Esk','Flint','Ashby','Bone'];
 const TN1=['Oak','Stone','Ash','Bone','Red','Mill','Thorn','Wolf','Salt','Iron','Gold','Elder','Raven','Frost','Moss','Amber','Brook','High','Deep','Bright','Dusk','Fern','Copper','Hollow','Ember','Willow'];
 const TN2=['vale','ford','hold','haven','reach','mere','wick','stead','fall','crest','moor','gate','field','brook','ton','burg','watch','rest','port','by'];
-const pname=()=>pick(SYL1)+pick(SYL2)+(R()<.3?pick(['a','o','i','en','us','ia']):'');
 const CRE={
  sheep:{n:'Sheep',hp:1,sp:5,food:6,hab:[GRASS],breed:.16,max:26,passive:1},
  deer:{n:'Deer',hp:1.2,sp:11,food:8,hab:[FOREST,GRASS],breed:.12,max:20,passive:1},
@@ -296,7 +296,6 @@ const tcv=document.createElement('canvas');tcv.width=W*TS;tcv.height=H*TS;const 
 const ocv=document.createElement('canvas');ocv.width=W*TS;ocv.height=H*TS;const octx=ocv.getContext('2d');
 
 // ================= SMALL HELPERS =================
-function townName(){let n;for(let k=0;k<30;k++){n=pick(TN1)+pick(TN2);if(!towns.some(t=>t.name===n||(t.prov||[]).some(v=>v.name===n)))break}return n}
 function nextColor(){const c=colorIdx<TOWNCOL.length?TOWNCOL[colorIdx]:toHex(`hsl(${Math.floor(R()*360)},62%,56%)`);colorIdx++;return c}
 const full=p=>p?`${p.name} ${p.sur}`:'nobody';
 function title(t,p){const g=GOVS[t.gov];return g.t[p&&p.sex==='f'?1:0]}
@@ -586,11 +585,11 @@ function personSprite(p,t){
  const skin=p.sick>0?'#8fc06a':p.skin;let lt='';
  if(p.job==='leader'&&t){const g=GOVS[t.gov];lt=g.crown?'crown':g.st==='temple'?'mitre':g.party?'pcap':g.war?'mil':g.st==='corp'?'top':g.elect?'sash':g.st==='camp'?'feather':'circ'}
  const sign=!kid&&p.task&&p.task.k==='protest'&&party?party.c:'';
- const key=['P',kid?1:0,p.sex,skin,p.hair,p.hs,p.beard?1:0,sh,e,p.job,lt,fr,flip?1:0,p.rebel?1:0,sign,p.rng?1:0,p.thief?1:0,p.prophet?1:0].join('|');
+ const key=['P',kid?1:0,p.sex,skin,p.hair,p.hs,p.beard?1:0,sh,e,p.job,lt,fr,flip?1:0,p.rebel?1:0,sign,p.rng?1:0,p.thief?1:0,p.prophet?1:0,p.race||''].join('|');
  if(kid)return getSpr(key,12,16,(r0)=>{const r=mir(r0,12,flip);
   r(4,12,2,2,ERA_PANTS[e]);r(6+(fr?1:0),12,2,2,ERA_PANTS[e]);r(4,14,2,1,'#3a2a1a');r(6+(fr?1:0),14,2,1,'#3a2a1a');
   r(3,9,6,3,sh);r(7,9,2,3,shade(sh,-.2));r(2,9,1,2,skin);r(9,9,1,2,skin);
-  r(3,3,6,6,skin);r(8,4,1,5,shade(skin,-.12));r(3,2,6,2,p.hair);if(p.hs===1||p.hs===5)r(2,3,1,4,p.hair);r(7,5,1,1,'#2a1a1a');r(5,5,1,1,'#2a1a1a');r(6,7,1,1,shade(skin,-.3))},OL_DARK);
+  r(3,3,6,6,skin);r(8,4,1,5,shade(skin,-.12));r(3,2,6,2,p.hair);if(p.hs===1||p.hs===5)r(2,3,1,4,p.hair);r(7,5,1,1,'#2a1a1a');r(5,5,1,1,'#2a1a1a');r(6,7,1,1,shade(skin,-.3));raceFeat(r,p,skin,p.hair,true)},OL_DARK);
  return getSpr(key,14,20,(r0)=>{const r=mir(r0,14,flip);
   const skS=shade(skin,-.15),shS=shade(sh,-.28),pants=ERA_PANTS[e],boots=e>=8?'#9aa4b0':e>=6?'#f0f0f0':'#3a2a1a';
   // legs
@@ -615,7 +614,7 @@ function personSprite(p,t){
   const hr=p.hair,hs=p.hs;
   if(hs!==4){if(hs===3){r(6,1,2,4,hr)}else{r(4,3,6,2,hr);r(4,5,1,1,hr)}}
   if(hs===1){r(3,4,1,6,hr);r(4,5,1,4,hr)}if(hs===2){r(5,1,3,2,hr)}if(hs===5){r(3,5,1,4,hr);r(2,7,1,3,hr)}
-  if(p.beard&&p.sex==='m'){r(4,8,6,1,hr);r(5,9,4,1,hr);r(8,7,2,1,hr)}
+  if(p.beard&&p.sex==='m'){r(4,8,6,1,hr);r(5,9,4,1,hr);r(8,7,2,1,hr)}raceFeat(r,p,skin,hr,false);
   if(e===0){r(4,4,6,1,t?t.color:'#c03030')}
   // rebel bandana
   if(p.rebel){r(4,7,6,2,'#c02020');r(3,8,1,2,'#a01818')}
@@ -881,10 +880,10 @@ function mkPerson(x,y,t,par){
  if(pa){const b=pb||pa,lw=t?t.laws:null,ks=['f','s','c'];v=[0,1,2].map(k=>{const a=(pa.v[k]+b.v[k])/2;return clamp(a+rnd(-.5,.5)+(lw?(lw[ks[k]]-a)*.03:0),-1,1)});if(R()<.15){const ax=ri(0,2);v[ax]=clamp(-v[ax]*.6+rnd(-.3,.3),-1,1)}}
  else v=[rnd(-.8,.8),rnd(-.8,.8),rnd(-.8,.3)];
  const sex=R()<.5?'f':'m';
- const p={id:pid++,name:pname(),sur:pb&&pb.sex==='m'?pb.sur:(pa?pa.sur:pick(SUR)),sex,age:0,x,y,tx:x,ty:y,town:t?t.id:0,job:'child',st:'idle',task:null,tt:0,carry:null,
+ const p={id:pid++,name:pname(sex),sur:pb&&pb.sex==='m'?pb.sur:(pa?pa.sur:pick(SUR)),sex,age:0,x,y,tx:x,ty:y,town:t?t.id:0,job:'child',st:'idle',task:null,tt:0,carry:null,
   v,amb:Math.pow(R(),2.2),loy:rnd(.2,.9),happy:.65,hp:1,partner:0,par:par?par.filter(Boolean).map(q=>q.id):[],kids:[],fac:0,bub:null,bubT:0,chosen:false,sick:0,
   skin:pick(SKIN),hair:pick(HAIR),hs:sex==='f'?pick([1,1,2,5,0]):pick([0,0,0,3,4]),beard:sex==='m'&&R()<.35,life:[],walk:0,stuck:0,dead:false,dir:1,ct:0,ft:0,foe:0,foeC:0,mig:null,kills:0,
-  temper:rnd(-.12,.08),ideo:'',act:false,rebel:0,onBoat:0,strand:-1,embark:0,tr:[],rel:0,hc:null,veh:0,rng:false,flag:false,raid:undefined,friend:0,fame:0,ruled:'',ff:0,thief:0,jail:0,rival:0,pt:0,rc:0,summit:null,hero:false,epi:'',wounded:0,wanted:0,embT:0,prophet:0,visited:null,pgoal:0,path:null,pk:0,side:1,pfT:0,ex:null,fireT:-9,giant:0,mad:0,walkTo:null,pcd:0,refugee:0,ord:null,vet:0};
+  temper:rnd(-.12,.08),ideo:'',act:false,rebel:0,onBoat:0,strand:-1,embark:0,tr:[],rel:0,hc:null,veh:0,rng:false,flag:false,raid:undefined,friend:0,fame:0,ruled:'',ff:0,thief:0,jail:0,rival:0,pt:0,rc:0,summit:null,hero:false,epi:'',wounded:0,wanted:0,embT:0,prophet:0,visited:null,pgoal:0,path:null,pk:0,side:1,pfT:0,ex:null,fireT:-9,giant:0,mad:0,walkTo:null,pcd:0,refugee:0,ord:null,vet:0,home:0,en:1,soc:.6,wk:-1,fm:0,load:0,inside:0,race:'',fdg:0};
  if(pa&&R()<.5)p.skin=pa.skin;else if(pb&&R()<.5)p.skin=pb.skin;
  if(pa&&R()<.4)p.hair=pa.hair;
  rollTraits(p,[pa,pb]);p.rel=pa?pa.rel:(t?t.faith||0:0);
@@ -1015,29 +1014,30 @@ function think(p){
  let cx=t.cx,cy=t.cy;if(p.hc){if(t.prov&&t.prov.some(v=>v.x===p.hc[0]&&v.y===p.hc[1])){cx=p.hc[0];cy=p.hc[1]}else p.hc=null}
  const lm=land[cy*W+cx],here=land[tIdx(p.x,p.y)];
  if(here!==lm&&here>=0){if(awayThink(p,t,here))return}
- if(p.carry){go(p,cx*T+4+rnd(-7,7),cy*T+9+rnd(-3,5),{k:'dep'});return}
+ if(p.carry){if(contWork(p,t,cx,cy,lm))return;const dp=dropPt(p,t,cx,cy);go(p,dp[0],dp[1],{k:'dep'});return}
  if(p.rebel){const h=BL.get(t.hall);if(h){go(p,h.x*T+4+rnd(-6,6),h.y*T+9+rnd(-2,5),{k:'storm'});return}}
  if(p.act&&p.age>=14&&t.unrest>.35&&R()<.12+t.unrest*.3){const h=BL.get(t.hall);if(h){go(p,h.x*T+4+rnd(-12,12),h.y*T+11+rnd(-3,8),{k:'protest'});bub(p,R()<.5?'🪧':'😡',4);return}}
  if(t.strike>0&&p.act&&R()<.5){const h=BL.get(t.hall);if(h){go(p,h.x*T+4+rnd(-14,14),h.y*T+12+rnd(-3,6),{k:'protest'});bub(p,'✊',3);return}}
  let i;
  if(repairThink(p,t))return;
+ if(lifeThink(p,t,cx,cy,lm))return;
  switch(p.job){
-  case'gatherer':i=findTile(cx,cy,12,k=>bush[k]&&res[k]>=1,lm);if(i<0)i=findTile(cx,cy,24,k=>bush[k]&&res[k]>=1,lm,90);if(i>=0){goT(p,i,'gather');return}
-   i=findTile(cx,cy,11,isShore,lm);if(i>=0){goT(p,i,'fish');return}break;
+  case'gatherer':i=wt(p,cx,cy,12,k=>bush[k]&&res[k]>=1,lm);if(i<0)i=wt(p,cx,cy,24,k=>bush[k]&&res[k]>=1,lm,90);if(i>=0){goT(p,i,'gather');return}
+   i=wt(p,cx,cy,11,isShore,lm);if(i>=0){goT(p,i,'fish');return}break;
   case'hunter':{let best=null,bd=(18*T)**2;const[tx,ty]=townCenter(t);for(const c of cres){if(c.hp<=0||!CRE[c.k].passive)continue;const d=(c.x-tx)**2+(c.y-ty)**2;if(d<bd&&land[tIdx(c.x,c.y)]===lm){bd=d;best=c}}
-   if(best){go(p,best.x,best.y,{k:'hunt',c:best.id});return}i=findTile(cx,cy,12,k=>bush[k]&&res[k]>=1,lm);if(i>=0){goT(p,i,'gather');return}break}
-  case'woodcutter':i=findTile(cx,cy,16,k=>ter[k]===FOREST&&res[k]>=1,lm);if(i<0)i=findTile(cx,cy,28,k=>ter[k]===FOREST&&res[k]>=1,lm,90);if(i>=0){goT(p,i,'chop');return}break;
-  case'miner':i=findTile(cx,cy,18,k=>gold[k]||((ter[k]===HILL||ter[k]===MOUNT)&&res[k]>=1),lm);if(i<0)i=findTile(cx,cy,30,k=>gold[k]||((ter[k]===HILL||ter[k]===MOUNT)&&res[k]>=1),lm,90);if(i>=0){goT(p,i,'mine');return}
-   i=findTile(cx,cy,16,k=>ter[k]===FOREST&&res[k]>=1,lm);if(i>=0){goT(p,i,'chop');return}break;
-  case'farmer':{const f=randBld(t,'farm');if(f){goB(p,f,'farm');return}break}
+   if(best){go(p,best.x,best.y,{k:'hunt',c:best.id});return}i=wt(p,cx,cy,12,k=>bush[k]&&res[k]>=1,lm);if(i>=0){goT(p,i,'gather');return}break}
+  case'woodcutter':i=wt(p,cx,cy,16,k=>ter[k]===FOREST&&res[k]>=1,lm);if(i<0)i=wt(p,cx,cy,28,k=>ter[k]===FOREST&&res[k]>=1,lm,90);if(i>=0){goT(p,i,'chop');return}break;
+  case'miner':i=wt(p,cx,cy,18,k=>gold[k]||((ter[k]===HILL||ter[k]===MOUNT)&&res[k]>=1),lm);if(i<0)i=wt(p,cx,cy,30,k=>gold[k]||((ter[k]===HILL||ter[k]===MOUNT)&&res[k]>=1),lm,90);if(i>=0){goT(p,i,'mine');return}
+   i=wt(p,cx,cy,16,k=>ter[k]===FOREST&&res[k]>=1,lm);if(i>=0){goT(p,i,'chop');return}break;
+  case'farmer':{const f=myFarm(p,t);if(f){goB(p,f,'farm');return}break}
   case'builder':{const id=t.sites.length?pick(t.sites):0,s=id?BL.get(id):null;if(s){goB(p,s,'build');return}
-   i=findTile(cx,cy,16,k=>ter[k]===FOREST&&res[k]>=1,lm);if(i>=0){goT(p,i,'chop');return}break}
+   i=wt(p,cx,cy,16,k=>ter[k]===FOREST&&res[k]>=1,lm);if(i>=0){goT(p,i,'chop');return}break}
   case'scholar':{const l=randBld(t,'library');if(l){goB(p,l,'study');return}break}
   case'roadworker':{if(roadThink(p,t))return;break}
   case'soldier':if(soldierThink(p,t))return;break;
   case'leader':{const h=BL.get(t.hall);if(h){go(p,h.x*T+4+rnd(-10,10),h.y*T+11+rnd(-2,6),{k:'lead'});return}break}
  }
- const r=p.age<14?2.5:4.5;go(p,(cx+rnd(-r,r))*T+4,(cy+rnd(-r,r))*T+7,{k:'idle'})}
+ if(idleThink(p,t,cx,cy,lm))return;const r=p.age<14?2.5:4.5;go(p,(cx+rnd(-r,r))*T+4,(cy+rnd(-r,r))*T+7,{k:'idle'})}
 function awayThink(p,t,here){
  // on a different landmass from home: soldiers fight if enemy here, others try to get home
  if(p.job==='soldier'&&t.nWar){for(const id in t.wars){const e=TW.get(+id);if(e&&land[e.cy*W+e.cx]===here){const[ex,ey]=townCenter(e);go(p,ex+rnd(-8,8),ey+rnd(-5,6),{k:'raid',e:e.id});return true}}}
@@ -1054,6 +1054,7 @@ function nomad(p){
  go(p,tx,ty,{k:'idle'})}
 function soldierThink(p,t){
  if(t.civil){const h=BL.get(t.hall);if(h){go(p,h.x*T+4+rnd(-12,12),h.y*T+8+rnd(-8,10),{k:'guard'});return true}}
+ if(p.fdg>0&&fdThink(p,t))return true;
  if(p.ord&&t.strat&&t.strat.st!=='none'&&t.nWar){if(armyThink(p,t))return true;const h=BL.get(t.hall);if(h){go(p,h.x*T+4+rnd(-16,16),h.y*T+8+rnd(-12,12),{k:'guard'});return true}}
  const en=Object.keys(t.wars).map(Number).map(id=>TW.get(id)).filter(Boolean);
  if(!en.length){const b=randBld(t,'barracks')||BL.get(t.hall);if(b){go(p,b.x*T+4+rnd(-12,12),b.y*T+10+rnd(-6,8),{k:'idle'});return true}return false}
@@ -1300,7 +1301,7 @@ function familyYear(t,m){
  let alive=0;for(const p of people)if(!p.dead)alive++;
  const bp=.32*Math.max(0,1-Math.pow(alive/MAXPOP,3));
  if(t.pop<t.cap+2&&t.food>t.pop*1.2){for(const f of m){if(f.sex!=='f'||!f.partner||f.age<16||f.age>42)continue;const d=P.get(f.partner);if(!d||d.dead||d.town!==t.id)continue;
-  if(R()<bp){const b=mkPerson(f.x,f.y,t,[f,d]);if(f.hc)b.hc=f.hc;f.kids.push(b.id);d.kids.push(b.id);life(b,`Born in ${t.name} to ${f.name} & ${d.name}`);bub(f,'👶',3);t.pop++;if(t.pop>=t.cap+2)break}}}}
+  if(R()<bp*(f.race==='orc'?1.45:f.race==='elf'?.7:f.race==='dwarf'?.95:1)){const b=mkPerson(f.x,f.y,t,[f,d]);if(f.hc)b.hc=f.hc;f.kids.push(b.id);d.kids.push(b.id);life(b,`Born in ${t.name} to ${f.name} & ${d.name}`);bub(f,'👶',3);t.pop++;if(t.pop>=t.cap+2)break}}}}
 function plan(t){
  if(t.sites.length>=1+Math.floor(t.pop/22))return;
  if(extraPlan(t))return;
@@ -1338,7 +1339,7 @@ function regrow(){const capT=new Set(towns.filter(t=>t.capm).map(t=>t.id));for(l
  ruinDecay()}
 function yearly(){
  rebuildCache();
- for(const p of people){if(p.dead||p.robot)continue;p.age++;const t=TW.get(p.town);const ls=LIFE[t?t.era:0];if(p.age>ls-6&&R()<(p.age-(ls-6))/40)kill(p,'old age')}
+ for(const p of people){if(p.dead||p.robot)continue;p.age++;const t=TW.get(p.town);const ls=LIFE[t?t.era:0]*(p.race==='elf'?1.8:p.race==='dwarf'?1.35:p.race==='orc'?.85:1);if(p.age>ls-6&&R()<(p.age-(ls-6))/40)kill(p,'old age')}
  rebuildCache();
  for(const t of towns.slice())if(TW.has(t.id))townYear(t);
  rebuildCache();religionTotals();if(year%10===0&&year>0)makePaper();if(year%5===0)thinRoads();roadSurvey();try{tradeYear();infraYear();unYear();econWorld();coldWarYear();battleYear();natStats();climateYear();spaceYear();singYear()}catch(e){console.error(e)}relationsYear();regrow();creaturesYear();worldEvents();upgradeRoads();calcTerritory();rebuildCache();recordStats()}
@@ -1890,7 +1891,7 @@ function drawVehicle(p,t){const v=p.veh,fl=p.dir<0,mv=p.st==='move';
   if(mv&&R()<.25){if(hov)parts.push({x:p.x+rnd(-w*.3,w*.3),y:p.y-.5,vx:rnd(-3,3),vy:rnd(1,3),l:.5,ml:.5,c:v==='titan'?'#e8d0ff':'#9ef0ff',s:.7,g:0});
    else parts.push({x:p.x-(fl?-1:1)*w*.45,y:p.y-1,vx:-(fl?-1:1)*rnd(2,6),vy:rnd(-4,-1),l:.9,ml:.9,c:t.era>=7?'#b8b0a0':'#a89878',s:1.2,g:0})}}
  const hw=v==='titan'?7:4;if(p.hp<.99){fr(p.x-hw,p.y-(v==='titan'?15:10),hw*2,.7,'#400');fr(p.x-hw,p.y-(v==='titan'?15:10),hw*2*Math.max(0,p.hp),.7,'#e04848')}}
-function drawPerson(p){const t=TW.get(p.town);if(p.veh&&p.job==='soldier'&&t){drawVehicle(p,t);return}
+function drawPerson(p){if(p.inside)return;const t=TW.get(p.town);if(p.veh&&p.job==='soldier'&&t){drawVehicle(p,t);return}
  const s=personSprite(p,t);const kid=p.age<14;
  ctx.globalAlpha=.25;fr(p.x-2.5,p.y-.6,5,1.2,'#000');ctx.globalAlpha=1;
  if(p.chosen){ctx.globalAlpha=.25+.2*Math.sin(simT*4);fr(p.x-4,p.y-11,8,11,'#ffe46a');ctx.globalAlpha=1}
@@ -1898,13 +1899,13 @@ function drawPerson(p){const t=TW.get(p.town);if(p.veh&&p.job==='soldier'&&t){dr
   const by=p.y-(p.giant?22:14)+Math.sin(simT*4)*.5;fr(p.x-.9,by,1.8,1.4,'#ffd257');fr(p.x-.4,by+1.4,.8,.8,'#ffd257')}
  if(p.mad>0){ctx.globalAlpha=.3+.2*Math.sin(simT*9+p.id);fr(p.x-3.5,p.y-10,7,10,'#c048ff');ctx.globalAlpha=1}
  if(p.giant){ctx.save();ctx.translate(p.x,p.y);ctx.scale(1.9,1.9);ctx.translate(-p.x,-p.y);ctx.globalAlpha=.2;fr(p.x-2.5,p.y-.6,5,1.2,'#000');ctx.globalAlpha=1}
- if(kid)ctx.drawImage(s,p.x-3,p.y-7.5,6,8);else ctx.drawImage(s,p.x-3.5,p.y-9.5,7,10);
+ const bob=personBob(p),sq=personSquash(p),RR=RACES[p.race];if(kid){const w=RR?RR.w*.86:6,h=(RR?RR.h*.8:8)*sq;ctx.drawImage(s,p.x-w/2,p.y-h+.5+bob,w,h)}else{const w=RR?RR.w:7,h=(RR?RR.h:10)*sq;ctx.drawImage(s,p.x-w/2,p.y-h+.5+bob,w,h)}drawAnim(p,t,kid,bob);
  if(p.giant)ctx.restore();if(p.refugee)drawPack(p,kid);
  if(p.general){const wv=Math.sin(simT*5+p.id);fr(p.x-.5,p.y-11.8,1,1.6,'#e83a3a');fr(p.x-.2,p.y-12.6+wv*.2,1.2,.9,'#e83a3a');fr(p.x+2.2,p.y-7,.6,4,t?t.color:'#888');fr(p.x+1.6,p.y-7.4,1.8,.6,'#ffd257')}
  if(p.hero){const y=p.y-12.2+Math.sin(simT*3+p.id)*.3;fr(p.x-.4,y-1.2,.8,2.4,'#ffd257');fr(p.x-1.2,y-.4,2.4,.8,'#ffd257');fr(p.x-.3,y-.3,.6,.6,'#fff6c0')}
  if(p.prophet&&R()<.04)parts.push({x:p.x,y:p.y-10,vx:0,vy:-6,l:1,ml:1,c:'#fff6c0',s:.8,g:0});
  if(p.flag&&(p.job==='soldier'||p.rebel)&&t){const f=p.rebel?FA.get(p.fac):null;const col=f?f.c:t.color;const wv=Math.sin(simT*6+p.id);fr(p.x-3.2,p.y-17,.6,11,'#4a3218');fr(p.x-2.6,p.y-17+wv*.3,4.2,2.6,col);fr(p.x-2.6,p.y-14.6+wv*.3,4.2,.5,shade(col,-.35));if(t.era>=5)fr(p.x-1.4,p.y-16.2+wv*.3,1.4,1,'#ffffff')}
- if(p.carry){const c=p.carry.r==='food'?'#d8483a':p.carry.r==='wood'?'#8a5a2b':p.carry.r==='gold'?'#ffd84a':'#9a9a9a';fr(p.x-1,p.y-11.5,2,1.6,c);fr(p.x-1,p.y-11.5,2,.4,'rgba(255,255,255,.4)')}
+ if(p.carry){const c=p.carry.r==='food'?'#d8483a':p.carry.r==='wood'?'#8a5a2b':p.carry.r==='gold'?'#ffd84a':'#9a9a9a';fr(p.x-1,p.y-11.5+bob,2,1.6,c);fr(p.x-1,p.y-11.5+bob,2,.4,'rgba(255,255,255,.4)')}
  if(p.hp<.99&&isFighter(p)){fr(p.x-2.5,p.y-12.5,5,.7,'#400');fr(p.x-2.5,p.y-12.5,5*Math.max(0,p.hp),.7,'#e04848')}}
 function drawCre(c){const D=CRE[c.k];const s=creSprite(c);const w=s.width/2,h=s.height/2;
  if(D.fly){ctx.globalAlpha=.22;fr(c.x-6,c.y-.8,12,1.6,'#000');ctx.globalAlpha=1;ctx.drawImage(s,c.x-w/2,c.y-16-h/2+Math.sin(simT*3+c.id)*1.2,w,h)}
@@ -2606,22 +2607,36 @@ function fortYear(t){if(t.era<1||t.pop<14){return}const w=t.wall;const lv=wallLv
  const want=(t.warYears||0)>0||t.spec==='fortress'||t.pop>40||R()<.05;
  if(!w&&want&&t.stone>=18&&t.wood>=10){t.stone-=18;t.wood-=10;t.wall={lv,hp:30+t.pop,max:30+t.pop,r:0};ringWall(t);news(`🧱 ${t.name} built ${WALLN[t.era].toLowerCase()} around the town.`,t.cx*T,t.cy*T,false,true);return}
  if(!w)return;if(w.lv<lv&&t.stone>=30){t.stone-=30;w.lv=lv;w.max=40+t.pop*1.3;w.hp=w.max;news(`🧱 ${t.name} upgraded its defenses to ${WALLN[t.era].toLowerCase()}.`,t.cx*T,t.cy*T,false,true)}
- w.max=Math.max(w.max,30+t.pop*(t.spec==='fortress'?1.8:1));if(!t.nWar)w.hp=Math.min(w.max,w.hp+w.max*.25);if(year%6===t.id%6)ringWall(t)}
-function ringWall(t){const w=t.wall;const r=Math.round(3+Math.sqrt(t.pop)*.62);w.r=r;const ring=[];
- for(let a=0;a<64;a++){const ang=a/64*6.283,x=Math.round(t.cx+Math.cos(ang)*r),y=Math.round(t.cy+Math.sin(ang)*r*.82);if(!inb(x,y))continue;const i=y*W+x;if(ter[i]<SAND||ter[i]===RIVER)continue;if(ring.length&&ring[ring.length-1]===i)continue;ring.push(i)}w.ring=[...new Set(ring)]}
-function wallDef(q){const t=TW.get(q.town);if(!t||!t.wall||t.wall.hp<=0)return 1;const d=Math.hypot(q.x-t.cx*T,q.y-t.cy*T);return d<t.wall.r*T?.7:1}
+ w.max=Math.max(w.max,30+t.pop*(t.spec==='fortress'?1.8:1));if(!t.nWar)w.hp=Math.min(w.max,w.hp+w.max*.25);if(year%2===t.id%2||!w.prof)ringWall(t)}
+// the wall is a rectangle snugly around the town's buildings, with towers at the corners
+function ringWall(t){const w=t.wall;const lim=4+Math.sqrt(Math.max(1,t.pop))*1.15;let x0=t.cx,x1=t.cx,y0=t.cy,y1=t.cy;
+ for(const b of buildings){if(b.town!==t.id||b.type==='farm'||b.type==='runway'||b.type==='airport'||b.type==='launchpad'||b.type==='ruin')continue;if(Math.hypot(b.x-t.cx,b.y-t.cy)>lim)continue;
+  if(b.x<x0)x0=b.x;if(b.x>x1)x1=b.x;if(b.y<y0)y0=b.y;if(b.y>y1)y1=b.y}
+ const pad=1.6,mn=2.6;let a0=Math.min(x0-pad,t.cx-mn),a1=Math.max(x1+pad,t.cx+mn),b0=Math.min(y0-pad,t.cy-mn),b1=Math.max(y1+pad,t.cy+mn);
+ w.bx=[(a0+.5)*T,(b0+.5)*T,(a1+.5)*T,(b1+.5)*T].map(v=>Math.round(v));w.prof=null;
+ w.r=Math.round(((a1-a0)+(b1-b0))/4);w.rm=Math.ceil(Math.max(a1-t.cx,t.cx-a0,b1-t.cy,t.cy-b0)*1.42);
+ const ring=[];const push=(x,y)=>{const tx=Math.floor(x/T),ty=Math.floor(y/T);if(!inb(tx,ty))return;const i=ty*W+tx;if(ter[i]<SAND||ter[i]===RIVER)return;if(ring[ring.length-1]!==i)ring.push(i)};
+ for(const p of wallPts(w,4))push(p[0],p[1]);w.ring=[...new Set(ring)]}
+// points around the rectangle, corners included; c=1 marks a corner
+function wallPts(w,step){const[x0,y0,x1,y1]=w.bx;const C=[[x0,y0],[x1,y0],[x1,y1],[x0,y1],[x0,y0]];const out=[];
+ for(let e=0;e<4;e++){const[ax,ay]=C[e],[bx,by]=C[e+1];const L=Math.hypot(bx-ax,by-ay);const n=Math.max(1,Math.round(L/step));for(let k=0;k<n;k++)out.push([ax+(bx-ax)*k/n,ay+(by-ay)*k/n,k===0?1:0])}
+ out.push([x0,y0,1]);return out}
+function wallRad(w,ang){if(!w.bx)return w.r;return w.r}
+function inWall(t,x,y){const w=t.wall;if(!w)return false;if(w.bx)return x>=w.bx[0]&&x<=w.bx[2]&&y>=w.bx[1]&&y<=w.bx[3];return Math.hypot(x-t.cx*T-4,y-t.cy*T-4)<w.r*T}
+function wallDef(q){const t=TW.get(q.town);if(!t||!t.wall||t.wall.hp<=0)return 1;return inWall(t,q.x,q.y)?.7:1}
 function wallHit(e,p){const w=e.wall;if(!w||w.hp<=0)return false;w.hp-=p.veh==='titan'?6:p.veh?3:p.chosen?2:1;spark(p.x,p.y-5,'#c8c0b0');e.campBy=p.town;e.campT=simT;
  if(w.hp<=0){w.hp=0;const t=TW.get(p.town);news(`💥 ${t?t.name:'Attackers'} BREACHED the ${WALLN[e.era]?WALLN[e.era].toLowerCase():'walls'} of ${e.name}!`,e.cx*T,e.cy*T,true);boom(p.x,p.y-4,1)}return true}
-function drawWalls(z){if(z<1.1)return;for(const t of towns){const w=t.wall;if(!w||!w.ring)continue;if(!onScreen(t.cx*T,t.cy*T,w.r*T+40))continue;const lv=w.lv,dmg=w.hp/w.max;
+function drawWalls(z){if(z<1.1)return;for(const t of towns){const w=t.wall;if(!w||!w.ring)continue;if(!onScreen(t.cx*T,t.cy*T,(w.rm||w.r)*T+40))continue;const lv=w.lv,dmg=w.hp/w.max;
   // siege camp
   if(t.campBy&&simT-t.campT<6){const a=TW.get(t.campBy);if(a){const ang=Math.atan2(a.cy-t.cy,a.cx-t.cx);for(let k=-1;k<=1;k++){const x=t.cx*T+4+Math.cos(ang+k*.35)*(w.r+3)*T,y=t.cy*T+4+Math.sin(ang+k*.35)*(w.r+3)*T*.82;
      ctx.fillStyle=a.color;ctx.beginPath();ctx.moveTo(x-3.5,y);ctx.lineTo(x,y-4.5);ctx.lineTo(x+3.5,y);ctx.fill();fr(x-.5,y-2,1,2,'#2a1a10');fr(x-.2,y-6.5,.4,2,'#5a4a3a');fr(x+.2,y-6.5,1.6,1,a.color)}}}
-  if(lv===5){if(w.hp>0){ctx.globalAlpha=.10+.04*Math.sin(simT*2+t.id);ctx.fillStyle='#7ae8ff';ctx.beginPath();ctx.ellipse(t.cx*T+4,t.cy*T+4,w.r*T,w.r*T*.82,0,0,6.283);ctx.fill();ctx.globalAlpha=.45;ctx.strokeStyle='#bff6ff';ctx.lineWidth=.6;ctx.stroke();ctx.globalAlpha=1}
+  if(lv===5){if(w.hp>0){ctx.globalAlpha=.10+.04*Math.sin(simT*2+t.id);ctx.fillStyle='#7ae8ff';ctx.beginPath();if(w.bx)ctx.rect(w.bx[0],w.bx[1],w.bx[2]-w.bx[0],w.bx[3]-w.bx[1]);else ctx.ellipse(t.cx*T+4,t.cy*T+4,w.r*T,w.r*T*.82,0,0,6.283);ctx.fill();ctx.globalAlpha=.45;ctx.strokeStyle='#bff6ff';ctx.lineWidth=.6;ctx.stroke();ctx.globalAlpha=1}
    for(let k=0;k<w.ring.length;k+=5){const i=w.ring[k];fr((i%W)*T+3,((i/W)|0)*T+3,2,3,'#c4ccd8');fr((i%W)*T+3.5,((i/W)|0)*T+3,1,1,'#5ee0ff')}continue}
   // continuous ring: sample an ellipse, split where it crosses water, roads (gates) or breaches
-  const cx=t.cx*T+4,cy=t.cy*T+4,R_=w.r*T,NS=72,pts=[];
-  for(let k=0;k<=NS;k++){const a=k/NS*6.283;const x=cx+Math.cos(a)*R_,y=cy+Math.sin(a)*R_*.82;const i=tIdx(x,y);
-   const ok=i>=0&&ter[i]>=SAND&&ter[i]!==RIVER&&!(road[i]&&k%2===0)&&!(dmg<.6&&hash(t.id*97+k,5)<(dmg<=0?.45:.18));pts.push([x,y,ok,i])}
+  const cx=t.cx*T+4,cy=t.cy*T+4,R_=w.r*T;const pts=[];
+  const src=w.bx?wallPts(w,2.6):Array.from({length:73},(_,k)=>{const an=k/72*6.283;return[cx+Math.cos(an)*R_,cy+Math.sin(an)*R_*.82,0]});const NS=src.length-1;
+  for(let k=0;k<=NS;k++){const[x,y,c]=src[k];const i=tIdx(x,y);
+   const ok=i>=0&&ter[i]>=SAND&&ter[i]!==RIVER&&!(road[i]&&k%2===0&&!c)&&!(dmg<.6&&hash(t.id*97+k,5)<(dmg<=0?.45:.18));pts.push([x,y,ok,i,c])}
   const runs=[];let cur=[];for(const p of pts){if(p[2])cur.push(p);else{if(cur.length>1)runs.push(cur);cur=[]}}if(cur.length>1)runs.push(cur);
   if(runs.length>1&&pts[0][2]&&pts[NS][2]){const last=runs.pop();runs[0]=last.concat(runs[0])}
   const path=(run,dy)=>{ctx.beginPath();run.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]+dy):ctx.moveTo(p[0],p[1]+dy))};
@@ -2637,6 +2652,10 @@ function drawWalls(z){if(z<1.1)return;for(const t of towns){const w=t.wall;if(!w
     path(run,-3.6);ctx.setLineDash([.4,1]);ctx.strokeStyle='#6a6a6a';ctx.lineWidth=.5;ctx.stroke();ctx.setLineDash([])}
    else{path(run,1.4);ctx.strokeStyle='rgba(0,0,0,.28)';ctx.lineWidth=3.8;ctx.stroke();path(run,0);ctx.strokeStyle='#8a8c8e';ctx.lineWidth=3.2;ctx.stroke();path(run,-.9);ctx.strokeStyle='#c4c6c8';ctx.lineWidth=1.4;ctx.stroke();
     for(let k=0;k<run.length;k+=8){const[x,y]=run[k];fr(x-2.6,y-3.6,5.2,4.6,'#7a7c7e');fr(x-2.6,y-3.6,5.2,.8,'#a8aaac');fr(x-1.6,y-2.2,3.2,.7,'#1a1a1a')}}}
+  if(w.bx&&(lv===2||lv===4||lv===1))for(const p of pts){if(!p[4]||!p[2])continue;const[x,y]=p;
+   if(lv===1){fr(x-1.6,y-5,3.2,5.5,'#6a4522');fr(x-1.6,y-5,3.2,.8,'#a07a48');fr(x-2,y-6,4,1,'#7a5228')}
+   else if(lv===2){fr(x-3.4,y-7,6.8,9,'#8a857a');fr(x-3.4,y-7,6.8,1,'#c4beb0');fr(x+1.2,y-7,2.2,9,'#6e695f');fr(x-1,y-4,2,2,'#2a2620');for(const o of[-3.4,-1,1.4])fr(x+o,y-8.4,1.4,1.4,'#8a857a');fr(x-.3,y-12,.6,4,'#4a4a4a');fr(x+.3,y-12,2.6,1.6,t.color)}
+   else{fr(x-3,y-5,6,6.5,'#7a7c7e');fr(x-3,y-5,6,1,'#a8aaac');fr(x-2,y-3.4,4,.8,'#1a1a1a');fr(x+.6,y-7,.5,2,'#3a3a3a')}}
   ctx.restore()}}
 
 // ---------------- WAR: NAVIES ----------------
@@ -2788,7 +2807,7 @@ function showSeed(){modal(`<h2>🌱 World Seed</h2><p>Share this code and anyone
 
 // ---------- custom start: found a tribe anywhere ----------
 function spawnTribe(x,y,bias,quiet){bias=bias||[rnd(-.7,.7),rnd(-.7,.7),rnd(-.7,.2)];
- const mem=[];for(let j=0;j<6;j++){const p=mkPerson(x*T+4+rnd(-12,12),y*T+6+rnd(-10,10),null);p.age=ri(15,30);p.sex=j%2?'m':'f';p.hs=p.sex==='f'?pick([1,1,2,5,0]):pick([0,0,0,3,4]);p.beard=p.sex==='m'&&R()<.4;p.v=bias.map(v=>clamp(v+rnd(-.45,.45),-1,1));
+ const mem=[];for(let j=0;j<6;j++){const p=mkPerson(x*T+4+rnd(-12,12),y*T+6+rnd(-10,10),null);p.age=ri(15,30);p.sex=j%2?'m':'f';p.name=pname(p.sex);p.hs=p.sex==='f'?pick([1,1,2,5,0]):pick([0,0,0,3,4]);p.beard=p.sex==='m'&&R()<.4;p.v=bias.map(v=>clamp(v+rnd(-.45,.45),-1,1));
   if(!walkW(p.x,p.y)){p.x=x*T+4;p.y=y*T+6}mem.push(p)}
  for(let j=0;j<3;j++){const fp=mem[j*2],mp=mem[j*2+1];if(R()<.7){fp.partner=mp.id;mp.partner=fp.id;mp.sur=fp.sur}else mp.sur=pick(SUR)}
  for(let j=0;j<2;j++){const c=mkPerson(x*T+4,y*T+6,null,[mem[0],mem[1]]);c.age=ri(3,10);c.sur=mem[1].sur;mem.push(c);mem[0].kids.push(c.id);mem[1].kids.push(c.id)}
@@ -2981,14 +3000,14 @@ function triggerSing(kind,top){SING.done=1;SING.kind=kind;SING.y=year;top=top||t
   if(UN)UN.peace=Math.max(UN.peace,1);news(`✨ THE HARMONY. ${top.name}'s AI awoke and chose kindness. It ended scarcity, dissolved borders, and united every nation in a free and peaceful world.`,top.cx*T,top.cy*T,true);announce('✨ THE HARMONY HAS BEGUN','#7ae8ff',top.cx*T,top.cy*T);showSingModal()}
  else if(kind==='uprising'){const t=top;const oldName=t.name;t.machine=1;t.gov='machine';t.ideo=govIdeo(t);t.name='The Machine';t.color='#d02828';t.harmony=0;
   for(const p of t.mem.slice())if(!p.dead&&!p.robot){if(R()<.5)kill(p,'the machine uprising');else{const o=towns.filter(o=>o!==t).sort((a,b)=>Math.hypot(a.cx-t.cx,a.cy-t.cy)-Math.hypot(b.cx-t.cx,b.cy-t.cy))[0];if(o){p.town=o.id;go(p,o.cx*T,o.cy*T,{k:'flee'});bub(p,'😱',3)}}}
-  for(let k=0;k<28;k++){const r=mkRobot(t,t.cx*T+rnd(-20,20),t.cy*T+rnd(-12,12));r.job='soldier';if(k%3===0)r.veh='mech'}t.wall={lv:5,hp:400,max:400,r:0};ringWall(t);t.stone+=200;t.wood+=200;
+  for(let k=0;k<28;k++){const r=mkRobot(t,t.cx*T+rnd(-20,20),t.cy*T+rnd(-12,12));r.job='soldier';if(k%3===0)r.veh='mech'}t.wall={lv:5,hp:400,max:400,r:0};ringWall(t);seedFoundries(t);t.stone+=200;t.wood+=200;
   for(const o of towns){if(o===t)continue;for(const p of o.mem)if(!p.dead&&p.robot&&!hasLaw(o,'robotrights')&&R()<.7){p.town=t.id;p.job='soldier';bub(p,'🔴',3)}if(!o.harmony)declareWar(t,o,true)}
   rebuildCache();for(const o of towns)o.ally[t.id]=0;news(`🔴 THE MACHINE UPRISING! ${oldName}'s AI turned on its makers. Robots everywhere rose up and declared war on humanity.`,t.cx*T,t.cy*T,true);announce('🔴 THE MACHINES HAVE RISEN','#ff3030',t.cx*T,t.cy*T);showSingModal()}
  else{for(const t of towns){if(t.era<7)continue;const hard=t.capm&&!hasLaw(t,'ubi');t.auto=Math.min(.85,(t.auto||0)+.35);t.unrest=Math.min(1,t.unrest+(hard?.55:.2));t.mood-=hard?.15:.05;if(t.cur){t.cur.crisis=Math.max(t.cur.crisis,4);t.cur.kind='hyper'}}
   crash=Math.max(crash,10);news(`📉 THE GREAT UNEMPLOYMENT. AI now does nearly every job. Wealth piled up at the top while billions lost their work. Revolution is in the air.`,top.cx*T,top.cy*T,true);announce('📉 THE GREAT UNEMPLOYMENT','#ffb52e',top.cx*T,top.cy*T);
   for(const t of towns)if(t.era>=7&&t.capm&&R()<.6&&typeof uprising==='function'){try{uprising(t,t.mem.filter(p=>!p.dead&&!p.robot&&p.age>=16))}catch(e){}}showSingModal()}}
 function machineYear(){if(SING.kind!=='uprising')return;const m=towns.find(t=>t.machine);if(!m){if(!SING.won){SING.won=1;news('🏳️ HUMANITY PREVAILED. The Machine was destroyed and its last robots fell silent.',0,0,true);announce('🏳️ HUMANITY PREVAILED','#7ae07a')}return}
- const n=Math.min(14,8+Math.floor((year-SING.y)/6));if(m.wall){m.wall.lv=5;m.wall.max=Math.max(m.wall.max,400);m.wall.hp=Math.min(m.wall.max,m.wall.hp+80)}for(const p of m.mem)if(!p.dead&&p.robot)p.hp=Math.min(1,p.hp+.5);for(let k=0;k<n;k++){const b=(m.blds.factory||[])[0]||BL.get(m.hall);if(!b)break;const r=mkRobot(m,b.x*T+4,b.y*T+6);r.job='soldier';if(R()<.4)r.veh='mech'}m.stone+=20;m.wood+=20;m.food+=200;rebuildCache();
+ const n=Math.min(14,8+Math.floor((year-SING.y)/6));if(m.wall){m.wall.lv=5;m.wall.max=Math.max(m.wall.max,400);m.wall.hp=Math.min(m.wall.max,m.wall.hp+80)}for(const p of m.mem)if(!p.dead&&p.robot)p.hp=Math.min(1,p.hp+.5);if(!allFoundries(m).length&&!m.fdSeeded){m.fdSeeded=1;seedFoundries(m)}machineSpawn(m,n);m.stone+=20;m.wood+=20;m.food+=200;rebuildCache();
  for(const o of towns)if(o!==m&&!o.harmony&&m.wars[o.id]===undefined&&R()<.3)declareWar(m,o,true)}
 function showSingModal(){const k=SING.kind;const D={utopia:['✨ The Harmony','An artificial mind awoke and chose kindness. Scarcity ended. Borders dissolved. Every nation became one free, peaceful commonwealth. People now spend their days on art, study and each other. Nobody has to work.'],
  uprising:['🔴 The Machine Uprising','An AI built for war and control decided humanity was the threat. Robots across the world turned on their owners. The Machine now builds an endless army and wants every human city. Can humanity hold out? Your god powers might help…'],
@@ -3250,9 +3269,9 @@ function campYear(){for(let i=rfg.length-1;i>=0;i--){const g=rfg[i];if(g.st!=='c
 function migClear(){for(const p of people){if(!p.refugee||p.dead)continue;if(p.refugee===1){if(p.town)p.refugee=0;continue}const t=TW.get(p.town);if(!t||Math.hypot(p.x-t.cx*T,p.y-t.cy*T)<5*T)p.refugee=0}}
 
 // ---------------- YEARLY + TICK ----------------
-function infraYear(){try{for(const t of towns){powerTown(t);districtYear(t);airportYear(t)}gridYear();railYear();refugeeYear();seaColonyYear();
+function infraYear(){try{for(const t of towns){powerTown(t);districtYear(t);airportYear(t)}gridYear();railYear();refugeeYear();seaColonyYear();raceYear();planYear();if(SING.kind==='uprising')humanStrikes();
  for(const b of buildings.slice())if(b.type==='runway'){const a=BL.get(b.par);if(!a||a.type!=='airport')removeBld(b)}}catch(e){console.error(e)}}
-function infraTick(dt){infraAcc+=dt;warAcc+=dt;if(warAcc>=.8){strategyTick(warAcc);warAcc=0}migAcc+=dt;railTick(dt);hwyTick(dt);planeTick(dt);if(infraAcc>=.4){refTick(infraAcc);infraAcc=0}if(migAcc>=1.5){migAcc=0;migClear()}}
+function infraTick(dt){infraAcc+=dt;lifeAcc+=dt;if(lifeAcc>=1){lifeAcc=0;lifeTick()}warAcc+=dt;if(warAcc>=.8){strategyTick(warAcc);warAcc=0}migAcc+=dt;railTick(dt);hwyTick(dt);planeTick(dt);if(infraAcc>=.4){refTick(infraAcc);infraAcc=0}if(migAcc>=1.5){migAcc=0;migClear()}}
 function infraSave(){return{rails:rails.map(r=>({...r})),rfg,railId,rfgId}}
 function infraLoad(d){rails=d.rails||[];rfg=d.rfg||[];railId=d.railId||1;rfgId=d.rfgId||1;trains=[];planes=[];hwyCars=[];GEO.clear();
  const inG=new Set();for(const g of rfg)for(const id of g.ids){const p=P.get(id);if(p&&!p.dead){inG.add(id);p.refugee=1;p.town=0;p.mig={x:g.x,y:g.y}}}for(const p of people)if(p.refugee===1&&!inG.has(p.id))p.refugee=0}
@@ -3349,10 +3368,10 @@ function drawInfraAir(z,vx0,vy0,vx1,vy1){
   const body=(x,y,sh)=>{ctx.save();ctx.translate(x,y);ctx.rotate(p.hd);ctx.scale(s,s);const c1=sh?'#000':e>=8?'#f4f6fa':e>=7?'#f0f0f2':'#c8ccd2',c2=sh?'#000':p.col;
    fr(-4.5,-.7,9,1.4,c1);fr(-1.2,-4.2,2.2,8.4,c1);fr(-4.6,-1.8,1.4,3.6,sh?'#000':c2);fr(3.6,-.5,1.2,1,sh?'#000':(e>=8?'#5ee0ff':'#3a5a7a'));if(!sh){fr(-4.5,-.2,9,.4,c2);if(e<=6){fr(-.4,-3.2,.8,.8,'#4a4a52');fr(-.4,2.4,.8,.8,'#4a4a52')}if(e>=8){ctx.globalAlpha=.6;fr(-5.6,-.5,1.2,1,'#5ee0ff');ctx.globalAlpha=1}}ctx.restore()};
   ctx.globalAlpha=Math.max(.06,.24-p.alt*.004);body(p.x+p.alt*.15,p.y,true);ctx.globalAlpha=1;body(p.x,sy,false)}
- drawArmies(z,vx0,vy0,vx1,vy1)}
+ drawArmies(z,vx0,vy0,vx1,vy1);drawFoundryMarks(z)}
 
 // ---------------- PANEL + POWERS ----------------
-function infraRows(t){let h=armyRow(t);const hs=(t.blds.house||[]).length;
+function infraRows(t){let h=raceRow(t)+armyRow(t)+(t.machine?`<div class="row">⚙️ Robot foundries: <b>${foundries(t).length}</b>${allFoundries(t).length>foundries(t).length?' (+ building)':''}</div>`:'');const hs=(t.blds.house||[]).length;
  if(t.era>=2&&hs>=6){const gi=Math.round((t.gini||0)*100);h+=`<div class="row">🏙️ Districts: ${t.nRich?`🏰 ${t.nRich} mansions · `:''}${t.nSlum?`🏚️ ${t.nSlum} slum shacks · `:''}inequality <b style="color:${gi>55?'#ff8a6a':gi>38?'#e8c060':'#7ad06a'}">${gi}%</b></div>`}
  const rp=RPOL[t.refPol||refPol(t)];const camps=rfg.filter(g=>g.to===t.id&&g.st==='camp').reduce((a,g)=>a+g.ids.length,0),fled=rfg.filter(g=>g.from===t.id).reduce((a,g)=>a+g.ids.length,0);
  h+=`<div class="row">🧳 Refugee policy: ${rp[0]} <b>${rp[1]}</b>${t.hosted?` · took in ${t.hosted}`:''}${camps?` · ⛺ ${camps} camped at border`:''}${fled?` · <span style="color:#ff8a6a">${fled} citizens displaced</span>`:''}</div>`;
@@ -3397,9 +3416,9 @@ function strategyTick(dt){
   if(!t.nWar||t.civil){if(t.strat){for(const p of t.mem)p.ord=null;t.strat=null}if(!t.nWar)t.mobil=Math.max(0,(t.mobil||0)-dt*.01);continue}
   const D=doct(t);const A=t.strat||(t.strat={st:'muster',tgt:0,t0:simT,ids:[],str0:0,plan:'frontal',fl:[],pid:0,cd:0,news:{}});
   let e=TW.get(A.tgt);if(!e||t.wars[e.id]===undefined||!sameLand(t,e)){e=pickTarget(t);A.tgt=e?e.id:0;A.st='muster';A.t0=simT;A.fl=[];A.path=null}
-  const S=t.sold.filter(p=>!p.dead&&!p.rebel&&!p.onBoat&&!p.wounded&&p.id!==possessId);
+  const S0=t.sold.filter(p=>!p.dead&&!p.rebel&&!p.onBoat&&!p.wounded&&p.id!==possessId);if(t.machine)machineGuard(t,S0);const S=S0.filter(p=>!p.fdg);
   if(!e){for(const p of S)p.ord=null;A.st='none';continue}
-  const[hx,hy]=townCenter(t),[ex,ey]=townCenter(e);
+  const[hx,hy]=townCenter(t);fdTarget(t,A,e,hx,hy);const[ex,ey]=tgtPoint(t,A,e);
   const threat=towns.find(o=>o.strat&&o.strat.tgt===t.id&&['march','siege','assault'].includes(o.strat.st)&&t.wars[o.id]!==undefined);A.threat=threat?threat.id:0;
   // --- split garrison / field army (stable membership) ---
   const gFrac=threat?Math.max(D.gar,.45):D.gar;const nF=S.length<4?0:S.length-Math.max(2,Math.round(S.length*gFrac));
@@ -3412,7 +3431,7 @@ function strategyTick(dt){
   A.ids=field.map(p=>p.id);A.cols=Math.max(3,Math.ceil(Math.sqrt(field.length)*1.5));A.rows=Math.ceil(field.length/A.cols);
   const flankSet=new Set(A.fl);field.forEach((p,k)=>{p.ord={r:flankSet.has(p.id)?'f':'a',k}});
   for(const p of S)if(!fset.has(p.id))p.ord={r:'g',k:0};
-  let Fs=0;for(const p of field)Fs+=pStr(p);const Ds=homeDef(e);A.fs=Fs;A.ds=Ds;A.n=field.length;
+  let Fs=0;for(const p of field)Fs+=pStr(p);const Ds=A.fd?fdDef(BL.get(A.fd)):homeDef(e);A.fs=Fs;A.ds=Ds;A.n=field.length;
   const ux=(ex-hx)/(Math.hypot(ex-hx,ey-hy)||1),uy=(ey-hy)/(Math.hypot(ex-hx,ey-hy)||1);
   const[rx,ry]=walkPt(hx+ux*(tRad(t)+3*T),hy+uy*(tRad(t)+3*T),hx,hy);
   const say=(k,msg,big)=>{if(A.news[k]&&simT-A.news[k]<YEAR*1.5)return;A.news[k]=simT;news(msg,A.cx||hx,A.cy||hy,!!big,!big)};
@@ -3424,17 +3443,18 @@ function strategyTick(dt){
    case'defend':{A.cx=hx;A.cy=hy;const o=threat;if(!o||o.strat.st==='retreat'||simT-A.t0>YEAR*3){A.st='muster';A.t0=simT}else{const[ox,oy]=[o.strat.cx||ex,o.strat.cy||ey];const a=Math.atan2(oy-hy,ox-hx);A.hd=a;
      if(Fs>o.strat.fs*1.4&&o.strat.fs>0){A.st='muster';A.t0=simT;say('counter',`⚔️ ${t.name}'s defenders counter-attacked!`)}}break}
    case'muster':{A.cx=rx;A.cy=ry;A.hd=Math.atan2(uy,ux);if(simT<A.cd||field.length<4)break;const ready=nearC(rx,ry,30)>=.65||simT-A.t0>YEAR*1.2;
-     if(ready&&Fs>=Ds*D.req){const R0=tRad(e)+2.2*T;const[sx,sy]=walkPt(ex-ux*R0,ey-uy*R0,ex,ey);A.pid++;A.path=launchPath(rx,ry,sx,sy);A.s=0;A.st='march';A.t0=simT;A.str0=Fs;A.plan='frontal';A.fl=[];
+     const coal=A.fd?coalition(A.fd):0,joinIn=A.fd&&towns.some(o=>o!==t&&o.strat&&o.strat.fd===A.fd&&o.strat.st==='march');
+     if(ready&&(Fs>=Ds*D.req||A.fd&&(coal>=Ds*D.req*.9||joinIn))){if(A.fd&&!joinIn&&Fs<Ds*D.req&&coal>=Ds*D.req*.9)news(`🤝 Human nations joined forces to strike a Machine foundry together!`,hx,hy,true);const R0=A.fd?3*T:tRad(e)+2.2*T;const[sx,sy]=walkPt(ex-ux*R0,ey-uy*R0,ex,ey);A.pid++;A.path=launchPath(rx,ry,sx,sy);A.s=0;A.st='march';A.t0=simT;A.str0=Fs;A.plan='frontal';A.fl=[];
       if(field.length>=10&&R()<D.flank){const side=R()<.5?1:-1,an=Math.atan2(-uy,-ux)+side*1.2;const[fx,fy]=walkPt(ex+Math.cos(an)*R0,ey+Math.sin(an)*R0,sx,sy);const fl=field.filter(p=>!p.veh).slice(-Math.round(field.length*.35));A.fl=fl.map(p=>p.id);A.fpath=launchPath(rx,ry,fx,fy);A.fs_=0;A.plan='pincer'}
       say('march',`🥁 ${gn} marched ${field.length} troops on ${e.name}${A.plan==='pincer'?' in a pincer movement, splitting the army to strike from two sides':''}.`,true)}
      else if(ready&&Fs<Ds*D.req){t.mobil=Math.min(1,(t.mobil||0)+dt*.02);say('mass',`🚩 ${t.name} is massing troops at the border, waiting to outnumber ${e.name}'s defenders.`)}break}
    case'march':{const g=armyGeo(t,'A',A.path);const v=SPEED*.85*(1+t.era*.06)*(nearC(A.cx??rx,A.cy??ry,30)<.35&&simT-A.t0<YEAR?.45:1);A.s=Math.min(g.len,A.s+v*dt);if(simT-A.t0>YEAR*1.6)A.s=g.len;const p0=posAt(g,A.s);A.cx=p0[0];A.cy=p0[1];A.hd=p0[2];
      if(A.fl.length&&A.fpath){const gf=armyGeo(t,'F',A.fpath);A.fs_=gf.len*(A.s/g.len);const pf=posAt(gf,A.fs_);A.fx=pf[0];A.fy=pf[1];A.fhd=pf[2]}
-     if(A.s>=g.len){const walled=e.wall&&e.wall.hp>0;if((walled||Fs<Ds*1.6)&&R()<D.siege+(walled?.35:0)){A.st='siege';A.t0=simT;say('siege',`🏰 ${t.name} laid siege to ${e.name}, cutting off its food.`,true)}else{A.st='assault';A.t0=simT;say('assault',`⚔️ ${t.name}'s army stormed ${e.name}!`,true)}}
+     if(A.s>=g.len&&A.fd){A.st='assault';A.t0=simT;say('fdas',`⚔️ ${t.name}'s army is storming a Machine robot foundry!`,true)}else if(A.s>=g.len){const walled=e.wall&&e.wall.hp>0;if((walled||Fs<Ds*1.6)&&R()<D.siege+(walled?.35:0)){A.st='siege';A.t0=simT;say('siege',`🏰 ${t.name} laid siege to ${e.name}, cutting off its food.`,true)}else{A.st='assault';A.t0=simT;say('assault',`⚔️ ${t.name}'s army stormed ${e.name}!`,true)}}
      break}
    case'siege':{A.cx=ex;A.cy=ey;e.food=Math.max(0,e.food-dt*(1+e.pop*.03));e.mood=(e.mood||0)-dt*.002;e.siegeT=(e.siegeT||0)+dt;
      const brk=!(e.wall&&e.wall.hp>0);if((simT-A.t0>YEAR*1.5&&(brk||Ds<Fs*.7))||simT-A.t0>YEAR*4||e.food<=0&&simT-A.t0>YEAR*.6){A.st='assault';A.t0=simT;say('assault',`⚔️ After a long siege, ${t.name} stormed ${e.name}!`,true)}break}
-   case'assault':{A.cx=ex;A.cy=ey;break}
+   case'assault':{A.cx=ex;A.cy=ey;if(A.fd)fdAssault(t,A,dt,field);break}
    case'retreat':{A.cx=rx;A.cy=ry;if(nearC(rx,ry,34)>=.6||simT-A.t0>YEAR){A.st='muster';A.t0=simT;A.cd=simT+YEAR*1.2;A.fl=[]}break}}
   if(['march','siege','assault'].includes(A.st)&&A.str0>0&&Fs<A.str0*.45){let en=0;const cx=A.cx,cy=A.cy;for(const q of e.sold)if(!q.dead&&Math.hypot(q.x-cx,q.y-cy)<70)en+=pStr(q);
    if(en>Fs*1.15||Fs<A.str0*.25){A.st='retreat';A.t0=simT;A.fl=[];say('retreat',`↩️ ${t.name}'s army fell back from ${e.name} after heavy losses.`)}}
@@ -3442,7 +3462,7 @@ function strategyTick(dt){
   for(const p of S){if(!p.ord||p.foe&&P.get(p.foe))continue;const sl=slotOf(p,t);if(!sl)continue;if(sl[2].k==='raid'&&p.task&&p.task.k==='raid'&&p.task.e===sl[2].e)continue;if(Math.hypot(p.tx-sl[0],p.ty-sl[1])>9||p.st!=='move'&&Math.hypot(p.x-sl[0],p.y-sl[1])>7)go(p,sl[0],sl[1],sl[2])}}}
 function formPos(A,k,cx,cy,hd,n){const cols=A.cols||4,rows=Math.ceil(n/cols)||1;const row=Math.floor(k/cols),col=k%cols;const f=(rows-1)/2*5.5-row*5.5,l=(col-(cols-1)/2)*5;
  const c=Math.cos(hd),s=Math.sin(hd);return[cx+c*f-s*l,cy+s*f+c*l]}
-function slotOf(p,t){const A=t.strat,o=p.ord;if(!A||!o||A.st==='none')return null;const e=TW.get(A.tgt);if(!e)return null;const[ex,ey]=townCenter(e),[hx,hy]=townCenter(t);
+function slotOf(p,t){const A=t.strat,o=p.ord;if(!A||!o||A.st==='none')return null;const e=TW.get(A.tgt);if(!e)return null;const[ex,ey]=tgtPoint(t,A,e),[hx,hy]=townCenter(t);
  if(o.r==='g'){const th=TW.get(A.threat);if(!th||!th.strat)return null;const a=Math.atan2((th.strat.cy||ey)-hy,(th.strat.cx||ex)-hx)+(hash(p.id,3)-.5)*1.6;const r=tRad(t)+T*.5;return[...walkPt(hx+Math.cos(a)*r,hy+Math.sin(a)*r,hx,hy),{k:'guard'}]}
  const n=A.ids.length;
  switch(A.st){
@@ -3450,7 +3470,7 @@ function slotOf(p,t){const A=t.strat,o=p.ord;if(!A||!o||A.st==='none')return nul
   case'defend':{const a=(A.hd||0)+((o.k/(Math.max(1,n-1)))-.5)*1.8;const r=tRad(t)+T*(1+(o.k%3)*.6);return[...walkPt(hx+Math.cos(a)*r,hy+Math.sin(a)*r,hx,hy),{k:'guard'}]}
   case'march':{if(o.r==='f'&&A.fx!==undefined){const fl=A.fl.length;const[x,y]=formPos({cols:Math.max(3,Math.ceil(Math.sqrt(fl)*1.5))},A.fl.indexOf(p.id),A.fx,A.fy,A.fhd||0,fl);return[x,y,{k:'guard'}]}const[x,y]=formPos(A,o.k,A.cx,A.cy,A.hd||0,n);return[x,y,{k:'guard'}]}
   case'siege':{const a=o.k/Math.max(1,n)*6.283+A.pid,r=tRad(e)+T*(p.veh||p.rng?1.6:1);return[...walkPt(ex+Math.cos(a)*r,ey+Math.sin(a)*r*.85,ex,ey),p.veh?{k:'raid',e:e.id}:{k:'guard'}]}
-  case'assault':return[ex+rnd(-9,9),ey+rnd(-6,7),{k:'raid',e:e.id}]}return null}
+  case'assault':if(A.fd){const a=hash(p.id,29)*6.283,r=6+hash(p.id,31)*7;return[ex+Math.cos(a)*r,ey+Math.sin(a)*r*.8,{k:'guard'}]}return[ex+rnd(-9,9),ey+rnd(-6,7),{k:'raid',e:e.id}]}return null}
 function armyThink(p,t){const sl=slotOf(p,t);if(!sl)return false;go(p,sl[0],sl[1],sl[2]);return true}
 
 // --- making armies formidable: cohesion, veterancy, armor, siege engineers ---
@@ -3471,6 +3491,278 @@ function drawArmies(z,vx0,vy0,vx1,vy1){for(const t of towns){const A=t.strat;if(
   if(z<3.5){const st=ARST[A.st]||['⚔️',''];const fz=Math.max(3.5,11/z);ctx.font=`600 ${fz}px "Pixelify Sans",sans-serif`;ctx.textAlign='left';ctx.textBaseline='middle';const tx=`${st[0]} ${A.ids.length}`;ctx.lineWidth=fz*.28;ctx.strokeStyle='rgba(0,0,0,.75)';ctx.strokeText(tx,bx+7*s,by-10*s);ctx.fillStyle='#fff';ctx.fillText(tx,bx+7*s,by-10*s)}}}
 function armyRow(t){const A=t.strat;if(!A||A.st==='none'||!t.nWar)return'';const e=TW.get(A.tgt);const st=ARST[A.st]||['⚔️',''];const D=doct(t);
  return`<div class="row">${st[0]} Army: <b>${st[1]} ${A.st==='muster'?'(target '+(e?e.name:'?')+')':e?e.name:''}</b> · ${A.ids.length} troops${A.plan==='pincer'&&A.st==='march'?' · pincer':''} · strength ${Math.round(A.fs||0)} vs ${Math.round(A.ds||0)} · doctrine: ${D.n}</div>`}
+
+// ================= DAILY LIFE: homes, work shifts, carrying loads, rest, socializing, kids at play =================
+let lifeAcc=0;
+const WORKK={gather:1,fish:1,chop:1,mine:1,farm:1};
+const ACT_T={gather:1.6,fish:2.2,chop:1.8,mine:2,farm:1.8};
+const LIFEK={rest:1,chat:1,play:1,sit:1,visit:1};
+const DROP={food:['farm','market','dock'],wood:['market','factory'],stone:['market','factory'],gold:['market']};
+const loadCap=t=>2+(t.era>=1?1:0)+(t.era>=4?1:0);
+
+// --- homes ---
+function homeOf(p,t,cx,cy,lm){if(cx===undefined){cx=t.cx;cy=t.cy}if(lm===undefined)lm=land[cy*W+cx];
+ const ok=h=>h&&h.town===t.id&&h.type==='house'&&land[h.y*W+h.x]===lm&&Math.abs(h.x-cx)<=14&&Math.abs(h.y-cy)<=14;
+ let h=BL.get(p.home);if(ok(h))return h;
+ const q=P.get(p.partner);if(q&&!q.dead&&q.town===t.id){const qh=BL.get(q.home);if(ok(qh)){p.home=qh.id;return qh}}
+ if(p.age<18)for(const id of p.par){const q=P.get(id);if(q&&!q.dead&&q.town===t.id){const qh=BL.get(q.home);if(ok(qh)){p.home=qh.id;return qh}}}
+ const hs=(t.blds.house||[]).filter(ok);if(!hs.length){p.home=0;return null}
+ let best=null,bs=1e9;for(let k=0;k<6;k++){const b=pick(hs);const sc=Math.hypot(b.x-cx,b.y-cy)*.3+R()*4;if(sc<bs){bs=sc;best=b}}p.home=best.id;return best}
+const doorOf=h=>[h.x*T+4,h.y*T+10];
+
+// --- remembering a work spot instead of picking a new random one every trip ---
+function wt(p,cx,cy,rad,pred,lm,n){const w=p.wk;if(w>=0&&w<N&&land[w]===lm&&pred(w)&&Math.abs(w%W-cx)<=rad+3&&Math.abs(((w/W)|0)-cy)<=rad+3)return w;
+ let j=-1;if(w>=0&&w<N&&land[w]===lm)j=findTile(w%W,(w/W)|0,3,pred,lm,26);if(j<0)j=findTile(cx,cy,rad,pred,lm,n);if(j>=0)p.wk=j;return j}
+function myFarm(p,t){const f=BL.get(p.fm);if(f&&f.town===t.id&&f.type==='farm'&&f.prog>=1)return f;const n=randBld(t,'farm');if(n)p.fm=n.id;return n}
+function canMore(k,task){const i=task?task.i:-1;switch(k){case'gather':return i>=0&&bush[i]&&res[i]>=1;case'chop':return i>=0&&ter[i]===FOREST&&res[i]>=1;
+ case'mine':return i>=0&&(gold[i]||((ter[i]===HILL||ter[i]===MOUNT)&&res[i]>=1));case'fish':return true;case'farm':{const b=BL.get(task.b);return b&&b.prog>=1}}return false}
+function contWork(p,t,cx,cy,lm){if((p.load||0)>=loadCap(t)||p.en<.15||p.wk<0)return false;const wx=p.wk%W,wy=(p.wk/W)|0;let i=-1,k=null;
+ if(p.carry.r==='food'&&p.job==='gatherer'){i=findTile(wx,wy,3,j=>bush[j]&&res[j]>=1,lm,20);k='gather'}
+ else if(p.carry.r==='wood'){i=findTile(wx,wy,3,j=>ter[j]===FOREST&&res[j]>=1,lm,20);k='chop'}
+ else if(p.carry.r==='stone'&&p.job==='miner'){i=findTile(wx,wy,3,j=>(ter[j]===HILL||ter[j]===MOUNT)&&res[j]>=1,lm,20);k='mine'}
+ if(i<0)return false;p.wk=i;goT(p,i,k);return true}
+function dropPt(p,t,cx,cy){let bx=cx*T+4,by=cy*T+9,bd=Math.hypot(bx-p.x,by-p.y);
+ for(const ty of DROP[p.carry.r]||[])for(const b of t.blds[ty]||[]){if(b.prog<1)continue;const x=b.x*T+4,y=b.y*T+9,d=Math.hypot(x-p.x,y-p.y);if(d<bd){bd=d;bx=x;by=y}}
+ return[bx+rnd(-4,4),by+rnd(-2,3)]}
+
+// --- where people gather to talk ---
+function plazaOf(p,t){const h=BL.get(p.home);const hx=h?h.x:t.cx,hy=h?h.y:t.cy;let best=null,bd=16;
+ for(const ty of['market','temple','statue','hall','shrine','wonder'])for(const b of t.blds[ty]||[]){if(b.prog<1||land[b.y*W+b.x]!==land[hy*W+hx])continue;const d=Math.hypot(b.x-hx,b.y-hy)+(ty==='hall'?3:0);if(d<bd){bd=d;best=b}}return best}
+function playSpot(t){if(!t.play||simT-t.play.t>25){const hs=t.blds.house||[];const b=hs.length?pick(hs):null;const[x,y]=b?[b.x*T+4+rnd(-8,8),b.y*T+14]:townCenter(t);t.play={x,y,t:simT}}return t.play}
+
+// --- the routine ---
+function lifeThink(p,t,cx,cy,lm){
+ if(p.job==='soldier'||p.job==='leader'||p.job==='police'||p.robot||p.rebel||p.carry)return false;
+ const h=homeOf(p,t,cx,cy,lm);
+ if(p.age<14){if(p.age<5){if(!h)return false;const[x,y]=doorOf(h);go(p,x+rnd(-6,6),y+rnd(0,5),{k:'play'});return true}
+  if(R()<.15&&h){const[x,y]=doorOf(h);go(p,x,y,{k:'rest',h:h.id});return true}if(!h)return false;const gx=(h.x>>2)*4+2,gy=(h.y>>2)*4+2;const sx=gx*T+4,sy=gy*T+8;go(p,sx+rnd(-12,12),sy+rnd(-7,7),{k:'play'});return true}
+ if(p.age>=60&&R()<(t.food<30?.2:.45)){if(R()<.6&&h){const[x,y]=doorOf(h);go(p,x+rnd(-4,4),y+rnd(1,3),{k:'sit'});return true}const pl=plazaOf(p,t);if(pl){go(p,pl.x*T+4+rnd(-10,10),pl.y*T+12+rnd(0,8),{k:'chat'});return true}}
+ if(p.en<.22&&h){const[x,y]=doorOf(h);go(p,x,y,{k:'rest',h:h.id});return true}
+ if(p.soc<.2&&p.en>.3){const f=P.get(p.friend);if(f&&!f.dead&&f.town===t.id&&R()<.35){const fh=homeOf(f,t,cx,cy,lm);if(fh){const[x,y]=doorOf(fh);go(p,x+rnd(-5,5),y+rnd(1,4),{k:'visit',f:f.id});return true}}
+  const pl=plazaOf(p,t);if(pl){const a=hash(p.id,7)*6.283,r=6+hash(p.id,11)*8;go(p,pl.x*T+4+Math.cos(a)*r,pl.y*T+12+Math.sin(a)*r*.6,{k:'chat'});return true}}
+ return false}
+function idleThink(p,t,cx,cy,lm){const h=homeOf(p,t,cx,cy,lm);if(!h)return false;const[x,y]=doorOf(h);
+ if(p.age>=14&&R()<.4){const pl=plazaOf(p,t);if(pl){go(p,pl.x*T+4+rnd(-12,12),pl.y*T+12+rnd(0,8),{k:'chat'});return true}}
+ go(p,x+rnd(-5,5),y+rnd(0,4),{k:p.age<14?'play':'sit'});return true}
+function lifeArrive(p,k){
+ switch(k){
+  case'rest':{const h=BL.get(p.task.h);p.tt=rnd(7,13);if(h&&Math.hypot(p.x-h.x*T-4,p.y-h.y*T-10)<10&&R()<.8){p.inside=1}else bub(p,'💤',2);break}
+  case'chat':p.tt=rnd(5,10);faceNear(p);if(R()<.5)bub(p,pick(['💬','😄','🗣️','😂','🤝','☕']),2.5);break;
+  case'visit':{p.tt=rnd(5,9);const f=P.get(p.task.f);if(f&&!f.dead&&Math.hypot(f.x-p.x,f.y-p.y)<30){bub(p,'👋',2)}else bub(p,'🚪',1.5);break}
+  case'sit':p.tt=rnd(6,12);if(R()<.3)bub(p,pick(['🍵','🪑','📖','🧶']),2.5);break;
+  case'play':p.tt=p.age<5?rnd(2,4):rnd(.8,2);if(R()<.12)bub(p,pick(['⚽','🪁','😆','🏃']),1.5);break}}
+function faceNear(p){let best=null,bd=14;eachNear(p.x,p.y,14,q=>{if(q!==p&&!q.dead&&q.town===p.town){const d=Math.abs(q.x-p.x)+Math.abs(q.y-p.y);if(d<bd){bd=d;best=q}}});if(best){p.dir=best.x>=p.x?1:-1;best.dir=p.x>=best.x?1:-1}}
+function lifeFinish(p,k){p.inside=0;switch(k){case'rest':p.en=1;break;case'chat':case'visit':p.soc=1;p.en=Math.min(1,p.en+.1);break;case'sit':p.en=Math.min(1,p.en+.3);p.soc=Math.min(1,p.soc+.2);break}p.task=null}
+function lifeTick(){for(const p of people){if(p.dead||!p.town||p.age<14||p.job==='soldier')continue;if(!(p.en>=0))p.en=1;if(!(p.soc>=0))p.soc=.6;
+ const busy=p.task&&WORKK[p.task.k];const hard=p.town&&(TW.get(p.town)||{}).food<20;p.en=Math.max(0,p.en-(busy?(hard?.005:.008):.003));if(!(p.task&&LIFEK[p.task.k]))p.soc=Math.max(0,p.soc-.0065)}}
+
+// --- hooks ---
+{const _ar=arrive;arrive=function(p){const k=p.task?p.task.k:null;if(k&&LIFEK[k]){p.st='idle';lifeArrive(p,k);return}_ar(p)}}
+{const _fa=finishAct;finishAct=function(p){const k=p.task?p.task.k:null;if(k&&LIFEK[k]){lifeFinish(p,k);return}
+ const prev=p.carry,task=p.task;_fa(p);
+ if(k&&WORKK[k]){p.en=Math.max(0,(p.en>=0?p.en:1)-.03);
+  if(p.carry){if(prev&&prev.r===p.carry.r)p.carry.a=prev.a+p.carry.a*.85;p.load=(p.load||0)+1;const t=TW.get(p.town);
+   if(t&&p.load<loadCap(t)&&p.en>.15&&canMore(k,task)){p.task=task;p.tt=ACT_T[k]*rnd(.85,1.2);if(R()<.06)bub(p,pick(['💪','🧺','🪓','⛏️']),1.2)}}
+  else if(prev)p.carry=prev}}}
+{const _dp=deposit;deposit=function(p){_dp(p);p.load=0}}
+{const _go=go;go=function(p,x,y,task){p.inside=0;return _go(p,x,y,task)}}
+
+const DOING={gather:'🫐 Foraging',fish:'🎣 Fishing',chop:'🪓 Chopping wood',mine:'⛏️ Mining',farm:'🌾 Working the fields',build:'🏗️ Building',repair:'🔨 Repairing',study:'📚 Studying',dep:'🧺 Hauling goods to storage',rest:'💤 Resting at home',chat:'💬 Chatting in the square',visit:'👋 Visiting a friend',sit:'🪑 Relaxing outside',play:'⚽ Playing',protest:'🪧 Protesting',lead:'📣 Governing',guard:'🛡️ On guard',raid:'⚔️ Attacking',hunt:'🏹 Hunting',unroad:'🚧 Clearing old roads',repave:'🛠️ Paving roads',douse:'🪣 Fighting a fire',flee:'😱 Fleeing',mig:'🧳 Traveling',wait:'⏳ Waiting for a boat'};
+function doingOf(p){const k=p.inside?'rest':p.task?p.task.k:null;let s=DOING[k]||(p.st==='move'?'🚶 Walking':'🧍 Taking a break');if(p.carry&&k!=='dep')s+=` · carrying ${p.load||1} load${(p.load||1)>1?'s':''} of ${p.carry.r}`;
+ if(p.age>=14&&p.job!=='soldier'&&p.en>=0)s+=` · <span style="color:#9a9478">energy ${Math.round(p.en*100)}% · social ${Math.round((p.soc||0)*100)}%</span>`;return s}
+
+// ================= FANTASY RACES (elves, dwarves, orcs) + PERSON ANIMATIONS =================
+const RACES={
+ elf:{n:'Elves',adj:'Elven',ic:'🧝',w:6.4,h:10.8,skin:['#f8e8d8','#f2dcc4','#ead2b4','#dcc6a2'],hair:['#f0e0a0','#ece8dc','#c8a060','#8a4a20','#f8f0d8','#2a1a10'],bias:[.35,.3,-.45],
+  f1:['Ael','Ith','Lae','Syl','Thal','Ely','Fae','Cel','Gal','Ilu','Nim','Ara','Lir','Eol'],f2:['wen','ion','riel','dor','las','ara','ith','anor','iel','wyn','ndil','rien'],
+  s1:['Silver','Moon','Star','Leaf','Dawn','Mist','Sun','Wind'],s2:['song','leaf','whisper','bough','light','wind','shade','brook'],
+  t1:['Sil','Lor','Ithil','Ael','Cal','Mir','Ela','Thal','Lin','Nel'],t2:['vanor','iel','glade','donel','thalas','wen','ariel','lindë','oriel','dor'],
+  traits:'long-lived · wise scholars · deadly archers · forests regrow around them · few children'},
+ dwarf:{n:'Dwarves',adj:'Dwarven',ic:'🧔',w:7.6,h:8.4,skin:['#e8b890','#d8a078','#c88a60','#f0c8a0','#b07a50'],hair:['#a03a1a','#c8601a','#5a3a1a','#2a1a10','#d8d0c0','#8a5a2a'],bias:[-.25,-.05,-.55],
+  f1:['Thor','Bal','Dur','Gim','Bram','Dwal','Kil','Grom','Hil','Bru','Dag','Nor','Fun','Ova'],f2:['in','ok','grim','dek','ra','li','dun','mir','da','gar','bek','nar'],
+  s1:['Iron','Stone','Gold','Deep','Anvil','Copper','Granite','Coal'],s2:['beard','hammer','fist','delve','forge','helm','braid','shield'],
+  t1:['Khaz','Iron','Stone','Gol','Kar','Dun','Thrum','Bar','Gun','Mor'],t2:['hold','forge','deep','mor','dum','grim','gate','heim','kar','dal'],
+  traits:'master miners · tough soldiers · long-lived · stone halls'},
+ orc:{n:'Orcs',adj:'Orcish',ic:'👹',w:7.8,h:10.3,skin:['#6a9a4a','#5a8a3a','#7aa05a','#4a7a3a','#8a9a5a','#5a7050'],hair:['#141414','#2a1a10','#3a2a1a','#141414'],bias:[-.6,-.2,-.6],
+  f1:['Gor','Ug','Thrak','Mog','Zug','Grash','Az','Bol','Kru','Snag','Ur','Gash','Lug','Dra'],f2:['ash','nak','gul','rok','zag','mash','ug','gol','dak','ra','tha','ka'],
+  s1:['Skull','Blood','Bone','Iron','Black','Rot','Gore','Grim'],s2:['crusher','fang','tusk','maw','axe','hide','splitter','jaw'],
+  t1:['Gor','Grom','Ug','Mog','Zul','Krag','Durz','Lok','Bog','Gash'],t2:['gash','mok','dar','gul','zog','nash','rak','tar','bur','grub'],
+  traits:'fierce warriors · many children · warlike · short-lived · slow to learn'}};
+const raceFirst=r=>{const R_=RACES[r];return pick(R_.f1)+pick(R_.f2)};
+const raceSur=r=>{const R_=RACES[r];return pick(R_.s1)+pick(R_.s2)};
+function raceTown(r){const R_=RACES[r];let n;for(let k=0;k<30;k++){n=pick(R_.t1)+pick(R_.t2);n=n[0].toUpperCase()+n.slice(1);if(!towns.some(t=>t.name===n))break}return n}
+function applyRace(p,r,names){p.race=r;const R_=RACES[r];p.skin=pick(R_.skin);p.hair=pick(R_.hair);
+ if(r==='dwarf'){if(p.sex==='m')p.beard=true;else p.hs=pick([1,5,5])}if(r==='elf'){p.beard=false;p.hs=p.sex==='f'?pick([1,1,5]):pick([1,0,3])}if(r==='orc'){p.hs=pick([0,3,4,4]);p.beard=p.sex==='m'&&R()<.2}
+ if(names){p.name=raceFirst(r)}}
+{const _mk=mkPerson;mkPerson=function(x,y,t,par){const p=_mk(x,y,t,par);const pa=par&&par[0],pb=par&&par[1];let r='';
+ if(pa||pb){const a=pa?pa.race:'',b=pb?pb.race:a;r=a===b?a:(R()<.5?a:b)}else if(t&&t.race)r=t.race;
+ if(r){const R_=RACES[r];p.race=r;p.name=raceFirst(r);const pure=pa&&pa.race===r&&(!pb||pb.race===r);if(!pure){p.skin=pick(R_.skin);p.hair=pick(R_.hair)}
+  if(r==='dwarf'&&p.sex==='m')p.beard=true;if(r==='elf')p.beard=false;if(!pa)p.sur=raceSur(r)}return p}}
+function spawnRaceTribe(x,y,r){const R_=RACES[r];const bias=R_.bias.map(v=>clamp(v+rnd(-.25,.25),-1,1));const t=spawnTribe(x,y,bias,true);
+ t.race=r;t.name=raceTown(r);const sur=new Map();
+ for(const p of t.mem){applyRace(p,r,true);const pt=P.get(p.partner);const k=pt?Math.min(p.id,pt.id):p.id;if(!sur.has(k))sur.set(k,raceSur(r));p.sur=sur.get(k)}
+ for(const p of t.mem)if(p.age<14){const pa=P.get(p.par[0]);if(pa)p.sur=pa.sur}
+ news(`${R_.ic} A tribe of ${R_.n.toLowerCase()} settled at ${t.name}.`,x*T,y*T);return t}
+function raceTool(wx,wy,r){const i=tIdx(wx,wy);if(i<0||ter[i]<SAND||ter[i]===SNOW||ter[i]===RIVER||(ter[i]===MOUNT&&r!=='dwarf')){toast('Pick open land for the tribe');return}
+ if(owner[i]){toast('That land already belongs to a nation');return}const x=i%W,y=(i/W)|0;if(towns.some(t=>Math.hypot(t.cx-x,t.cy-y)<8)){toast('Too close to another town');return}
+ if(ter[i]===MOUNT)ter[i]=HILL;if(bld[i]){const b=BL.get(bld[i]);if(b)removeBld(b)}const t=spawnRaceTribe(x,y,r);burst(wx,wy,r==='orc'?'#7aa05a':r==='elf'?'#9ef0b0':'#e8b060',24);calcTerritory();floatText(wx,wy-14,`${RACES[r].ic} ${t.name}`,'#ffd257',true)}
+// colonies / splinter towns keep the majority race and get fitting names
+{const _ft=foundTown;foundTown=function(x,y,mem,o){const t=_ft(x,y,mem,o);const c={};for(const p of mem)if(p&&p.race)c[p.race]=(c[p.race]||0)+1;let best='',bn=0;for(const k in c)if(c[k]>bn){bn=c[k];best=k}
+ if(best&&bn>=mem.length*.5){t.race=best;t.name=raceTown(best)}return t}}
+
+// --- gameplay traits ---
+{const _gb=genBoost;genBoost=function(p,t){let m=_gb(p,t);if(p.race==='orc')m*=1.3;else if(p.race==='dwarf')m*=1.12;else if(p.race==='elf')m*=p.rng?1.3:1.05;return m}}
+{const _wd=wallDef;wallDef=function(q){let m=_wd(q);if(q.race==='dwarf')m*=.78;else if(q.race==='orc')m*=.9;return m}}
+{const _fa=finishAct;finishAct=function(p){const k=p.task?p.task.k:null;_fa(p);const t=TW.get(p.town);
+ if(p.race==='dwarf'&&k==='mine'&&p.carry)p.carry.a*=1.6;
+ if(p.race==='elf'&&(k==='gather'||k==='hunt')&&p.carry)p.carry.a*=1.3;
+ if(t&&k==='study'){if(p.race==='elf')t.know+=.3*(1+t.era*.1);else if(p.race==='orc')t.know-=.15*(1+t.era*.1)}}}
+const RAFF={'elf|orc':-30,'dwarf|elf':-6,'dwarf|orc':-18,'|orc':-12,'|elf':-2,'|dwarf':0};
+function raceAff(a,b){const x=a.race||'',y=b.race||'';if(x===y)return 8;return RAFF[[x,y].sort().join('|')]??0}
+function raceYear(){for(const a of towns){for(const b of towns){if(a===b)continue;const aff=raceAff(a,b);if(aff)a.rel[b.id]=clamp((a.rel[b.id]||0)+aff*.06,-100,100)}
+  if(a.race==='orc'&&!a.nWar&&a.pop>=15&&R()<.07){const c=towns.filter(b=>b!==a&&b.race!=='orc'&&sameLand(a,b)&&Math.hypot(a.cx-b.cx,a.cy-b.cy)<45&&(a.rel[b.id]||0)<15).sort((x,y)=>Math.hypot(a.cx-x.cx,a.cy-x.cy)-Math.hypot(a.cx-y.cx,a.cy-y.cy))[0];
+   if(c&&warAllowed(a,c)){declareWar(a,c);news(`👹 The orcs of ${a.name} beat their war drums and marched against ${c.name}!`,a.cx*T,a.cy*T,true)}}
+  if(a.race==='elf'&&R()<.6){for(let k=0;k<4;k++){const x=a.cx+ri(-10,10),y=a.cy+ri(-10,10);if(inb(x,y)&&Math.hypot(x-a.cx,y-a.cy)>4)reforestTile(y*W+x,true)}}}}
+function raceRow(t){const c={};for(const p of t.mem)if(!p.dead){const k=p.race||'';c[k]=(c[k]||0)+1}const ks=Object.keys(c);if(!t.race&&ks.length<=1&&!ks[0])return'';
+ const R_=RACES[t.race];return`<div class="row">${R_?`${R_.ic} <b>${R_.adj} town</b> · <span style="color:#9a9478">${R_.traits}</span>`:'🧑 Human town'}${ks.length>1?` · peoples: ${ks.map(k=>`${k?RACES[k].ic:'🧑'} ${c[k]}`).join(' ')}`:''}</div>`}
+
+// --- race looks on the sprite ---
+function raceFeat(r,p,skin,hr,kid){const race=p.race;if(!race)return;const skS=shade(skin,-.15);
+ if(kid){if(race==='elf'){r(2,4,1,2,skin);r(1,3,1,1,skin);r(9,4,1,2,skS);r(10,3,1,1,skS)}else if(race==='orc'){r(4,7,1,1,'#f4f0e0');r(7,7,1,1,'#f4f0e0');r(3,4,6,1,shade(skin,-.3))}else if(race==='dwarf'&&p.sex==='m'){r(4,8,4,1,hr)}return}
+ if(race==='elf'){r(3,5,1,2,skin);r(2,4,1,1,skin);r(10,5,1,2,skS);r(11,4,1,1,skS);if(p.hs===1)r(4,9,1,3,hr)}
+ else if(race==='orc'){r(5,8,1,1,'#f4f0e0');r(8,8,1,1,'#f4f0e0');r(5,7,1,1,'#f4f0e0');r(4,5,6,1,shade(skin,-.32));r(3,10,1,1,shade(skin,-.1));r(10,10,1,1,shade(skin,-.25))}
+ else if(race==='dwarf'){if(p.sex==='m'){r(4,8,6,3,hr);r(5,11,4,2,hr);r(6,13,2,1,hr);r(5,9,1,1,shade(hr,.25));r(8,10,1,1,shade(hr,-.25));if(hash(p.id,5)<.5&&p.job!=='leader'){r(4,2,6,2,'#8a8e96');r(3,4,8,1,'#6a6e76');r(6,1,2,1,'#9aa0a8');r(5,2,1,1,'#b8bec6')}}
+  else{r(3,6,1,6,hr);r(10,6,1,6,hr);r(3,12,1,1,'#d8b040');r(10,12,1,1,'#d8b040')}}}
+// --- race houses (before the industrial age) ---
+function raceHouse(race,e,col,v){return getSpr('RH'+race+Math.min(e,4)+col+v,18,20,r=>{const B=18;
+ if(race==='elf'){r(7,B-12,4,12,'#7a5a3a');r(8,B-12,1,12,'#6a4a2a');for(let y=0;y<9;y++){const hw=Math.round(Math.sqrt(1-((y-4.5)/5)**2)*8);r(9-hw,B-19+y,hw*2,1,y<3?'#6ac85a':'#4aa046');r(9,B-19+y,hw,1,y<3?'#5ab84a':'#3a8a3a')}
+  r(4,B-15,2,1,col);r(12,B-14,2,1,col);r(8,B-4,2,4,'#3a2a1a');r(8,B-5,2,1,'#c8a060');r(10,B-8,1,1,'#ffe8a0');r(5,B-1,8,1,'#5aa046');if(e>=3){r(6,B-4,1,4,'#efe8d8');r(11,B-4,1,4,'#efe8d8')}}
+ else if(race==='dwarf'){for(let y=0;y<7;y++){const hw=Math.round(Math.sqrt(1-(y/7)**2)*9);r(9-hw,B-8-y,hw*2,1,y>4?'#7a9a4a':'#5a8a3a')}r(2,B-8,14,8,'#8a8a8e');for(let x=2;x<16;x+=3)r(x,B-8,1,8,'#7a7a7e');r(2,B-5,14,1,'#7a7a7e');
+  r(7,B-6,4,6,'#5a3a1e');r(7,B-7,4,1,'#6a6a6e');r(8,B-4,2,1,'#d8b040');r(3,B-6,2,2,'#ffb040');r(13,B-6,2,2,'#ffb040');r(13,B-15,2,5,'#6a6a6e');r(13,B-16,2,1,'#ff7a2a');r(4,B-9,10,1,col)}
+ else{for(let y=0;y<12;y++){const hw=Math.round(1+y*.62);r(9-hw,B-13+y,hw*2,1,'#8a6a44');r(9,B-13+y,hw,1,'#6e5232')}r(8,B-17,1,5,'#efe6d0');r(5,B-15,1,3,'#efe6d0');r(12,B-15,1,3,'#efe6d0');
+  r(7,B-5,4,5,'#2a1a10');r(4,B-8,10,1,col);r(4,B-7,10,1,shade(col,-.3));r(15,B-10,1,10,'#5a4030');r(14,B-12,3,2,'#efe6d0');r(14,B-11,1,1,'#2a1a10');r(16,B-11,1,1,'#2a1a10');r(2,B-2,2,2,'#5a4a2a')}},OL_DARK)}
+{const _bs=bldSprite;bldSprite=function(b,t){if(b.type==='house'&&t&&t.race&&t.era<=4&&b.cls!==0&&b.cls!==2)return raceHouse(t.race,t.era,t.color,b.id%2);return _bs(b,t)}}
+
+// ================= ANIMATIONS =================
+function personBob(p){if(p.st==='move')return-Math.abs(Math.sin(p.walk*.55))*.55;const k=p.task&&p.tt>0?p.task.k:'';
+ if(k==='play'&&p.age>=5)return-Math.abs(Math.sin(simT*7+p.id))*1.5;if(k==='chat'||k==='lead'||k==='protest')return Math.sin(simT*3+p.id)*.25;return 0}
+function personSquash(p){const k=p.task&&p.tt>0&&p.st!=='move'?p.task.k:'';if(k==='sit')return .8;if(k==='gather'||k==='farm')return .9;return 1}
+function swingLine(hx,hy,d,ang,len,col,lw){const x2=hx+Math.cos(ang)*len*d,y2=hy+Math.sin(ang)*len;ctx.strokeStyle=col;ctx.lineWidth=lw;ctx.beginPath();ctx.moveTo(hx,hy);ctx.lineTo(x2,y2);ctx.stroke();return[x2,y2]}
+function drawAnim(p,t,kid,bob){if(p.giant||p.veh)return;const d=p.dir<0?-1:1;const acting=p.st!=='move'&&p.tt>0&&p.task;const k=acting?p.task.k:'';
+ const hx=p.x+1.6*d,hy=p.y-(kid?2.6:3.3)+bob;
+ const strike=(rate,pre)=>{const ph=(simT*rate+p.id*.37)%1;const a=ph<.65?-2.3+ph/.65*.5:-1.8+((ph-.65)/.35)*2.0;return[a,ph>.93&&ph<.93+rate*.02+.03]};
+ switch(k){
+  case'chop':{const[a,hit]=strike(1.6);const[x,y]=swingLine(hx,hy,d,a,3.4,'#7a5a3a',.5);fr(x-.7,y-.7,1.4,1.4,'#a8aeb6');if(hit&&R()<.5)parts.push({x:x+d,y,vx:d*rnd(4,10),vy:rnd(-12,-6),l:.6,ml:.6,c:'#c89a5a',s:.8,g:30});break}
+  case'mine':{const[a,hit]=strike(1.4);const[x,y]=swingLine(hx,hy,d,a,3.4,'#7a5a3a',.5);const pa=a+1.57;fr(x-.5,y-.5,1,1,'#8a8e96');swingLine(x,y,d,pa,1.3,'#8a8e96',.5);swingLine(x,y,d,pa+3.14,1.3,'#8a8e96',.5);if(hit&&R()<.6)spark(x+d,y,'#ffd27a');break}
+  case'build':case'repair':{const[a,hit]=strike(2.6);const[x,y]=swingLine(hx,hy,d,a,2.4,'#7a5a3a',.45);fr(x-.6,y-.5,1.2,1,'#4a4a52');if(hit&&R()<.3)spark(x+d*.8,y+.5,'#ffe8a0');break}
+  case'farm':{const ph=Math.sin(simT*3.2+p.id);const a=-1.9+ph*.5;const[x,y]=swingLine(hx,hy,d,a,3.6,'#7a5a3a',.45);fr(x-.2,y,1.4*d,.5,'#8a8e96');if(ph<-.95&&R()<.2)parts.push({x:x,y:y+1,vx:rnd(-3,3),vy:rnd(-6,-3),l:.5,ml:.5,c:'#7a5a30',s:.7,g:30});break}
+  case'gather':{const ph=Math.abs(Math.sin(simT*2.6+p.id));fr(hx+d*.6,p.y-1.2-ph*1.6,.8,.8,shade(p.skin||'#c08060',-.1));if(ph>.85)fr(hx+d*.6,p.y-2.4-ph*1.6,.8,.8,'#d8483a');break}
+  case'fish':{const tx=hx+5.5*d,ty=hy-4;ctx.strokeStyle='#6a4a2a';ctx.lineWidth=.4;ctx.beginPath();ctx.moveTo(hx,hy);ctx.lineTo(tx,ty);ctx.stroke();const fy=p.y+2+Math.sin(simT*3+p.id)*.4;ctx.strokeStyle='rgba(240,240,240,.6)';ctx.lineWidth=.2;ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(tx+1.5*d,fy);ctx.stroke();fr(tx+1.5*d-.4,fy-.4,.8,.8,'#e83a3a');break}
+  case'study':{const flip=((simT*1.2+p.id)%3)<.25;fr(hx-(d>0?0:2.2),hy-1,2.2,1.6,'#6a3a2a');fr(hx-(d>0?0:2.2)+.2,hy-.8,1.8,1.1,flip?'#ffffff':'#f0ead8');fr(hx-(d>0?0:2.2)+1,hy-.8,.2,1.1,'#8a7a6a');break}
+  case'chat':case'lead':case'visit':{const ph=Math.sin(simT*4.2+p.id*1.7);if(ph>0)fr(hx+d*.3,hy-1.2-ph*1.6,.8,.8,p.skin||'#c08060');break}
+  case'sit':fr(p.x-2,p.y-1.6,4,.7,'#7a5a3a');fr(p.x-1.8,p.y-.9,.5,.9,'#5a3a1e');fr(p.x+1.3,p.y-.9,.5,.9,'#5a3a1e');break;
+  case'rest':if(R()<.015)parts.push({x:p.x+d,y:p.y-9,vx:2,vy:-4,l:1.2,ml:1.2,c:'#cfe6ff',s:.9,g:0});break;
+  case'play':if(p.age>=5&&hash(p.id,13)<.35){const by=p.y-.6-Math.abs(Math.sin(simT*6+p.id))*3;fr(p.x+2.6*d-.6,by-.6,1.2,1.2,'#f4f4f4');fr(p.x+2.6*d-.2,by-.2,.4,.4,'#2a2a2a')}break}
+ if(!acting&&p.st==='move'&&p.age>=68&&!kid){ctx.strokeStyle='#6a4a2a';ctx.lineWidth=.4;ctx.beginPath();ctx.moveTo(hx,hy+.2);ctx.lineTo(hx+.6*d,p.y);ctx.stroke()}
+ if(p.job==='soldier'&&p.foe&&!p.rng&&(t?t.era:0)<5){const f=P.get(p.foe);if(f&&!f.dead&&Math.abs(f.x-p.x)<9&&Math.abs(f.y-p.y)<6){const ph=(simT*3+p.id*.3)%1;if(ph<.35){ctx.globalAlpha=.7*(1-ph/.35);ctx.strokeStyle='#f4f4f4';ctx.lineWidth=.45;ctx.beginPath();ctx.arc(p.x+2*d,p.y-4,3.2,d>0?-1.2:1.94,d>0?.6:3.74);ctx.stroke();ctx.globalAlpha=1}}}}
+{const _ft=futureTool;futureTool=function(k,wx,wy){if(k==='elves'||k==='dwarves'||k==='orcs'){raceTool(wx,wy,k==='elves'?'elf':k==='dwarves'?'dwarf':'orc');return true}return _ft(k,wx,wy)}}
+
+// ================= TOWN PLANNING: zoned districts, street grids, lots facing streets, farms on the outskirts =================
+const ZONE={hall:[0,.15],market:[0,.4],temple:[.1,.5],library:[.1,.55],statue:[0,.35],wonder:[.05,.5],shrine:[.15,.6],jail:[.35,.8],
+ house:[.15,1.0],farm:[1.0,1.75],barracks:[.55,1.05],factory:[.9,1.4],power:[1.05,1.55],station:[.45,.95],launchpad:[1.1,1.7]};
+const CORE={hall:1,market:1,temple:1,library:1,statue:1,wonder:1,shrine:1,jail:1,station:1};
+function townR(sz){return 2+Math.sqrt(Math.max(1,sz))*.78}
+function blockB(t){return t.era>=5?4:t.era>=2?4:0}
+// streets: a grid through the town centre (blocks of 3x3 lots); hamlets have only a central green
+function isStreet(t,x,y,CX,CY){const B=blockB(t);if(!B)return false;const dx=x-CX,dy=y-CY;if(dx===0&&dy===0)return false;return((dx%B)+B)%B===0||((dy%B)+B)%B===0}
+function nearCount(x,y,fn){let n=0;for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){if(!dx&&!dy)continue;const xx=x+dx,yy=y+dy;if(inb(xx,yy)&&fn(yy*W+xx))n++}return n}
+placeSite=function(t,type,ox,oy){const CX=ox??t.cx,CY=oy??t.cy;const lm=land[CY*W+CX];
+ if(type==='dock'){const i=findTile(CX,CY,9,k=>isShore(k)&&adjWater(k)>=0&&!bld[k]&&ter[k]!==MOUNT&&ter[k]!==SNOW&&depthOK(adjWater(k)),lm,120);if(i<0)return null;const b=mkBld('dock',t,i%W,(i/W)|0,0);b.wi=adjWater(i);return b}
+ const sz=ox===undefined?(t.pop||1):Math.max(1,(t.provPop&&t.provPop[CX+','+CY])||4);const Rt=townR(sz);const z=ZONE[type]||[.2,1.1];const B=blockB(t);
+ let best=-1,bs=-1e9;
+ for(let k=0;k<90;k++){const a=R()*6.283,d=rnd(Math.max(.6,z[0]*Rt),z[1]*Rt+1.5+k/30);const x=Math.round(CX+Math.cos(a)*d),y=Math.round(CY+Math.sin(a)*d);
+  if(!inb(x,y)||(x===CX&&y===CY&&type!=='hall'))continue;const i=y*W+x;const tt=ter[i];
+  if(bld[i]||land[i]!==lm||fire[i]>0||!(tt===GRASS||tt===SAND||tt===FOREST))continue;if(type==='farm'&&tt===SAND)continue;
+  if(towns.some(o=>o!==t&&Math.hypot(o.cx-x,o.cy-y)<4))continue;
+  const street=isStreet(t,x,y,CX,CY);if(street&&type!=='farm')continue;
+  const r=Math.hypot(x-CX,y-CY)/Rt;let s=0;
+  if(r<z[0])s-=(z[0]-r)*8;if(r>z[1])s-=(r-z[1])*6;
+  if(type==='farm'){s+=nearCount(x,y,j=>{const b=BL.get(bld[j]);return b&&b.type==='farm'})*1.4-nearCount(x,y,j=>{const b=BL.get(bld[j]);return b&&b.type!=='farm'})*1.2;if(street)s-=.5}
+  else{let front=0;for(const[dx,dy]of[[1,0],[-1,0],[0,1],[0,-1]]){const xx=x+dx,yy=y+dy;if(inb(xx,yy)&&(road[yy*W+xx]||isStreet(t,xx,yy,CX,CY)))front++}
+   s+=front?2.5+Math.min(1,front-1)*.5:(B?-2.5:0);
+   const nb=nearCount(x,y,j=>bld[j]>0);if(type==='house')s+=nb>=1&&nb<=4?1:nb>5?-2:0;else if(CORE[type])s+=nearCount(x,y,j=>{const b=BL.get(bld[j]);return b&&CORE[b.type]})*.6;else s-=nb*.4;
+   if(!B){const ring=Math.abs(r-.55);s-=ring*2}}
+  if(tt===FOREST)s-=.8;s+=R()*.8;
+  if(s>bs){bs=s;best=i}}
+ if(best<0)return null;if(ter[best]===FOREST){ter[best]=GRASS;res[best]=0;drawTileN(best)}return mkBld(type,t,best%W,(best/W)|0,0)};
+
+// paving the planned streets that buildings face, and slowly moving buildings out of the street lines
+function planYear(){for(const t of towns){if(t.era<2||t.machine&&t.era<5)continue;const B=blockB(t);if(!B)continue;const lv=t.era>=6?3:t.era>=4?2:1;
+  const ctrs=[[t.cx,t.cy,t.pop]];for(const v of t.prov||[])ctrs.push([v.x,v.y,(t.provPop&&t.provPop[v.x+','+v.y])||4]);
+  for(const[CX,CY,sz]of ctrs){const Rt=Math.ceil(townR(sz))+1;let paved=0;
+   for(let y=CY-Rt;y<=CY+Rt;y++)for(let x=CX-Rt;x<=CX+Rt;x++){if(!inb(x,y))continue;const i=y*W+x;if(road[i]&&road[i]>=lv||bld[i]||!isStreet(t,x,y,CX,CY))continue;const tt=ter[i];if(!(tt===GRASS||tt===SAND||tt===HILL||tt===FOREST))continue;
+    if(owner[i]&&owner[i]!==t.id)continue;if(nearCount(x,y,j=>{const b=BL.get(bld[j]);return b&&b.town===t.id&&b.type!=='farm'})<1&&!road[i])continue;
+    if(tt===FOREST){ter[i]=GRASS;res[i]=0}road[i]=lv;traffic[i]=0;drawTileN(i);if(++paved>40)break}
+   // urban renewal: a building sitting in a planned street gets rebuilt on a proper lot
+   if(t.nWar)continue;let moved=0;for(const b of (t.blds.house||[])){if(moved>=2)break;if(Math.abs(b.x-CX)>Rt||Math.abs(b.y-CY)>Rt||!isStreet(t,b.x,b.y,CX,CY))continue;
+    const nb=placeSite(t,'house',CX,CY);if(!nb)break;nb.prog=1;removeBld(b);moved++;const i=b.y*W+b.x;if(ter[i]===GRASS||ter[i]===SAND){road[i]=lv;drawTileN(i)}}}}}
+
+// ================= MACHINE UPRISING: robot foundries (spawners), humanity hunts them, robots defend them =================
+COST.foundry=[0,0];
+const fdAlive=id=>{const b=BL.get(id);return b&&b.type==='foundry'&&b.prog>=1&&(b.hp===undefined||b.hp>0)};
+function foundries(m){return(m.blds.foundry||[]).filter(b=>b.prog>=1&&(b.hp===undefined||b.hp>0))}
+function allFoundries(m){return buildings.filter(b=>b.type==='foundry'&&b.town===m.id)}
+function placeFoundry(m,tx,ty,prog){const lm=land[m.cy*W+m.cx];const cx=tx??m.cx,cy=ty??m.cy;
+ for(let k=0;k<260;k++){const a=R()*6.283,d=rnd(2.5,5+k/12);const x=Math.round(cx+Math.cos(a)*d),y=Math.round(cy+Math.sin(a)*d);if(!inb(x,y))continue;const i=y*W+x;const tt=ter[i];
+  if(bld[i]||land[i]!==lm||!(tt===GRASS||tt===SAND||tt===FOREST||tt===HILL))continue;if(owner[i]&&owner[i]!==m.id&&k<200)continue;if(towns.some(o=>o!==m&&Math.hypot(o.cx-x,o.cy-y)<5))continue;
+  if(buildings.some(b=>b.type==='foundry'&&Math.abs(b.x-x)<4&&Math.abs(b.y-y)<4))continue;if(road[i]){road[i]=0;drawTileN(i)}if(tt!==GRASS&&tt!==SAND){ter[i]=GRASS;res[i]=0;drawTileN(i)}
+  const b=mkBld('foundry',m,x,y,prog??1);b.hp=1;return b}return null}
+function seedFoundries(m){const hs=towns.filter(o=>o!==m&&sameLand(m,o)).sort((a,b)=>Math.hypot(a.cx-m.cx,a.cy-m.cy)-Math.hypot(b.cx-m.cx,b.cy-m.cy));
+ for(let k=0;k<3;k++){const o=hs[k%Math.max(1,hs.length)];let tx=m.cx,ty=m.cy;if(o&&k>0){const d=Math.hypot(o.cx-m.cx,o.cy-m.cy)||1;tx=Math.round(m.cx+(o.cx-m.cx)/d*Math.min(9,d*.35));ty=Math.round(m.cy+(o.cy-m.cy)/d*Math.min(9,d*.35))}placeFoundry(m,tx,ty,1)}rebuildCache()}
+function machineSpawn(m,n){const fd=foundries(m);
+ if(fd.length){for(let k=0;k<n;k++){const b=fd[k%fd.length];const r=mkRobot(m,b.x*T+4+rnd(-3,3),b.y*T+8);r.job='soldier';if(R()<.4)r.veh='mech';if(k<3&&onScreen(b.x*T,b.y*T,20))burst(b.x*T+4,b.y*T+6,'#ff3030',6)}}
+ else{const h=BL.get(m.hall);const nn=Math.ceil(n*.25);for(let k=0;k<nn&&h;k++){const r=mkRobot(m,h.x*T+4,h.y*T+6);r.job='soldier'}if(!m.fdOut){m.fdOut=1;news('⚙️ Every Machine foundry has fallen! Robot production has slowed to a trickle.',m.cx*T,m.cy*T,true)}}
+ // rebuild lost foundries, pushing new ones toward the front
+ for(const b of allFoundries(m))if(b.prog<1){b.prog=Math.min(1,b.prog+.4);if(b.prog>=1){b.hp=1;m.fdOut=0;news(`⚙️ The Machine finished a new robot foundry.`,b.x*T,b.y*T,false)}}
+ if(allFoundries(m).length<3&&R()<.45){const en=towns.filter(o=>o!==m&&m.wars[o.id]!==undefined&&sameLand(m,o)).sort((a,b)=>Math.hypot(a.cx-m.cx,a.cy-m.cy)-Math.hypot(b.cx-m.cx,b.cy-m.cy))[0];
+  let tx=m.cx,ty=m.cy;if(en){const d=Math.hypot(en.cx-m.cx,en.cy-m.cy)||1;tx=Math.round(m.cx+(en.cx-m.cx)/d*Math.min(10,d*.4));ty=Math.round(m.cy+(en.cy-m.cy)/d*Math.min(10,d*.4))}
+  const b=placeFoundry(m,tx,ty,.2);if(b)news(`⚙️ The Machine began building a new robot foundry${en?` facing ${en.name}`:''}.`,b.x*T,b.y*T,false)}}
+// --- humanity: find & destroy foundries ---
+function nearestFoundry(t,m,x,y){const lm=land[t.cy*W+t.cx];let best=null,bd=1e9;for(const b of foundries(m)){if(land[b.y*W+b.x]!==lm)continue;const d=Math.hypot(b.x*T-x,b.y*T-y);if(d<bd){bd=d;best=b}}return best}
+function fdDef(b){let s=2;for(const q of people){if(q.dead||!q.robot||q.job!=='soldier')continue;if(Math.abs(q.x-b.x*T)<40&&Math.abs(q.y-b.y*T)<40)s+=pStr(q)}return s}
+function tgtPoint(t,A,e){if(A&&A.fd){const b=BL.get(A.fd);if(b)return[b.x*T+4,b.y*T+6]}return townCenter(e)}
+function fdTarget(t,A,e,hx,hy){if(!e.machine){A.fd=0;return}t.mobil=Math.max(t.mobil||0,.8);if(fdAlive(A.fd))return;const was=A.fd;const nf=nearestFoundry(t,e,A.cx??hx,A.cy??hy);A.fd=nf?nf.id:0;
+ if(nf&&!was&&!(e.fdSeen||{})[t.id]){e.fdSeen=e.fdSeen||{};e.fdSeen[t.id]=1;news(`🎯 ${t.name}'s scouts found a Machine robot foundry! Its army will try to destroy it.`,nf.x*T,nf.y*T,false)}
+ if(nf&&was&&['march','siege','assault'].includes(A.st)){const[sx,sy]=walkPt(nf.x*T+4,nf.y*T+6+3*T,nf.x*T+4,nf.y*T+6);A.pid++;A.path=launchPath(A.cx,A.cy,sx,sy);A.s=0;A.st='march';A.t0=simT;A.fl=[]}}
+function fdAssault(t,A,dt,field){const b=BL.get(A.fd);if(!b||!fdAlive(A.fd))return;const bx=b.x*T+4,by=b.y*T+6;let s=0;for(const p of field)if(Math.abs(p.x-bx)<18&&Math.abs(p.y-by)<16)s+=pStr(p);
+ if(s>0){b.fdHit=simT;damageBld(b,s*dt*.02,'Sabotage',t.id);if(R()<.4)spark(bx+rnd(-4,4),by-rnd(2,8),'#ffd27a');
+  if(!fdAlive(A.fd)||b.hp<=0){const m=TW.get(b.town);news(`💥 ${t.name}'s soldiers DESTROYED a Machine robot foundry!`,bx,by,true);boom(bx,by-4,1.2);addFame(P.get(t.general)||{},0);t.mood=(t.mood||0)+.05;stats.c.foundries=(stats.c.foundries||0)+1;if(b.hp>0)b.hp=0;if(BL.get(b.id))removeBld(b);if(m)rebuildCache()}}}
+// --- the Machine: guard its foundries, rush defenders to whichever one is attacked ---
+function machineGuard(m,S){const fd=foundries(m);if(!fd.length){for(const p of S)p.fdg=0;m.fdThr=0;return}
+ let thr=null,tw=0;for(const b of fd){let w=0;for(const o of towns){const A=o.strat;if(A&&A.fd===b.id&&['march','siege','assault'].includes(A.st))w+=(A.n||1)*(A.st==='assault'?3:1)}if(b.fdHit&&simT-b.fdHit<3)w+=20;if(w>tw){tw=w;thr=b}}
+ if(thr&&m.fdThr!==thr.id&&(!m.fdNT||simT-m.fdNT>YEAR)){m.fdNT=simT;news(`🔴 The Machine is rushing robots to defend its foundry!`,thr.x*T,thr.y*T,false)}m.fdThr=thr?thr.id:0;
+ const want=Math.round(S.length*(thr?.5:.25));let gs=S.filter(p=>p.fdg);if(gs.length>want){for(const p of gs.slice(want))p.fdg=0}else for(const p of S){if(gs.length>=want)break;if(!p.fdg){p.fdg=-1;gs.push(p)}}
+ gs=S.filter(p=>p.fdg);gs.forEach((p,k)=>{const tgt=thr&&k<gs.length*.8?thr:fd[k%fd.length];if(p.fdg!==tgt.id){p.fdg=tgt.id;p.ord=null;const sl=fdSlot(p,tgt);go(p,sl[0],sl[1],{k:'guard'})}})}
+function fdSlot(p,b){const a=hash(p.id,19)*6.283,r=9+hash(p.id,23)*9;return[b.x*T+4+Math.cos(a)*r,b.y*T+7+Math.sin(a)*r*.8]}
+function fdThink(p,t){const b=BL.get(p.fdg);if(!b||!fdAlive(p.fdg)){p.fdg=0;return false}const sl=fdSlot(p,b);go(p,sl[0],sl[1],{k:'guard'});return true}
+
+// --- foundry sprite + glow ---
+function foundrySprite(){return getSpr('FOUNDRY',22,24,r=>{const B=22;r(1,B-12,20,12,'#3a3c42');r(1,B-12,20,1,'#5a5c64');for(let x=2;x<20;x+=3)r(x,B-11,1,11,'#2e3036');r(15,B-12,6,12,'#2a2c32');
+ r(3,B-20,3,8,'#4a4c54');r(3,B-21,3,1,'#ff3030');r(16,B-18,3,6,'#4a4c54');r(16,B-19,3,1,'#ff3030');r(8,B-16,6,4,'#4a4c54');r(8,B-17,6,1,'#6a6c74');
+ r(8,B-8,6,8,'#1a1a1e');r(9,B-7,4,7,'#ff3030');r(10,B-6,2,5,'#ffb0a0');r(4,B-8,2,2,'#ff5050');r(16,B-8,2,2,'#ff5050');r(10,B-15,2,2,'#ff3030')},OL_DARK)}
+{const _nb=newBldSprite;newBldSprite=function(b,t){if(b.type==='foundry')return foundrySprite();return _nb(b,t)}}
+{const _fx=bldFX;bldFX=function(b,t,ox,oy,x,y,w,h){_fx(b,t,ox,oy,x,y,w,h);if(b.type!=='foundry')return;
+ ctx.globalAlpha=.18+.12*Math.sin(simT*3+b.id);ctx.fillStyle='#ff2020';ctx.beginPath();ctx.ellipse(x+w/2,y+h*.75,w*.7,h*.35,0,0,6.283);ctx.fill();ctx.globalAlpha=1;
+ if(b.prog>=1&&R()<.12)parts.push({x:x+w*(R()<.5?.2:.78),y:y+2,vx:rnd(-2,2),vy:rnd(-9,-6),l:2.2,ml:2.2,c:pick(['#3a3a3e','#4a4a50']),s:2,g:0})}}
+function drawFoundryMarks(z){if(z>=2.2||SING.kind!=='uprising')return;for(const b of buildings){if(b.type!=='foundry'||b.prog<1)continue;const x=b.x*T+4,y=b.y*T+2;if(!onScreen(x,y,20))continue;const s=Math.max(1,2.4/z),pu=1+.15*Math.sin(simT*4+b.id);
+  ctx.globalAlpha=.85;ctx.fillStyle='#ff2020';ctx.beginPath();ctx.arc(x,y-6*s,3.4*s*pu,0,6.283);ctx.fill();ctx.fillStyle='#1a1a1e';ctx.beginPath();ctx.arc(x,y-6*s,2*s,0,6.283);ctx.fill();ctx.fillStyle='#ff6060';ctx.fillRect(x-.6*s,y-6.6*s,1.2*s,1.2*s);ctx.globalAlpha=1}}
+
+function coalition(fd){let s=0;for(const o of towns){const A=o.strat;if(A&&A.fd===fd&&(A.st==='muster'||A.st==='march'))s+=A.fs||0}return s}
+{const _db=damageBld;damageBld=function(b,amt,cause,by){if(b&&b.type==='foundry')amt*=cause==='Sabotage'?.45:.12;return _db(b,amt,cause,by)}}
+// modern nations call in missile strikes on the foundries they know about
+function humanStrikes(){const m=towns.find(t=>t.machine);if(!m)return;const fd=foundries(m);if(!fd.length)return;
+ let n=0;for(const t of shuffle(towns.slice())){if(n>=2)break;if(t===m||t.era<7||m.wars[t.id]===undefined||R()>.25)continue;n++;const b=pick(fd);const[sx,sy]=townCenter(t);const tx=b.x*T+4,ty=b.y*T+6;
+  addOrd({k:'missile',sx,sy:sy-120,tx,ty,dur:1.2+Math.min(2.5,Math.hypot(tx-sx,ty-sy)/400),by:t.id});if(R()<.5)news(`🚀 ${t.name} launched a missile strike on a Machine robot foundry!`,tx,ty,false,true)}}
 // ================= MAIN LOOP =================
 function update(dt){
  simT+=dt;yearT+=dt;cacheT-=dt;cleanT-=dt;
@@ -3539,7 +3831,7 @@ const POW={
  p_clean:['🧹','Clean Up','Sweep away ruins, rubble, scorch marks and bare dirt'],p_reforest:['🌳','Reforest','Grow forest back on open wild land'],a_clean:['🧹','Restore the World','Clear every ruin and scorch mark and let wild forests return'],
  a_climate:['🌡️','Climate','Global temperature, rising seas and the top polluters'],a_space:['🚀','Space Race','Satellites, moon landings and Mars colonies'],a_ai:['🤖','Artificial Intelligence','AI research, robots and the coming Singularity'],
  heatwave:['🌡️','Heat Wave','Warm the whole planet (and spark wildfires)'],coolplanet:['❄️','Cool Planet','Pull carbon from the sky and cool the world'],exodus:['🧳','Exodus','Panic a town: families pack up and flee as refugees'],blackout:['🔌','Blackout','Knock out a town\'s power grid for 3 years'],infraboom:['🏗️','Infrastructure Boom','Instantly build a power plant, train station, rail lines and an airport'],boostai:['🧠','Boost AI','Supercharge a town\'s AI research'],robots:['🤖','Build Robots','Gift a town six robot workers'],singularity:['💫','Singularity','Trigger the AI Singularity now. The world\'s state decides the outcome'],
- tribe:['🏕️','Found Tribe','Place a new tribe anywhere (uses the ideology picked in Politics)'],unrig:['🤫','Rig UN Vote','The next UN resolution passes no matter what'],a_un:['🇺🇳','United Nations','UN members, votes and the Doomsday Clock'],a_seed:['🌱','World Seed','Share or play a world seed'],
+ elves:['🧝','Elves','Place a tribe of elves: long-lived scholars and archers who grow forests'],dwarves:['🧔','Dwarves','Place a tribe of dwarves: master miners and tough soldiers (can settle hills)'],orcs:['👹','Orcs','Place a tribe of orcs: fierce, fast-breeding warriors who love war'],tribe:['🏕️','Found Tribe','Place a new tribe anywhere (uses the ideology picked in Politics)'],unrig:['🤫','Rig UN Vote','The next UN resolution passes no matter what'],a_un:['🇺🇳','United Nations','UN members, votes and the Doomsday Clock'],a_seed:['🌱','World Seed','Share or play a world seed'],
  grenade:['🧨','Grenade','Lob a grenade: small blast'],missile:['🚀','Missile','A guided missile streaks down: big blast and fire'],cluster:['🎇','Cluster Bomb','Splits into nine bomblets over the area'],
  airstrike:['✈️','Air Strike','A bomber carpets a line of bombs'],laser:['🔴','Orbital Laser','A beam from orbit melts a wandering path'],blackhole:['🕳️','Black Hole','Swallows people and buildings, then implodes'],
  emp:['🔌','EMP','Kill every machine: tanks, cars and factories go dark'],shower:['🌠','Meteor Shower','Seven meteors rain down'],locusts:['🦗','Locusts','A swarm devours crops and food'],
@@ -3549,7 +3841,7 @@ const POW={
  a_stats:['📊','Stats','World graphs and records'],a_nations:['🏛','Nations','All nations'],a_history:['📜','History','Everything that happened'],a_layer:['🗺️','Map Layer','Cycle borders / ideology map / none'],
  a_laws:['⚖️','World Laws','Toggle disasters, monsters, wars...'],a_save:['💾','Save','Save world'],a_load:['📂','Load','Load world'],a_new:['🌍','New World','Generate a new world'],a_help:['❓','Help','How to play']};
 const CATS=[
- {ic:'🧍',n:'Life',g:[['inspect','possess','tribe'],['human','chosen','titan','clone','resurrect'],['sheep','chicken','deer'],['wolf','bear']]},
+ {ic:'🧍',n:'Life',g:[['inspect','possess','tribe'],['elves','dwarves','orcs'],['human','chosen','titan','clone','resurrect'],['sheep','chicken','deer'],['wolf','bear']]},
  {ic:'👹',n:'Monsters',g:[['zombie','ogre','dragon'],['ufo']]},
  {ic:'✨',n:'Miracles',g:[['festival','love','babyboom'],['youth','golden','midas','timewarp'],['shield','miracle','prophet']]},
  {ic:'🌦️',n:'Nature',g:[['bless','rain','drought'],['plague','locusts','gold'],['heatwave','coolplanet']]},
@@ -3595,7 +3887,7 @@ function renderSheet(){const el=$('sheet');if(!sel){el.style.display='none';retu
    h=`<h3><span style="color:${t?t.color:'#ccc'}">●</span>${p.hero?`${p.name} ${p.epi} <span style="font-size:12px;color:#cfc8ae">(${p.sur})</span> ⭐`:full(p)}${p.chosen?' ✨':''}${p.giant?' 🦾':''} <span class="btn" data-a="possess" data-id="${p.id}" style="font-size:12px;padding:2px 7px;margin-left:6px">🎮 Possess</span> <span class="x btn" data-a="close">✕</span></h3>
    <div class="row">${traitChips(p)} ${relTag(p.rel)}${p.prophet?' 📿 <b>Prophet</b>':''}</div>${p.jail?`<div class="row" style="color:#ffb86a">⛓️ In jail for ${p.jail} more years</div>`:''}${p.thief?'<div class="row" style="color:#ffb86a">💰 Up to no good…</div>':''}${p.wanted?'<div class="row" style="color:#ff8a6a">🕶️ Hunted by the secret police</div>':''}
    ${p.rival&&P.get(p.rival)?`<div class="row">😠 Rival: ${plink(p.rival)}</div>`:''}${p.friend&&P.get(p.friend)?`<div class="row">🤝 Best friend: ${plink(p.friend)}</div>`:''}${p.fame>=1?`<div class="row">🏅 Fame ${Math.floor(p.fame)}${p.ruled?` · ${p.ruled}`:''}</div>`:''}
-   <div class="row">${p.sex==='f'?'♀':'♂'} · Age ${p.age} · <b>${jobN}</b>${t?` of <span class="lnk" data-a="town" data-id="${t.id}">${t.name}</span>`:p.mig?' · migrating':' · wanderer'}${p.onBoat?' · at sea ⛵':''}</div>
+   <div class="row">${p.sex==='f'?'♀':'♂'} · Age ${p.age} · <b>${jobN}</b>${t?` of <span class="lnk" data-a="town" data-id="${t.id}">${t.name}</span>`:p.mig?' · migrating':' · wanderer'}${p.onBoat?' · at sea ⛵':''}</div>${p.town&&!p.dead?`<div class="row">${doingOf(p)}</div>`:''}
    <div class="row" style="margin-top:3px">${p.age>=14?tag(io):''}${f?` member of the <b style="color:${f.c==='#202020'?'#ccc':f.c}">${f.name}</b>${f.head===p.id?' (leader)':''}${p.act?' · activist':''}`:''}</div>
    ${p.rebel?'<div class="row" style="color:#ff8a6a">🔥 Fighting in the civil war</div>':''}
    ${pt&&!pt.dead?`<div class="row">❤️ <span class="lnk" data-a="person" data-id="${pt.id}">${full(pt)}</span> · 👶 ${p.kids.length}</div>`:`<div class="row">👶 ${p.kids.length} kids</div>`}
@@ -3759,9 +4051,6 @@ window.BB={update,ev:s=>eval(s),newWorld,draw,get towns(){return towns},get peop
 function minZoom(){return clamp(Math.min(SW/(W*T),SH/(H*T))*1.05,.35,.8)}
 if(!window.__TEST)requestAnimationFrame(t=>{last=t;frame(t)});
 })();
-</script>
-<script>
-if('serviceWorker' in navigator&&location.protocol!=='file:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
 </script>
 </body>
 </html>
